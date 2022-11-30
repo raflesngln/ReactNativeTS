@@ -30,9 +30,17 @@ import {extendTheme,Heading,AspectRatio,Text,HStack,Stack, Image,Box, Center, Na
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { color } from 'native-base/lib/typescript/theme/styled-system';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 
 import { store } from './src/redux/store'
 import { Provider } from 'react-redux'
+
+
+import RootNavigator from './src/navigation';
+
+
 
 const customTheme = extendTheme({
   space: {
@@ -54,22 +62,13 @@ declare module 'native-base' {
   interface ICustomTheme extends CustomThemeType {}
 }
 
+
 const App = () => {
 
 
   return (
     <Provider store={store}>
-    <NativeBaseProvider>
-      <ScrollView>
-    <Center flex={1} px="3">
-            <Example />
-
-            <MyCard />
-            <MyCard />
-            <MyCard />
-    </Center>
-    </ScrollView>
-  </NativeBaseProvider>
+      <RootNavigator />
   </Provider>
   );
 };

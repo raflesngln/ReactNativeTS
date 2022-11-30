@@ -2,7 +2,7 @@ import React  from 'react';
 import { StyleSheet, View, Text, Pressable, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { color } from 'native-base/lib/typescript/theme/styled-system';
-
+import {TextCustom} from '../../components/TextCustom';
 const DATA = [
   {
     id: 1,
@@ -31,8 +31,12 @@ const DATA = [
   }
 ];
 
+// import HomeScreenNavigationProp that check fro routes in homescreen
+import { HomeScreenNavigationProp } from '../navigation/types';
+
 const HomeScreen = () => {
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
+  const navigation = useNavigation<HomeScreenNavigationProp>(); // check which routes is navigates
 
   const renderListItems = ({ item }) => {
     return (
@@ -63,6 +67,18 @@ const HomeScreen = () => {
   return (
     <View style={{ flex: 1, paddingTop: 10 }}>
       <FlatList data={DATA} renderItem={renderListItems} />
+
+      <Pressable
+        onPress={() =>
+          navigation.navigate('About', {
+            title: 'about',
+          })
+        }
+      >
+      <TextCustom style={{ fontSize: 18, paddingHorizontal: 12, paddingVertical: 12,color:'red' }}>
+          GOTO About Page
+      </TextCustom>
+      </Pressable>
     </View>
   );
 };

@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 
-const DetailScreen = () => {
+const DetailScreen = (props) => {
   const route = useRoute();
   const { name, birthYear } = route.params;
 

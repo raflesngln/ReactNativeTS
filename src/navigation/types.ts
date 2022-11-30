@@ -8,7 +8,7 @@ export type HomeStackNavigatorParamList = {
       name: string;
       birthYear: string;
     };
-    About:{
+    Settings:{
         title:string
     };
   };
@@ -17,7 +17,7 @@ export type HomeStackNavigatorParamList = {
 //   type checks for screens
   export type HomeScreenNavigationProp = NativeStackNavigationProp<
   HomeStackNavigatorParamList,
-  'Details'
+  'Settings'
 >;
 
 //   type checks for screens Bottom Navigations

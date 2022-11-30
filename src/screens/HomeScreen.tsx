@@ -73,17 +73,14 @@ const HomeScreen = () => {
 
       <Pressable
         onPress={() =>
-          navigation.navigate('About', {
-            title: 'about',
+          navigation.navigate('Settings', {
+            title: 'Settings',
           })
         }
       >
       <TextCustom style={{ fontSize: 18, paddingHorizontal: 12, paddingVertical: 12,color:'red' }}>
           GOTO About Page 
       </TextCustom>
-      <View>
-      <Text>OKEKE</Text>
-      </View>
       </Pressable>
     </View>
   );

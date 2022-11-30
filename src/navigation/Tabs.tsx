@@ -44,6 +44,7 @@ const BottomTabs = () => {
         tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="message-text-outline" color={color} size={size+3} />
             ),
+            tabBarBadge: 55,
         }}
       />
       <Tab.Screen name="Settings" component={SettingsScreen}

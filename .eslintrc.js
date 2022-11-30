@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends:"extends": ["plugin:react/jsx-runtime",'@react-native-community'],
+  // extends: ['plugin:react/jsx-runtime', '@react-native-community'],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
   overrides: [
@@ -10,8 +10,9 @@ module.exports = {
         '@typescript-eslint/no-shadow': ['error'],
         'no-shadow': 'off',
         'no-undef': 'off',
-        "react/react-in-jsx-scope": "off"
-      },
-    },
-  ],
+        'react/react-in-jsx-scope': 'off',
+        'eol-last': ['error', 'never']
+      }
+    }
+  ]
 };

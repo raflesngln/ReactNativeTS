@@ -17,13 +17,13 @@ export type HomeStackNavigatorParamList = {
 //   type checks for screens
   export type HomeScreenNavigationProp = NativeStackNavigationProp<
   HomeStackNavigatorParamList,
-  'Details',
-  'About'
+  'Details'
 >;
 
 //   type checks for screens Bottom Navigations
 export type BottomTabNavigatorParamList = {
     Home: HomeStackNavigatorParamList;
-    Feed: undefined;
+    Tracking: undefined;
+    Message: undefined;
     Settings: undefined;
   };

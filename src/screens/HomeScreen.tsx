@@ -2,7 +2,10 @@ import React  from 'react';
 import { StyleSheet, View, Text, Pressable, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { color } from 'native-base/lib/typescript/theme/styled-system';
+
 import {TextCustom} from '../../components/TextCustom';
+
+
 const DATA = [
   {
     id: 1,
@@ -76,8 +79,11 @@ const HomeScreen = () => {
         }
       >
       <TextCustom style={{ fontSize: 18, paddingHorizontal: 12, paddingVertical: 12,color:'red' }}>
-          GOTO About Page
+          GOTO About Page 
       </TextCustom>
+      <View>
+      <Text>OKEKE</Text>
+      </View>
       </Pressable>
     </View>
   );

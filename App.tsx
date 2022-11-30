@@ -7,7 +7,6 @@
  *
  * @format
  */
-
 import React, {type PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -33,9 +32,10 @@ import { color } from 'native-base/lib/typescript/theme/styled-system';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-
-import { store } from './src/redux/store'
 import { Provider } from 'react-redux'
+
+import { PersistGate } from 'redux-persist/integration/react';
+import {persistor, store } from './src/redux/store'
 
 
 import RootNavigator from './src/navigation';
@@ -68,9 +68,11 @@ const App = () => {
 
   return (
     <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
       <NativeBaseProvider >
         <RootNavigator />
         </NativeBaseProvider>
+        </PersistGate>
   </Provider>
   );
 };

@@ -1,6 +1,7 @@
 import React  from 'react';
 import { StyleSheet, View, Text, Pressable, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { color } from 'native-base/lib/typescript/theme/styled-system';
 
 const DATA = [
   {
@@ -44,14 +45,15 @@ const HomeScreen = () => {
         }
       >
         <Text
-          style={{ fontSize: 18, paddingHorizontal: 12, paddingVertical: 12 }}
+          style={{ fontSize: 18, paddingHorizontal: 12, paddingVertical: 12,color:'red' }}
         >
           {item.name}
         </Text>
         <View
           style={{
             borderWidth: StyleSheet.hairlineWidth,
-            borderColor: '#ccc'
+            borderColor: '#ccc',
+            backgroundColor:'red',
           }}
         />
       </Pressable>
@@ -64,5 +66,24 @@ const HomeScreen = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  sectionContainer: {
+    marginTop: 32,
+    paddingHorizontal: 24,
+  },
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: '600',
+  },
+  sectionDescription: {
+    marginTop: 8,
+    fontSize: 18,
+    fontWeight: '400',
+  },
+  highlight: {
+    fontWeight: '700',
+  },
+});
 
 export default HomeScreen;

@@ -72,8 +72,8 @@ getdata()
 return(
   <>
   {
-    datas && datas.map((values)=>{
-      return <Box alignItems="center">
+    datas && datas.map((values,i)=>{
+      return <Box alignItems="center" key={i}>
       <Box
         maxW="80"
         rounded="lg"

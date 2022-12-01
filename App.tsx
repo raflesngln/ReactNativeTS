@@ -69,10 +69,10 @@ const App = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-      <NativeBaseProvider >
-        <RootNavigator />
+        <NativeBaseProvider >
+          <RootNavigator />
         </NativeBaseProvider>
-        </PersistGate>
+      </PersistGate>
   </Provider>
   );
 };

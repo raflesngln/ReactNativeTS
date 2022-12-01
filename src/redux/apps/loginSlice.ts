@@ -8,7 +8,9 @@ export interface LoginState {
     username: string;
     profilePicture: string;
     value:number;
-  }
+    darkMode:string;
+  },
+  darkMode:string;
 }
 
 const initialState: LoginState = {
@@ -17,7 +19,9 @@ const initialState: LoginState = {
     username: 'rafles',
     profilePicture: '',
     value:0,
-  }
+    darkMode:'light'
+  },
+  darkMode:'light'
 };
 
 export const loginSlice = createSlice({
@@ -34,12 +38,15 @@ export const loginSlice = createSlice({
       state.dataLogin.isLogin = false;
       state.dataLogin.username = '';
       state.dataLogin.profilePicture = '';
+    },
+    changeDarkMode: (state,action: PayloadAction<any>): void =>{
+      state.darkMode = action.payload;
     }
   }
 });
 
 // Action creators are generated for each case reducer function
-export const { setDataLogin, logout } = loginSlice.actions;
+export const { setDataLogin,changeDarkMode, logout } = loginSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectCount = (state: RootState) => state.login

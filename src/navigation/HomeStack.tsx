@@ -5,6 +5,7 @@ import { HomeStackNavigatorParamList } from './types';
 import HomeScreen from '../screens/HomeScreen';
 import DetailsScreen from '../screens/DetailsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import TrackingScreen from '../screens/home/TrackingScreen';
 
 const HomeStack = createNativeStackNavigator<HomeStackNavigatorParamList>(); // checking type for name stack & types params
 
@@ -23,6 +24,7 @@ const HomeStackNavigator = () => {
       {/* <HomeStack.Screen  name="TRACKING APPS" component={HomeScreen} /> */}
       <HomeStack.Screen  name="TRACKING APPS" component={HomeScreen} />
       <HomeStack.Screen name="Details" component={DetailsScreen} />
+      <HomeStack.Screen name="Tracking" component={TrackingScreen} />
       <HomeStack.Screen name="Settings" component={SettingsScreen} />
     </HomeStack.Navigator>
   );

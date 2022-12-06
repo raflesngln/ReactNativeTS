@@ -8,13 +8,12 @@ import {
   View,
   Text,
   Pressable,
-  FlatList,
   StatusBar,
   StyleSheet,
   useColorScheme,
   RefreshControl
 } from 'react-native';
-import { AspectRatio ,Image,Box,Container, Heading, Center, NativeBaseProvider,VStack ,ZStack,HStack ,Flex, Spacer,Stack,ScrollView,Divider,Badge } from "native-base";
+import { AspectRatio ,Image,Box,Container, Heading, Center, NativeBaseProvider,VStack ,ZStack,HStack ,Flex, Spacer,Stack,ScrollView,Divider,FlatList,SectionList,Avatar,Badge } from "native-base";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import LinearGradient from 'react-native-linear-gradient'
 import moment from 'moment';
@@ -25,6 +24,35 @@ import {TextCustom} from '../../components/TextCustom';
 import { HomeScreenNavigationProp } from '../navigation/types';
 import useEffect from 'react';
 import useState from 'react';
+
+const DATA = [
+  {
+    id: 1,
+    name: 'Luke Skywalker',
+    birth_year: '19BBY'
+  },
+  {
+    id: 2,
+    name: 'C-3PO',
+    birth_year: '112BBY'
+  },
+  {
+    id: 3,
+    name: 'R2-D2',
+    birth_year: '33BBY'
+  },
+  {
+    id: 4,
+    name: 'Darth Vader',
+    birth_year: '41.9BBY'
+  },
+  {
+    id: 5,
+    name: 'Leia Organa',
+    birth_year: '19BBY'
+  }
+];
+
 
 const HomeScreen = () => {
   // const navigation = useNavigation();
@@ -61,20 +89,6 @@ const HomeScreen = () => {
 
   return (
     <View style={{ flex: 1, paddingTop: 0 }}>
-      {/* <FlatList data={DATA} renderItem={renderListItems} />
-
-      <Pressable
-        onPress={() =>
-          navigation.navigate('Settings', {
-            title: 'Settings',
-          })
-        }
-      >
-      <Text style={{ fontSize:12, paddingHorizontal: 1, paddingVertical: 2,color:'red' }}>{JSON.stringify(datalogin)}</Text>
-      <TextCustom style={{ fontSize: 18, paddingHorizontal: 12, paddingVertical: 12,color:'red' }}>
-          GOTO About Page 
-      </TextCustom>
-      </Pressable> */}
       <Content/>
     </View>
   );
@@ -91,6 +105,7 @@ const wait = (timeout) => {
   var Today=moment().format('ddd, MMMM Do YYYY')
   var {width} = Dimensions.get('window');
   var lebar=width.toFixed()-2
+  const navigation = useNavigation<HomeScreenNavigationProp>(); // check which routes is navigates
 
   const[jam,setJam]=React.useState(null);
   const [refreshing, setRefreshing] = React.useState(false);
@@ -106,7 +121,6 @@ const wait = (timeout) => {
           <NativeBaseProvider>
             <SafeAreaView style={styles.container}>
               <ScrollView
-              //   contentContainerStyle={styles.scrollView}
                 refreshControl={
                   <RefreshControl
                     refreshing={refreshing}
@@ -114,7 +128,6 @@ const wait = (timeout) => {
                   />
                 }
               >
-                {/* linear-gradient(140deg, #3f51b5 0%, #405cf7 50%, #3f51b5 75%) */}
             <Flex direction="row" mb="2.5" mt="-3">
               <VStack space={4}  w='100%'>
               <LinearGradient
@@ -147,50 +160,114 @@ const wait = (timeout) => {
 
                   <Center>
                     <HStack space={3} >
-                      <Center h="80px" w="20" bg="transparent" borderRadius="15" borderWidth="1" borderColor="#00bcd4">
-                        <MaterialCommunityIcons name="adjust" color='#686868' size={23} />
-                        <Text style={{color:'#686868',fontWeight:'bold'}}>Tracking</Text>
-                      </Center>
-                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
+                        <Pressable
+                            onPress={() =>
+                              navigation.navigate('Tracking', {
+                                title: 'Tracking'
+                              })
+                            }
+                          >
+                        <Center h="80px" w="20" bg="transparent" borderRadius="15" borderWidth="1" borderColor="#17a0d1">
+                          <MaterialCommunityIcons name="adjust" color='#686868' size={23} />
+                          <Text style={{color:'#686868',fontWeight:'bold'}}>Tracking</Text>
+                        </Center>
+                      </Pressable>
+                      <Pressable
+                            onPress={() =>
+                              navigation.navigate('Tracking', {
+                                title: 'My Works'
+                              })
+                            }
+                          >
+                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#17a0d1">
                         <MaterialCommunityIcons name="folder-home-outline" color='#686868' size={23} />
                         <Text  style={{color:'#686868',fontWeight:'bold'}}>My Works</Text>
                       </Center>
-                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
+                      </Pressable>
+                      <Pressable
+                            onPress={() =>
+                              navigation.navigate('Tracking', {
+                                title: 'Pending Status'
+                              })
+                            }
+                          >
+                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#17a0d1">
                         <MaterialCommunityIcons name="chart-donut" color='#686868' size={23} />
                         <Text  style={{color:'#686868',fontWeight:'bold'}}>Pending</Text>
                       </Center>
-                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
+                      </Pressable>
+                      <Pressable
+                            onPress={() =>
+                              navigation.navigate('Tracking', {
+                                title: 'Complete Status'
+                              })
+                            }
+                          >
+                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#17a0d1">
                         <MaterialCommunityIcons name="check-circle-outline" color='#686868' size={23} />
                         <Text style={{color:'#686868',fontWeight:'bold'}}>Complete</Text>
                       </Center>
+                      </Pressable>
                       {/* </Flex> */}
                     </HStack>
                   </Center>
+
                   <Center mt="5">
                     <HStack space={3} >
-                    {/* <Flex direction="row-reverse" mb="2.5" mt="1.5"> */}
-                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
-                        <MaterialCommunityIcons name="alarm" color='#686868' size={23} />
-                        <Text style={{color:'#686868',fontWeight:'bold'}}>Tasks</Text>
-                      </Center>
-                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
-                        <MaterialCommunityIcons name="arrow-u-left-top" color='#686868' size={23} />
-                        <Text style={{color:'#686868',fontWeight:'bold'}}>Import</Text>
-                      </Center>
-                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
-                        <MaterialCommunityIcons name="arrow-u-right-top" color='#686868' size={23} />
-                        <Text style={{color:'#686868',fontWeight:'bold'}}>Export</Text>
-                      </Center>
-                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
-                        <MaterialCommunityIcons name="apps" color='#686868' size={23} />
-                        <Text style={{color:'#686868',fontWeight:'bold'}}>All</Text>
-                      </Center>
+                    <Pressable
+                            onPress={() =>
+                              navigation.navigate('Tracking', {
+                                title: 'Tasks'
+                              })
+                            }
+                          >
+                        <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#17a0d1">
+                          <MaterialCommunityIcons name="alarm" color='#686868' size={23} />
+                          <Text style={{color:'#686868',fontWeight:'bold'}}>Tasks</Text>
+                        </Center>
+                      </Pressable>
+                      <Pressable
+                            onPress={() =>
+                              navigation.navigate('Tracking', {
+                                title: 'Import'
+                              })
+                            }
+                          >
+                        <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#17a0d1">
+                          <MaterialCommunityIcons name="arrow-u-left-top" color='#686868' size={23} />
+                          <Text style={{color:'#686868',fontWeight:'bold'}}>Import</Text>
+                        </Center>
+                      </Pressable>
+                      <Pressable
+                            onPress={() =>
+                              navigation.navigate('Tracking', {
+                                title: 'Export'
+                              })
+                            }
+                          >
+                        <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#17a0d1">
+                          <MaterialCommunityIcons name="arrow-u-right-top" color='#686868' size={23} />
+                          <Text style={{color:'#686868',fontWeight:'bold'}}>Export</Text>
+                        </Center>
+                      </Pressable>
+                      <Pressable
+                            onPress={() =>
+                              navigation.navigate('Tracking', {
+                                title: 'All Menu'
+                              })
+                            }
+                          >
+                        <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#17a0d1">
+                          <MaterialCommunityIcons name="apps" color='#686868' size={23} />
+                          <Text style={{color:'#686868',fontWeight:'bold'}}>All</Text>
+                        </Center>
+                      </Pressable>
                       {/* </Flex> */}
                     </HStack>
                   </Center>
                 </Box>
 
-                <Box w="96%" ml="2%" h="auto" mt="-2" minHeight="150" rounded="8" bg="#ffffff" shadow={5}>
+                <Box w="96%" ml="2%" h="auto" mt="-1" minHeight="150" rounded="8" bg="#ffffff" shadow={5}>
                   <Box>
                   <Flex mt="3" mb="-5" p="3" flex={1}  flexDirection="row" justifyContent="space-between" alignItems="flex-start">
                     <Text >ARTIKEL</Text>
@@ -198,15 +275,22 @@ const wait = (timeout) => {
                   </Flex>
 
                   <Flex mt="5" p="2" flex={1}  flexDirection="row" justifyContent="space-between" alignItems="flex-start">
-                      <Box w="49%"  rounded="lg" overflow="hidden" borderColor="coolGray.200" borderWidth="1" _dark={{
-                      borderColor: "coolGray.600",
-                      backgroundColor: "gray.700"
-                    }} _web={{
-                      shadow: 2,
-                      borderWidth: 0
-                    }} _light={{
-                      backgroundColor: "gray.50"
-                    }}>
+                        <Box w="49%"  rounded="lg" overflow="hidden" borderColor="coolGray.200" borderWidth="1" _dark={{
+                        borderColor: "coolGray.600",
+                        backgroundColor: "gray.700"
+                        }} _web={{
+                          shadow: 2,
+                          borderWidth: 0
+                        }} _light={{
+                          backgroundColor: "gray.50"
+                        }}>
+                      <Pressable
+                          onPress={() =>
+                            navigation.navigate('Tracking', {
+                              title: 'Detail Artikel'
+                            })
+                          }
+                        >
                         <Box>
                           <AspectRatio w="100%" ratio={16 / 9}>
                             <Image source={{
@@ -233,16 +317,25 @@ const wait = (timeout) => {
                             </HStack>
                           </HStack>
                         </Stack>
+                        </Pressable>
                       </Box>
+
                       <Box w="49%"  rounded="lg" overflow="hidden" borderColor="coolGray.200" borderWidth="1" _dark={{
-                      borderColor: "coolGray.600",
-                      backgroundColor: "gray.700"
-                    }} _web={{
-                      shadow: 2,
-                      borderWidth: 0
-                    }} _light={{
-                      backgroundColor: "gray.50"
-                    }}>
+                            borderColor: "coolGray.600",
+                            backgroundColor: "gray.700"
+                          }} _web={{
+                            shadow: 2,
+                            borderWidth: 0
+                          }} _light={{
+                            backgroundColor: "gray.50"
+                          }}>
+                        <Pressable
+                            onPress={() =>
+                              navigation.navigate('Tracking', {
+                                title: 'Detail Artikel'
+                              })
+                            }
+                          >
                         <Box>
                           <AspectRatio w="100%" ratio={16 / 9}>
                             <Image source={{
@@ -259,6 +352,7 @@ const wait = (timeout) => {
                             FINANCE
                           </Center>
                         </Box>
+                        
                         <Stack p="4" space={3}>
                           <Text fontWeight="400">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry
@@ -269,6 +363,7 @@ const wait = (timeout) => {
                             </HStack>
                           </HStack>
                         </Stack>
+                        </Pressable>
                       </Box>
                   </Flex>
 
@@ -314,14 +409,48 @@ const wait = (timeout) => {
                   </VStack>
                  </Box>
                 </Box>
+                <Box>
+                  <Text>Lists</Text>
+                  {/* <Pengumuman/> */}
+              </Box>
               </VStack>
             </Flex>
             </ScrollView>
+
             </SafeAreaView>
           </NativeBaseProvider>
         );
     };
 
+    const Pengumuman = () => {
+      const data = [{
+        title: "Cyan",
+        data: ["cyan.100", "cyan.200", "cyan.300", "cyan.400", "cyan.500"]
+      }, {
+        title: "Yellow",
+        data: ["yellow.100", "yellow.200", "yellow.300", "yellow.400", "yellow.500"]
+      }, {
+        title: "Violet",
+        data: ["violet.100", "violet.200", "violet.300", "violet.400", "violet.500"]
+      }];
+      return <Center h="80" w="100%">
+          <SectionList maxW="300" w="100%" mb="4" sections={data} keyExtractor={(item, index) => item + index} renderItem={({
+          item
+        }) => <Center py="4" bg={item}>
+                {item.split(".")[1]}
+              </Center>} renderSectionHeader={({
+          section: {
+            title
+          }
+        }) => <Center>
+                <Heading fontSize="xl" mt="8" pb="4">
+                  {title}
+                </Heading>
+              </Center>} />
+        </Center>
+    };
+
+    
     const styles = StyleSheet.create({
       container: {
         flex: 1,

@@ -11,6 +11,9 @@ export type HomeStackNavigatorParamList = {
     Settings:{
         title:string
     };
+    Tracking:{
+        title:string
+    };
   };
 
 

@@ -167,9 +167,9 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                        <Center h="80px" w="20" bg="transparent" borderRadius="15" borderWidth="1" borderColor="#17a0d1">
-                          <MaterialCommunityIcons name="adjust" color='#686868' size={23} />
-                          <Text style={{color:'#686868',fontWeight:'bold'}}>Tracking</Text>
+                        <Center h="80px" w="20" bg="#c2edf2" borderRadius="15" borderWidth="1" borderColor="#7cd6d9">
+                          <MaterialCommunityIcons name="adjust" color='#6c8182' size={23} />
+                          <Text style={{color:'#6c8182',fontWeight:'bold'}}>Tracking</Text>
                         </Center>
                       </Pressable>
                       <Pressable
@@ -179,9 +179,9 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#17a0d1">
-                        <MaterialCommunityIcons name="folder-home-outline" color='#686868' size={23} />
-                        <Text  style={{color:'#686868',fontWeight:'bold'}}>My Works</Text>
+                      <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#7cd6d9">
+                        <MaterialCommunityIcons name="folder-home-outline" color='#6c8182' size={23} />
+                        <Text  style={{color:'#6c8182',fontWeight:'bold'}}>My Works</Text>
                       </Center>
                       </Pressable>
                       <Pressable
@@ -191,9 +191,9 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#17a0d1">
-                        <MaterialCommunityIcons name="chart-donut" color='#686868' size={23} />
-                        <Text  style={{color:'#686868',fontWeight:'bold'}}>Pending</Text>
+                      <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#7cd6d9">
+                        <MaterialCommunityIcons name="chart-donut" color='#6c8182' size={23} />
+                        <Text  style={{color:'#6c8182',fontWeight:'bold'}}>Pending</Text>
                       </Center>
                       </Pressable>
                       <Pressable
@@ -203,9 +203,9 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#17a0d1">
-                        <MaterialCommunityIcons name="check-circle-outline" color='#686868' size={23} />
-                        <Text style={{color:'#686868',fontWeight:'bold'}}>Complete</Text>
+                      <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#7cd6d9">
+                        <MaterialCommunityIcons name="check-circle-outline" color='#6c8182' size={23} />
+                        <Text style={{color:'#6c8182',fontWeight:'bold'}}>Complete</Text>
                       </Center>
                       </Pressable>
                       {/* </Flex> */}
@@ -221,9 +221,9 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                        <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#17a0d1">
-                          <MaterialCommunityIcons name="alarm" color='#686868' size={23} />
-                          <Text style={{color:'#686868',fontWeight:'bold'}}>Tasks</Text>
+                        <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#7cd6d9">
+                          <MaterialCommunityIcons name="alarm" color='#6c8182' size={23} />
+                          <Text style={{color:'#6c8182',fontWeight:'bold'}}>Tasks</Text>
                         </Center>
                       </Pressable>
                       <Pressable
@@ -233,9 +233,9 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                        <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#17a0d1">
-                          <MaterialCommunityIcons name="arrow-u-left-top" color='#686868' size={23} />
-                          <Text style={{color:'#686868',fontWeight:'bold'}}>Import</Text>
+                        <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#7cd6d9">
+                          <MaterialCommunityIcons name="arrow-u-left-top" color='#6c8182' size={23} />
+                          <Text style={{color:'#6c8182',fontWeight:'bold'}}>Import</Text>
                         </Center>
                       </Pressable>
                       <Pressable
@@ -245,9 +245,9 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                        <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#17a0d1">
-                          <MaterialCommunityIcons name="arrow-u-right-top" color='#686868' size={23} />
-                          <Text style={{color:'#686868',fontWeight:'bold'}}>Export</Text>
+                        <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#7cd6d9">
+                          <MaterialCommunityIcons name="arrow-u-right-top" color='#6c8182' size={23} />
+                          <Text style={{color:'#6c8182',fontWeight:'bold'}}>Export</Text>
                         </Center>
                       </Pressable>
                       <Pressable
@@ -257,9 +257,9 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                        <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#17a0d1">
-                          <MaterialCommunityIcons name="apps" color='#686868' size={23} />
-                          <Text style={{color:'#686868',fontWeight:'bold'}}>All</Text>
+                        <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#7cd6d9">
+                          <MaterialCommunityIcons name="apps" color='#6c8182' size={23} />
+                          <Text style={{color:'#6c8182',fontWeight:'bold'}}>All</Text>
                         </Center>
                       </Pressable>
                       {/* </Flex> */}

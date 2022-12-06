@@ -18,9 +18,6 @@ const wait = (timeout) => {
   return new Promise(resolve => setTimeout(resolve, timeout));
 }
 
-
-
-
 const MessageScreen = () => {
 
   const [refreshing, setRefreshing] = React.useState(false);

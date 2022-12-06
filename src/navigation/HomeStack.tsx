@@ -10,8 +10,18 @@ const HomeStack = createNativeStackNavigator<HomeStackNavigatorParamList>(); // 
 
 const HomeStackNavigator = () => {
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen name="TRACKING APPS" component={HomeScreen} />
+    <HomeStack.Navigator 
+        screenOptions={{
+            headerShown: true,
+            contentStyle:{
+                backgroundColor:'#308dc7',
+                zIndex:999
+              },
+        }}
+        initialRouteName="HomeScreen"
+    >
+      {/* <HomeStack.Screen  name="TRACKING APPS" component={HomeScreen} /> */}
+      <HomeStack.Screen  name="TRACKING APPS" component={HomeScreen} />
       <HomeStack.Screen name="Details" component={DetailsScreen} />
       <HomeStack.Screen name="Settings" component={SettingsScreen} />
     </HomeStack.Navigator>

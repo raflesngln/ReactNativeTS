@@ -52,7 +52,7 @@ const BottomTabs = () => {
             headerShown: false,
             tabBarLabel: 'Profile',
             tabBarIcon: ({ color, size }) => (
-                <MaterialCommunityIcons name="face-man-profile" color={color} size={size+3} />
+                <MaterialCommunityIcons name="account-circle" color={color} size={size+3} />
                 ),
             }}
       />

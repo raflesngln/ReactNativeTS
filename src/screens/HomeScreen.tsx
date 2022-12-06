@@ -16,37 +16,9 @@ import {
 } from 'react-native';
 import { AspectRatio ,Image,Box,Container, Heading, Center, NativeBaseProvider,VStack ,ZStack,HStack ,Flex, Spacer,Stack,ScrollView,Divider,Badge } from "native-base";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+// import Moment from 'react-moment';
 
 import {TextCustom} from '../../components/TextCustom';
-
-
-const DATA = [
-  {
-    id: 1,
-    name: 'Luke Skywalker',
-    birth_year: '19BBY'
-  },
-  {
-    id: 2,
-    name: 'C-3PO',
-    birth_year: '112BBY'
-  },
-  {
-    id: 3,
-    name: 'R2-D2',
-    birth_year: '33BBY'
-  },
-  {
-    id: 4,
-    name: 'Darth Vader',
-    birth_year: '41.9BBY'
-  },
-  {
-    id: 5,
-    name: 'Leia Organa',
-    birth_year: '19BBY'
-  }
-];
 
 // import HomeScreenNavigationProp that check fro routes in homescreen
 import { HomeScreenNavigationProp } from '../navigation/types';
@@ -123,6 +95,9 @@ const wait = (timeout) => {
       wait(2000).then(() => setRefreshing(false));
     }, []);
   
+  var tgl=new Date();
+
+
         return (
           <NativeBaseProvider>
             <SafeAreaView style={styles.container}>
@@ -138,10 +113,10 @@ const wait = (timeout) => {
             <Flex direction="row" mb="2.5" mt="-3">
               <VStack space={4}  w='100%'>
                 <Flex  h="150" bg="#2663fc">
-                  <Center zIndex={5} mt="2%" ml="2%" h="45px" p="2" borderRadius="10" position="absolute" bg="#054af98f" >
+                  <Center zIndex={9} mt="2%" ml="2%" h="45px" p="2" borderRadius="10" position="absolute" bg="#054af9c7" >
                     <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>Application </Text>
                   </Center>
-                  <Center zIndex={2} mt="10%" ml="15%" h="35px" p="2" borderRadius="10" position="absolute" bg="#054af95e">
+                  <Center zIndex={2} mt="10%" ml="14%" h="35px" p="2" borderRadius="10" position="absolute" bg="#054af95e">
                     <Text style={{fontSize:28,color:'#ffffff',fontWeight:'bold'}}>TRACKING</Text>
                   </Center>
                   <Box mt="-10" >
@@ -149,14 +124,19 @@ const wait = (timeout) => {
                   </Box>
                 </Flex>
 
-               
+
                 <Box w="100%" h="auto" mt="-6" pt="5" minHeight="1000"  bg="#ffffff" roundedTopRight="35" roundedTopLeft="35" shadow={3}>
+                <Box ml="8%" mt="2" mb="5">
+                    <Text>{`tgl`}</Text>
+                   
+                </Box>
+
                   <Center>
                     <HStack space={3} >
                     {/* <Flex direction="row-reverse" mb="2.5" mt="1.5"> */}
-                      <Center h="85px" w="20" bg="transparent" borderRadius="15" borderWidth="1" borderColor="#44adbbb0">
+                      <Center h="85px" w="20" bg="transparent" borderRadius="15" borderWidth="1" borderColor="#61a8ff">
                         <MaterialCommunityIcons name="adjust" color='#2f82ba' size={23} />
-                        <Text>Tracking</Text>
+                        <Text style={{color:'#61a8ff',fontWeight:'bold'}}>Tracking</Text>
                       </Center>
                       <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#79bee0">
                         <MaterialCommunityIcons name="folder-home-outline" color='#2f82ba' size={23} />
@@ -196,9 +176,7 @@ const wait = (timeout) => {
                     </HStack>
                   </Center>
 
-                
-
-                 <Box >
+                 <Box mt="5">
                   <Flex mt="5" mb="-5" p="3" flex={1}  flexDirection="row" justifyContent="space-between" alignItems="flex-start">
                     <Text >PENGUMUMAN</Text>
                     <Text underline>View more</Text>
@@ -217,7 +195,7 @@ const wait = (timeout) => {
                         <Box>
                           <AspectRatio w="100%" ratio={16 / 9}>
                             <Image source={{
-                            uri: "https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg"
+                            uri: "https://img.freepik.com/free-vector/contact-us-concept-landing-page_52683-18636.jpg?t=st=1670343853~exp=1670344453~hmac=b8f5657d438842aa8cd8798babfd25d3b0008f6b66af6afdf5b145c7735b2b20"
                           }} alt="image" />
                           </AspectRatio>
                           <Center bg="violet.500" _dark={{
@@ -253,7 +231,7 @@ const wait = (timeout) => {
                         <Box>
                           <AspectRatio w="100%" ratio={16 / 9}>
                             <Image source={{
-                            uri: "https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg"
+                            uri: "https://img.freepik.com/premium-vector/distance-learning-online-education-work-happy-woman-girl-working-office-remotely-using-laptop_503750-461.jpg"
                           }} alt="image" />
                           </AspectRatio>
                           <Center bg="violet.500" _dark={{
@@ -287,7 +265,7 @@ const wait = (timeout) => {
                     <Box>
                         <AspectRatio w="90%" ratio={16 / 9}>
                           <Image source={{
-                          uri: "https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg"
+                          uri: "https://img.freepik.com/free-vector/illustrated-woman-being-intern-company_23-2148726151.jpg?t=st=1670343853~exp=1670344453~hmac=f6ffc287abf74b335e7bb195020c876a7ca997190078218b146c95959c87f443"
                         }} alt="image" />
                         </AspectRatio>
                         <Stack p="4" space={3}>

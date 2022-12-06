@@ -134,21 +134,21 @@ const wait = (timeout) => {
                   <Center>
                     <HStack space={3} >
                     {/* <Flex direction="row-reverse" mb="2.5" mt="1.5"> */}
-                      <Center h="85px" w="20" bg="transparent" borderRadius="15" borderWidth="1" borderColor="#61a8ff">
-                        <MaterialCommunityIcons name="adjust" color='#2f82ba' size={23} />
-                        <Text style={{color:'#61a8ff',fontWeight:'bold'}}>Tracking</Text>
+                      <Center h="85px" w="20" bg="transparent" borderRadius="15" borderWidth="1" borderColor="#00bcd4">
+                        <MaterialCommunityIcons name="adjust" color='#686868' size={23} />
+                        <Text style={{color:'#686868',fontWeight:'bold'}}>Tracking</Text>
                       </Center>
-                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#79bee0">
-                        <MaterialCommunityIcons name="folder-home-outline" color='#2f82ba' size={23} />
-                        <Text>My Works</Text>
+                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
+                        <MaterialCommunityIcons name="folder-home-outline" color='#686868' size={23} />
+                        <Text  style={{color:'#686868',fontWeight:'bold'}}>My Works</Text>
                       </Center>
-                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#79bee0">
-                        <MaterialCommunityIcons name="chart-donut" color='#2f82ba' size={23} />
-                        <Text>Pending</Text>
+                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
+                        <MaterialCommunityIcons name="chart-donut" color='#686868' size={23} />
+                        <Text  style={{color:'#686868',fontWeight:'bold'}}>Pending</Text>
                       </Center>
-                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#79bee0">
-                        <MaterialCommunityIcons name="check-circle-outline" color='#2f82ba' size={23} />
-                        <Text>Complete</Text>
+                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
+                        <MaterialCommunityIcons name="check-circle-outline" color='#686868' size={23} />
+                        <Text style={{color:'#686868',fontWeight:'bold'}}>Complete</Text>
                       </Center>
                       {/* </Flex> */}
                     </HStack>
@@ -156,21 +156,21 @@ const wait = (timeout) => {
                   <Center mt="5">
                     <HStack space={3} >
                     {/* <Flex direction="row-reverse" mb="2.5" mt="1.5"> */}
-                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#79bee0">
-                        <MaterialCommunityIcons name="alarm" color='#2f82ba' size={23} />
-                        <Text>Tracking</Text>
+                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
+                        <MaterialCommunityIcons name="alarm" color='#686868' size={23} />
+                        <Text style={{color:'#686868',fontWeight:'bold'}}>Tracking</Text>
                       </Center>
-                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#79bee0">
-                        <MaterialCommunityIcons name="arrow-u-left-top" color='#2f82ba' size={23} />
-                        <Text>Import</Text>
+                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
+                        <MaterialCommunityIcons name="arrow-u-left-top" color='#686868' size={23} />
+                        <Text style={{color:'#686868',fontWeight:'bold'}}>Import</Text>
                       </Center>
-                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#79bee0">
-                        <MaterialCommunityIcons name="arrow-u-right-top" color='#2f82ba' size={23} />
-                        <Text>Export</Text>
+                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
+                        <MaterialCommunityIcons name="arrow-u-right-top" color='#686868' size={23} />
+                        <Text style={{color:'#686868',fontWeight:'bold'}}>Export</Text>
                       </Center>
-                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#79bee0">
-                        <MaterialCommunityIcons name="apps" color='#2f82ba' size={23} />
-                        <Text>All</Text>
+                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
+                        <MaterialCommunityIcons name="apps" color='#686868' size={23} />
+                        <Text style={{color:'#686868',fontWeight:'bold'}}>All</Text>
                       </Center>
                       {/* </Flex> */}
                     </HStack>

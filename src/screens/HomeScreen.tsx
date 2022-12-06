@@ -112,30 +112,31 @@ const wait = (timeout) => {
               >
             <Flex direction="row" mb="2.5" mt="-3">
               <VStack space={4}  w='100%'>
-                <Flex  h="250" pt="5" bg="#2663fc">
-                  <Center zIndex={9} mt="10%" ml="2%" h="20px" p="1" borderRadius="10" position="absolute" bg="#054af95e" >
-                    <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>Application </Text>
-                  </Center>
-                  <Center zIndex={2} mt="18%" ml="14%" h="25px" p="2" borderRadius="10" position="absolute" bg="#054af95e">
-                    <Text style={{fontSize:30,color:'#ffffff',fontWeight:'bold'}}>TRACKING</Text>
-                  </Center>
-                  <Box mt="-12" >
-                    <Image source={require('../../assets/images/delivery.png')} mt="8%" ml="-1%" width="50%" height="250px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
-                  </Box>
-                  <Box mt="-12" position="absolute" zIndex={0}>
-                    <Image source={require('../../assets/images/delivery2.png')} mt="12%" ml="40%" width="50%" height="250px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
-                  </Box>
-                </Flex>
+                <Box bg="#1670f7">
+                  <Flex  h="280" pt="5" >
+                    <Center zIndex={9} mt="10%" ml="2%" h="20px" p="1" borderRadius="10" position="absolute" bg="#054af95e" >
+                      <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>Application </Text>
+                    </Center>
+                    <Center zIndex={2} mt="18%" ml="14%" h="25px" p="2" borderRadius="10" position="absolute" bg="#054af95e">
+                      <Text style={{fontSize:30,color:'#ffffff',fontWeight:'bold'}}>TRACKING</Text>
+                    </Center>
+                    <Box mt="-12" >
+                      <Image source={require('../../assets/images/delivery.png')} mt="8%" ml="-1%" width="50%" height="250px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
+                    </Box>
+                    <Box mt="-12" position="absolute" zIndex={0}>
+                      <Image source={require('../../assets/images/delivery2.png')} mt="12%" ml="40%" width="50%" height="250px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
+                    </Box>
+                  </Flex>
+                </Box>
 
 
-              <Box w="96%" ml="2%" h="auto" mt="-20%" pt="5" pb="6" bg="#ffffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
+              <Box w="96%" ml="2%" h="auto" mt="-25%" pt="5" pb="6" bg="#ffffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
                 <Box ml="8%" mt="2" mb="5">
                     <Text>{`tgl`}</Text>
                 </Box>
 
                   <Center>
                     <HStack space={3} >
-                    {/* <Flex direction="row-reverse" mb="2.5" mt="1.5"> */}
                       <Center h="80px" w="20" bg="transparent" borderRadius="15" borderWidth="1" borderColor="#00bcd4">
                         <MaterialCommunityIcons name="adjust" color='#686868' size={23} />
                         <Text style={{color:'#686868',fontWeight:'bold'}}>Tracking</Text>

@@ -16,6 +16,7 @@ import {
 } from 'react-native';
 import { AspectRatio ,Image,Box,Container, Heading, Center, NativeBaseProvider,VStack ,ZStack,HStack ,Flex, Spacer,Stack,ScrollView,Divider,Badge } from "native-base";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import LinearGradient from 'react-native-linear-gradient'
 // import Moment from 'react-moment';
 
 import {TextCustom} from '../../components/TextCustom';
@@ -110,25 +111,31 @@ const wait = (timeout) => {
                   />
                 }
               >
+                {/* linear-gradient(140deg, #3f51b5 0%, #405cf7 50%, #3f51b5 75%) */}
             <Flex direction="row" mb="2.5" mt="-3">
               <VStack space={4}  w='100%'>
-                <Box bg="#1670f7">
-                  <Flex  h="280" pt="5" >
-                    <Center zIndex={9} mt="10%" ml="2%" h="20px" p="1" borderRadius="10" position="absolute" bg="#054af95e" >
+              <LinearGradient
+                  // colors={['#030e28','#2d3a85','#030e28' ]}
+                  colors={['#3f51b5','#242e68','#3f51b5' ]}
+                  style={styles.headerBox}
+                  start={{ x: 0, y: 0 }}
+                  end={{ x: 1, y: 1 }}
+                >
+                  <Flex pt="1" >
+                    <Center zIndex={9} mt="10%" ml="2%" h="20px" p="1" borderRadius="10" position="absolute" bg="#141b3e47" >
                       <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>Application </Text>
                     </Center>
-                    <Center zIndex={2} mt="18%" ml="14%" h="25px" p="2" borderRadius="10" position="absolute" bg="#054af95e">
-                      <Text style={{fontSize:30,color:'#ffffff',fontWeight:'bold'}}>TRACKING</Text>
+                    <Center zIndex={2} mt="18%" ml="14%" h="28px" borderRadius="13" position="absolute" bg="#141b3e61">
+                      <Text style={{fontSize:28,color:'#ffffff',fontWeight:'bold'}}>TRACKING</Text>
                     </Center>
                     <Box mt="-12" >
-                      <Image source={require('../../assets/images/delivery.png')} mt="8%" ml="-1%" width="50%" height="250px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
+                      <Image source={require('../../assets/images/delivery.png')} mt="6%" ml="-1%" width="50%" height="250px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
                     </Box>
                     <Box mt="-12" position="absolute" zIndex={0}>
-                      <Image source={require('../../assets/images/delivery2.png')} mt="12%" ml="40%" width="50%" height="250px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
+                      <Image source={require('../../assets/images/delivery2.png')} mt="10%" ml="40%" width="50%" height="250px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
                     </Box>
                   </Flex>
-                </Box>
-
+              </LinearGradient>
 
               <Box w="96%" ml="2%" h="auto" mt="-25%" pt="5" pb="6" bg="#ffffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
                 <Box ml="8%" mt="2" mb="5">
@@ -339,6 +346,12 @@ const wait = (timeout) => {
       headerTittle: {
         fontSize:'70px',
         color:'#1d64f2'
+      },
+      headerBox: {
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+        height: 280,
+        width:'100%',
       },
     });
 

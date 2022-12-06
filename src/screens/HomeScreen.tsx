@@ -136,25 +136,21 @@ const wait = (timeout) => {
                 }
               >
             <Flex direction="row" mb="2.5" mt="-3">
-              {/* <ContentsItem/> */}
               <VStack space={4}  w='100%'>
-                <Center  h="150" bg="indigo.300">
-                  {/* <AspectRatio w="100%" ratio={16 / 9}>
-                    <Image source={{
-                    uri: "https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg"
-                    // uri:{values.avatar}
-                  }} alt="image" />
-                  </AspectRatio> */}
-                <View zIndex={2} mt="5"  position="absolute" style={styles.headerTittle}>
-                  {/* <Text fontSize="4xl">ATT GROUP</Text> */}
-                </View>
-                  <Center mt="-11" >
-                  <Image source={require('../../assets/images/works.png')} width="600px" height="300px" alt="header image"/>
+                <Flex  h="150" bg="#2663fc">
+                  <Center zIndex={5} mt="2%" ml="2%" h="45px" p="2" borderRadius="10" position="absolute" bg="#054af98f" >
+                    <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>Application </Text>
                   </Center>
-                </Center>
+                  <Center zIndex={2} mt="10%" ml="15%" h="35px" p="2" borderRadius="10" position="absolute" bg="#054af95e">
+                    <Text style={{fontSize:28,color:'#ffffff',fontWeight:'bold'}}>TRACKING</Text>
+                  </Center>
+                  <Box mt="-10" >
+                    <Image source={require('../../assets/images/ilustration_dashboard.png')} width="600px" height="300px" alt="header image"/>
+                  </Box>
+                </Flex>
 
                
-                <Box w="100%" h="auto" mt="-10" minHeight="1000" pt="5" bg="#ffffff" roundedTopRight="25" roundedTopLeft="25" shadow={3}>
+                <Box w="100%" h="auto" mt="-6" pt="5" minHeight="1000"  bg="#ffffff" roundedTopRight="35" roundedTopLeft="35" shadow={3}>
                   <Center>
                     <HStack space={3} >
                     {/* <Flex direction="row-reverse" mb="2.5" mt="1.5"> */}
@@ -359,7 +355,8 @@ const wait = (timeout) => {
         fontWeight: '400',
       },
       headerTittle: {
-        fontSize:'30px',
+        fontSize:'70px',
+        color:'#1d64f2'
       },
     });
 

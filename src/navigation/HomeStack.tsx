@@ -12,7 +12,7 @@ const HomeStackNavigator = () => {
   return (
     <HomeStack.Navigator 
         screenOptions={{
-            headerShown: true,
+            headerShown: false,
             contentStyle:{
                 backgroundColor:'#308dc7',
                 zIndex:999

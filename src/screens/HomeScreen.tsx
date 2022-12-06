@@ -158,7 +158,7 @@ const wait = (timeout) => {
                     {/* <Flex direction="row-reverse" mb="2.5" mt="1.5"> */}
                       <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
                         <MaterialCommunityIcons name="alarm" color='#686868' size={23} />
-                        <Text style={{color:'#686868',fontWeight:'bold'}}>Tracking</Text>
+                        <Text style={{color:'#686868',fontWeight:'bold'}}>Tasks</Text>
                       </Center>
                       <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
                         <MaterialCommunityIcons name="arrow-u-left-top" color='#686868' size={23} />
@@ -179,7 +179,7 @@ const wait = (timeout) => {
                  <Box mt="5">
                   <Flex mt="5" mb="-5" p="3" flex={1}  flexDirection="row" justifyContent="space-between" alignItems="flex-start">
                     <Text >PENGUMUMAN</Text>
-                    <Text underline>View more</Text>
+                    <Text style={{color:'#3f51b5',textDecorationLine:'underline'}}>View more</Text>
                   </Flex>
 
                   <Flex mt="5" p="2" flex={1}  flexDirection="row" justifyContent="space-between" alignItems="flex-start">
@@ -259,7 +259,7 @@ const wait = (timeout) => {
 
                   <Flex mt="5" mb="-5" p="3" flex={1}  flexDirection="row" justifyContent="space-between" alignItems="flex-start">
                     <Text >TASKS</Text>
-                    <Text underline>View more</Text>
+                    <Text style={{color:'#3f51b5',textDecorationLine:'underline'}}>View More</Text>
                   </Flex>
                   <VStack space={4} alignItems="center" mt="5" borderWidth="1" borderColor="#cacdcf" borderRadius="md" >
                     <Box>

@@ -115,8 +115,8 @@ const wait = (timeout) => {
             <Flex direction="row" mb="2.5" mt="-3">
               <VStack space={4}  w='100%'>
               <LinearGradient
-                  // colors={['#030e28','#2d3a85','#030e28' ]}
-                  colors={['#3f51b5','#242e68','#3f51b5' ]}
+                  colors={['#030e28','#2d3a85','#030e28' ]}
+                  // colors={['#1b255e','#545d97','#1b255e' ]}
                   style={styles.headerBox}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}

@@ -125,10 +125,10 @@ const wait = (timeout) => {
                   end={{ x: 1, y: 1 }}
                 >
                   <Flex pt="1" >
-                    <Center zIndex={9} mt="10%" ml="2%" h="20px" p="1" borderRadius="8" position="absolute" bg="#73bdd95c" >
+                    <Center zIndex={9} mt="10%" ml="2%" h="20px" p="1" borderRadius="8" position="absolute" bg="#4d90a869" >
                       <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>Application </Text>
                     </Center>
-                    <Center zIndex={2} mt="18%" ml="14%" h="28px" borderRadius="8" position="absolute" bg="#73bdd98a">
+                    <Center zIndex={2} mt="18%" ml="14%" h="28px" borderRadius="8" position="absolute" bg="#4d90a88f">
                       <Text style={{fontSize:28,color:'#ffffff',fontWeight:'bold'}}>TRACKING</Text>
                     </Center>
                     <Box mt="-12" >

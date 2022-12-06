@@ -118,17 +118,17 @@ const wait = (timeout) => {
             <Flex direction="row" mb="2.5" mt="-3">
               <VStack space={4}  w='100%'>
               <LinearGradient
-                  colors={['#030e28','#2d3a85','#030e28' ]}
-                  // colors={['#1b255e','#545d97','#1b255e' ]}
+                  // colors={['#030e28','#2d3a85','#030e28' ]}
+                  colors={['#087aa3','#4d90a8','#087aa3' ]}
                   style={styles.headerBox}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
                 >
                   <Flex pt="1" >
-                    <Center zIndex={9} mt="10%" ml="2%" h="20px" p="1" borderRadius="10" position="absolute" bg="#141b3e47" >
+                    <Center zIndex={9} mt="10%" ml="2%" h="20px" p="1" borderRadius="8" position="absolute" bg="#73bdd95c" >
                       <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>Application </Text>
                     </Center>
-                    <Center zIndex={2} mt="18%" ml="14%" h="28px" borderRadius="13" position="absolute" bg="#141b3e61">
+                    <Center zIndex={2} mt="18%" ml="14%" h="28px" borderRadius="8" position="absolute" bg="#73bdd98a">
                       <Text style={{fontSize:28,color:'#ffffff',fontWeight:'bold'}}>TRACKING</Text>
                     </Center>
                     <Box mt="-12" >

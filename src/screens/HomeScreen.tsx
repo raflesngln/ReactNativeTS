@@ -17,12 +17,14 @@ import {
 import { AspectRatio ,Image,Box,Container, Heading, Center, NativeBaseProvider,VStack ,ZStack,HStack ,Flex, Spacer,Stack,ScrollView,Divider,Badge } from "native-base";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import LinearGradient from 'react-native-linear-gradient'
-// import Moment from 'react-moment';
+import moment from 'moment';
 
 import {TextCustom} from '../../components/TextCustom';
 
 // import HomeScreenNavigationProp that check fro routes in homescreen
 import { HomeScreenNavigationProp } from '../navigation/types';
+import useEffect from 'react';
+import useState from 'react';
 
 const HomeScreen = () => {
   // const navigation = useNavigation();
@@ -83,10 +85,14 @@ const HomeScreen = () => {
 const wait = (timeout) => {
   return new Promise(resolve => setTimeout(resolve, timeout));
 }
+
+
   function Content(){
+  var Today=moment().format('ddd, MMMM Do YYYY')
   var {width} = Dimensions.get('window');
   var lebar=width.toFixed()-2
 
+  const[jam,setJam]=React.useState(null);
   const [refreshing, setRefreshing] = React.useState(false);
   const datalogin = useAppSelector((state) => state.login)
   const dispatch = useAppDispatch()
@@ -96,9 +102,6 @@ const wait = (timeout) => {
       wait(2000).then(() => setRefreshing(false));
     }, []);
   
-  var tgl=new Date();
-
-
         return (
           <NativeBaseProvider>
             <SafeAreaView style={styles.container}>
@@ -139,7 +142,7 @@ const wait = (timeout) => {
 
               <Box w="96%" ml="2%" h="auto" mt="-25%" pt="5" pb="6" bg="#ffffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
                 <Box ml="8%" mt="2" mb="5">
-                    <Text>{`tgl`}</Text>
+                    <Text style={{fontSize:16,color:'#1b7de9',fontWeight:'bold'}}>{`${Today}`}</Text>
                 </Box>
 
                   <Center>

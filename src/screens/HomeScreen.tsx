@@ -153,7 +153,7 @@ const wait = (timeout) => {
                   </Flex>
               </LinearGradient>
 
-              <Box w="96%" ml="2%" h="auto" mt="-25%" pt="5" pb="6" bg="#ffffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
+              <Box w="96%" ml="2%" h="auto" mt="-26%" pt="5" pb="6" bg="#ffffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
                 <Box ml="8%" mt="2" mb="5">
                     <Text style={{fontSize:16,color:'#1b7de9',fontWeight:'bold'}}>{`${Today}`}</Text>
                 </Box>

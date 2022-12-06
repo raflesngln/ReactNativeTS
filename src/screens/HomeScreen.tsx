@@ -112,41 +112,43 @@ const wait = (timeout) => {
               >
             <Flex direction="row" mb="2.5" mt="-3">
               <VStack space={4}  w='100%'>
-                <Flex  h="150" bg="#2663fc">
-                  <Center zIndex={9} mt="2%" ml="2%" h="45px" p="2" borderRadius="10" position="absolute" bg="#054af9c7" >
+                <Flex  h="250" pt="5" bg="#2663fc">
+                  <Center zIndex={9} mt="10%" ml="2%" h="20px" p="1" borderRadius="10" position="absolute" bg="#054af95e" >
                     <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>Application </Text>
                   </Center>
-                  <Center zIndex={2} mt="10%" ml="14%" h="35px" p="2" borderRadius="10" position="absolute" bg="#054af95e">
-                    <Text style={{fontSize:28,color:'#ffffff',fontWeight:'bold'}}>TRACKING</Text>
+                  <Center zIndex={2} mt="18%" ml="14%" h="25px" p="2" borderRadius="10" position="absolute" bg="#054af95e">
+                    <Text style={{fontSize:30,color:'#ffffff',fontWeight:'bold'}}>TRACKING</Text>
                   </Center>
-                  <Box mt="-10" >
-                    <Image source={require('../../assets/images/ilustration_dashboard.png')} width="600px" height="300px" alt="header image"/>
+                  <Box mt="-12" >
+                    <Image source={require('../../assets/images/delivery.png')} mt="8%" ml="-1%" width="50%" height="250px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
+                  </Box>
+                  <Box mt="-12" position="absolute" zIndex={0}>
+                    <Image source={require('../../assets/images/delivery2.png')} mt="12%" ml="40%" width="50%" height="250px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
                   </Box>
                 </Flex>
 
 
-                <Box w="100%" h="auto" mt="-6" pt="5" minHeight="1000"  bg="#ffffff" roundedTopRight="35" roundedTopLeft="35" shadow={3}>
+              <Box w="96%" ml="2%" h="auto" mt="-20%" pt="5" pb="6" bg="#ffffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
                 <Box ml="8%" mt="2" mb="5">
                     <Text>{`tgl`}</Text>
-                   
                 </Box>
 
                   <Center>
                     <HStack space={3} >
                     {/* <Flex direction="row-reverse" mb="2.5" mt="1.5"> */}
-                      <Center h="85px" w="20" bg="transparent" borderRadius="15" borderWidth="1" borderColor="#00bcd4">
+                      <Center h="80px" w="20" bg="transparent" borderRadius="15" borderWidth="1" borderColor="#00bcd4">
                         <MaterialCommunityIcons name="adjust" color='#686868' size={23} />
                         <Text style={{color:'#686868',fontWeight:'bold'}}>Tracking</Text>
                       </Center>
-                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
+                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
                         <MaterialCommunityIcons name="folder-home-outline" color='#686868' size={23} />
                         <Text  style={{color:'#686868',fontWeight:'bold'}}>My Works</Text>
                       </Center>
-                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
+                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
                         <MaterialCommunityIcons name="chart-donut" color='#686868' size={23} />
                         <Text  style={{color:'#686868',fontWeight:'bold'}}>Pending</Text>
                       </Center>
-                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
+                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
                         <MaterialCommunityIcons name="check-circle-outline" color='#686868' size={23} />
                         <Text style={{color:'#686868',fontWeight:'bold'}}>Complete</Text>
                       </Center>
@@ -156,29 +158,31 @@ const wait = (timeout) => {
                   <Center mt="5">
                     <HStack space={3} >
                     {/* <Flex direction="row-reverse" mb="2.5" mt="1.5"> */}
-                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
+                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
                         <MaterialCommunityIcons name="alarm" color='#686868' size={23} />
                         <Text style={{color:'#686868',fontWeight:'bold'}}>Tasks</Text>
                       </Center>
-                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
+                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
                         <MaterialCommunityIcons name="arrow-u-left-top" color='#686868' size={23} />
                         <Text style={{color:'#686868',fontWeight:'bold'}}>Import</Text>
                       </Center>
-                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
+                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
                         <MaterialCommunityIcons name="arrow-u-right-top" color='#686868' size={23} />
                         <Text style={{color:'#686868',fontWeight:'bold'}}>Export</Text>
                       </Center>
-                      <Center h="85px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
+                      <Center h="80px" w="20" bg="transparent" borderRadius="10" borderWidth="1" borderColor="#00bcd4">
                         <MaterialCommunityIcons name="apps" color='#686868' size={23} />
                         <Text style={{color:'#686868',fontWeight:'bold'}}>All</Text>
                       </Center>
                       {/* </Flex> */}
                     </HStack>
                   </Center>
+                </Box>
 
-                 <Box mt="5">
-                  <Flex mt="5" mb="-5" p="3" flex={1}  flexDirection="row" justifyContent="space-between" alignItems="flex-start">
-                    <Text >PENGUMUMAN</Text>
+                <Box w="96%" ml="2%" h="auto" mt="-2" minHeight="150" rounded="8" bg="#ffffff" shadow={5}>
+                  <Box>
+                  <Flex mt="3" mb="-5" p="3" flex={1}  flexDirection="row" justifyContent="space-between" alignItems="flex-start">
+                    <Text >ARTIKEL</Text>
                     <Text style={{color:'#3f51b5',textDecorationLine:'underline'}}>View more</Text>
                   </Flex>
 
@@ -205,12 +209,12 @@ const wait = (timeout) => {
                           fontWeight: "700",
                           fontSize: "xs"
                         }} position="absolute" bottom="0" px="3" py="1.5">
-                            PHOTOS
+                            HEALTH
                           </Center>
                         </Box>
                         <Stack p="4" space={3}>
                           <Text fontWeight="400">
-                            Bengaluru (also called Bangalore) is the center of India's
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry
                           </Text>
                           <HStack alignItems="center" space={4} justifyContent="space-between">
                             <HStack alignItems="center">
@@ -241,12 +245,12 @@ const wait = (timeout) => {
                           fontWeight: "700",
                           fontSize: "xs"
                         }} position="absolute" bottom="0" px="3" py="1.5">
-                            PHOTOS
+                            FINANCE
                           </Center>
                         </Box>
                         <Stack p="4" space={3}>
                           <Text fontWeight="400">
-                            Bengaluru (also called Bangalore) is the center of
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry
                           </Text>
                           <HStack alignItems="center" space={4} justifyContent="space-between">
                             <HStack alignItems="center">
@@ -298,7 +302,6 @@ const wait = (timeout) => {
                       </Box>
                   </VStack>
                  </Box>
-
                 </Box>
               </VStack>
             </Flex>

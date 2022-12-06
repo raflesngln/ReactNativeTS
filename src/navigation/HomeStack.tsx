@@ -14,7 +14,7 @@ const HomeStackNavigator = () => {
         screenOptions={{
             headerShown: false,
             contentStyle:{
-                backgroundColor:'#308dc7',
+                backgroundColor:'#ebedf0',
                 zIndex:999
               },
         }}

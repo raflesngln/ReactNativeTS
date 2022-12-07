@@ -1,142 +1,199 @@
-import React from 'react';
-import { View } from 'react-native';
+import { useRoute } from '@react-navigation/native';
+import React,{useEffect,useState}  from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { color } from 'native-base/lib/typescript/theme/styled-system';
+import {
+  SafeAreaView,
+  Dimensions,
+  View,
+  Text,
+  Pressable,
+  StatusBar,
+  StyleSheet,
+  useColorScheme,
+  RefreshControl
+} from 'react-native';
+import { AspectRatio ,Image,Box,Container, Heading, Center, NativeBaseProvider,VStack ,ZStack,HStack ,Flex, Spacer,Stack,ScrollView,Divider,FlatList,SectionList,Avatar,Badge } from "native-base";
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import LinearGradient from 'react-native-linear-gradient'
+
+import {TextCustom} from '../../components/TextCustom';
 import { useAppSelector, useAppDispatch } from '../redux/hooks'
 
-import {extendTheme,Button,Heading,AspectRatio,Text,HStack,Stack, Image,Box, Center, NativeBaseProvider } from "native-base";
-
-import {
-    SafeAreaView,
-    ScrollView,
-    StatusBar,
-    StyleSheet,
-    useColorScheme,
-    RefreshControl
-} from 'react-native';
-
-import { setDataLogin, logout } from '../redux/apps/loginSlice'
-
-const wait = (timeout) => {
-    return new Promise(resolve => setTimeout(resolve, timeout));
-  }
+// import HomeScreenNavigationProp that check fro routes in homescreen
+import { HomeScreenNavigationProp } from '../navigation/types';
 
 
-
-const SettingsScreen = () => {
-    const [refreshing, setRefreshing] = React.useState(false);
-    const datalogin = useAppSelector((state) => state.login)
-    const dispatch = useAppDispatch()
-
-    const onRefresh = React.useCallback(() => {
-        setRefreshing(true);
-        wait(2000).then(() => setRefreshing(false));
-      }, []);
-
-    const ChangeDataLogin=()=>{
-        alert('You tapped the button!')
-        dispatch(setDataLogin({isLogin:true,username:'raflesngln@gmail.com',profilePicture:'no photos',value:90}))
-    }
-  
+const DetailScreen = (props) => {
+  const route = useRoute();
   return (
-    <SafeAreaView style={styles.container}>
-    <ScrollView
-    //   contentContainerStyle={styles.scrollView}
-      refreshControl={
-        <RefreshControl
-          refreshing={refreshing}
-          onRefresh={onRefresh}
-        />
-      }
-    >
-    <View style={{ flex: 1, paddingTop: 12, paddingHorizontal: 10 }}>
-      <Text style={{ fontSize: 18,color:'blue' }}>Settings Screen </Text>
-      <Text style={{ fontSize: 12,color:'blue' }}> {JSON.stringify(datalogin)}</Text>
-
-      <Button onPress={ChangeDataLogin}>Ganti Data</Button>
-      
-      <MyCard/>
-      <MyCard/>
+    <View style={{ flex: 1 }}>
+      <Content/>
     </View>
-    </ScrollView>
-    </SafeAreaView>
   );
 };
 
+const wait = (timeout) => {
+  return new Promise(resolve => setTimeout(resolve, timeout));
+}
 
-const MyCard = () => {
-    return <Box alignItems="center">
-        <Box
-          maxW="80"
-          rounded="lg"
-          overflow="hidden"
-          borderColor="coolGray.200"
-          marginBottom={4}
-          borderWidth="1"
-          _dark={{
-        borderColor: "coolGray.600",
-        backgroundColor: "gray.700"
-      }} _web={{
-        shadow: 2,
-        borderWidth: 0
-      }} _light={{
-        backgroundColor: "gray.50"
-      }}>
-          <Box>
-            <AspectRatio w="100%" ratio={16 / 9}>
-              <Image source={{
-              uri: "https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg"
-            }} alt="image" />
-            </AspectRatio>
-            <Center bg="violet.500" _dark={{
-            bg: "violet.400"
-          }} _text={{
-            color: "warmGray.50",
-            fontWeight: "700",
-            fontSize: "xs"
-          }} position="absolute" bottom="0" px="3" py="1.5">
-              PHOTOS
-            </Center>
-          </Box>
-          <Stack p="4" space={3}>
-            <Stack space={2}>
-              <Heading size="md" ml="-1">
-                The Garden City
-              </Heading>
-              <Text fontSize="xs" _light={{
-              color: "violet.500"
-            }} _dark={{
-              color: "violet.400"
-            }} fontWeight="500" ml="-0.5" mt="-1">
-                The Silicon Valley of India.
+
+  function Content(){
+  const navigation = useNavigation<HomeScreenNavigationProp>(); // check which routes is navigates
+
+  const[jam,setJam]=React.useState(null);
+  const [refreshing, setRefreshing] = React.useState(false);
+  const datalogin = useAppSelector((state) => state.login)
+  const dispatch = useAppDispatch()
+
+  const onRefresh = React.useCallback(() => {
+      setRefreshing(true);
+      wait(2000).then(() => setRefreshing(false));
+    }, []);
+  
+        return (
+          <NativeBaseProvider>
+            <SafeAreaView style={styles.container}>
+          
+            <Flex direction="row" mb="2.5" mt="-3">
+              <VStack space={4}  w='100%'>
+                <LinearGradient
+                  // colors={['#030e28','#2d3a85','#030e28' ]}
+                  colors={['#39c37a','#4d90a8','#39c37a' ]}
+                  style={styles.headerBoxSettings}
+                  start={{ x: 0, y: 0 }}
+                  end={{ x: 1, y: 1 }}
+                >
+                  <HStack space={2} ml="2%" mt="-18%" flexDirection="row" justifyContent="center" justifyItems="center" >
+                    <Center pl="3%" h="110px" w="110px" bg="primary.300" rounded="full" shadow={3}>
+                      <Avatar bg="purple.600" alignSelf="center" size="2xl" source={{
+                          uri: "https://hris.att-group.co.id/assets/images/karyawan/F01A-150885933/tmp/F01A-150885933-26102021134633.jpeg"
+                        }}>
+                            EM
+                      </Avatar>
+                    </Center>
+                    <Box h="110px" p="2" pl="5%" maxWidth="75%" bg="transparent" rounded="md" >
+                      <Text style={{fontSize:20,color:'#ffffff',fontWeight:'bold'}}>Rafles Nainggolan</Text>
+                      <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>Programmer</Text>
+                      <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>IT DEPARTEMEN</Text>
+                    </Box>
+                  </HStack>
+              </LinearGradient>
+
+                <Box w="96%" ml="2%" h="auto" p="2" minHeight="95%" mt="-23%" pt="2" bg="#ffffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
+                    <Box p="2" ml="2%" mb="3" maxWidth="75%" bg="transparent" >
+                      <Text style={{fontSize:26,color:'#4b5157'}}>Settings</Text>
+                    </Box>
+                    <ListSettings/>
+                    
+                    <Box p="2" mt="5" ml="2%" mb="1" maxWidth="75%" bg="transparent" >
+                      <Text style={{fontSize:18,color:'#4b5157',fontWeight:'bold'}}>Other Settings</Text>
+                    </Box>
+                    <Box borderBottomWidth="1" _dark={{
+                          borderColor: "#d7dbd9"
+                        }} borderColor="#d7dbd9" pl={["0", "4"]} pr={["0", "5"]} py="2">
+                      <HStack space={[2, 3]} justifyContent="space-between">
+                          <MaterialCommunityIcons name="exit-to-app" color={'#4b5157'} size={25} />
+                        <VStack>
+                          <Text _dark={{
+                                color: "warmGray.50"
+                              }} color="coolGray.800" bold>
+                              LOG-OUT
+                          </Text>
+                        </VStack>
+                        <Spacer />
+                      </HStack>
+                    </Box>
+                </Box>
+              </VStack>
+            </Flex>
+            </SafeAreaView>
+          </NativeBaseProvider>
+        );
+    };
+
+    const ListSettings = () => {
+      const data = [{
+        id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+        fullName: "Personal Info",
+        icon: "account-wrench"
+      }, {
+        id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
+        fullName: "My Files",
+        icon: "folder-account-outline"
+      }, {
+        id: "58694a0f-3da1-471f-bd96-145571e29d72",
+        fullName: "Job Settings",
+        icon: "application-cog-outline"
+      }, {
+        id: "68694a0f-3da1-431f-bd56-142371e29d72",
+        fullName: "Task Settings",
+        icon: "folder-search"
+      }, {
+        id: "28694a0f-3da1-471f-bd96-142456e29d72",
+        fullName: "Change Password",
+        icon: "account-key"
+      }];
+      return <Box>
+          <FlatList data={data} renderItem={({
+              item
+            }) => <Box h="50px" borderBottomWidth="1" _dark={{
+              borderColor: "#d7dbd9"
+            }} borderColor="#d7dbd9" pl={["0", "4"]} pr={["0", "5"]} py="2">
+            <HStack space={[2, 3]} justifyContent="space-between">
+                <MaterialCommunityIcons name={`${item.icon}`} color={'#4b5157'} size={25} />
+              <VStack>
+              <Text _dark={{
+                    color: "warmGray.50"
+                  }} color="coolGray.800" bold>
+                {item.fullName}
               </Text>
-            </Stack>
-            <Text fontWeight="400">
-              Bengaluru (also called Bangalore) is the center of India's high-tech
-              industry. The city is also known for its parks and nightlife.
-            </Text>
-            <HStack alignItems="center" space={4} justifyContent="space-between">
-              <HStack alignItems="center">
-                <Text color="coolGray.600" _dark={{
-                color: "warmGray.200"
-              }} fontWeight="400">
-                  6 mins ago
-                </Text>
-              </HStack>
+              </VStack>
+              <Spacer />
+              <Text fontSize="xs" _dark={{
+                    color: "warmGray.50"
+                  }} color="coolGray.800" alignSelf="flex-start">
+                  <MaterialCommunityIcons name="chevron-right" color={'#888b8f'} size={25} />
+              </Text>
             </HStack>
-          </Stack>
-        </Box>
-      </Box>;
-  };
+          </Box>} keyExtractor={item => item.id} />
+        </Box>;
+    };
+    
+    const styles = StyleSheet.create({
+      container: {
+        flex: 1,
+      },
+      scrollView: {
+        flex: 1,
+        backgroundColor: '#dad9db',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      sectionContainer: {
+        marginTop: 32,
+        paddingHorizontal: 24,
+      },
+      sectionTitle: {
+        fontSize: 24,
+        fontWeight: '600',
+        color:'black'
+      },
+      sectionDescription: {
+        marginTop: 8,
+        fontSize: 18,
+        fontWeight: '400',
+      },
+      headerTittle: {
+        fontSize:'70px',
+        color:'#1d64f2'
+      },
+      headerBoxSettings: {
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+        height: 250,
+        width:'100%',
+      },
+    });
 
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-    scrollView: {
-      flex: 1,
-      backgroundColor: '#dad9db',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  });
-export default SettingsScreen;
+export default DetailScreen;

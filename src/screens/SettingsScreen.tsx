@@ -84,10 +84,34 @@ const wait = (timeout) => {
                     <Box p="2" ml="2%" mb="3" maxWidth="75%" bg="transparent" >
                       <Text style={{fontSize:26,color:'#4b5157'}}>Settings</Text>
                     </Box>
+
+                    <Box p="1" mt="1" mb="1" ml="2%" maxWidth="75%" bg="transparent" >
+                      <Text style={{fontSize:16,color:'#b6bab8',fontWeight:'bold'}}>Basic Settings</Text>
+                    </Box>
                     <ListSettings/>
                     
-                    <Box p="2" mt="5" ml="2%" mb="1" maxWidth="75%" bg="transparent" >
-                      <Text style={{fontSize:18,color:'#4b5157',fontWeight:'bold'}}>Other Settings</Text>
+                    <Box p="1" mt="6" mb="1" ml="2%" maxWidth="75%" bg="transparent" >
+                      <Text style={{fontSize:16,color:'#b6bab8',fontWeight:'bold'}}>Other Settings</Text>
+                    </Box>
+                    <Box borderBottomWidth="1" _dark={{
+                          borderColor: "#d7dbd9"
+                        }} borderColor="#d7dbd9" pl={["0", "4"]} pr={["0", "5"]} py="2">
+                      <HStack space={[2, 3]} justifyContent="space-between">
+                          <MaterialCommunityIcons name="account-key" color={'#4b5157'} size={25} />
+                        <VStack>
+                          <Text _dark={{
+                                color: "warmGray.50"
+                              }} color="coolGray.800" bold>
+                             Change Password
+                          </Text>
+                        </VStack>
+                        <Spacer />
+                        <Text fontSize="xs" _dark={{
+                              color: "warmGray.50"
+                            }} color="coolGray.800" alignSelf="flex-start">
+                            <MaterialCommunityIcons name="chevron-right" color={'#888b8f'} size={25} />
+                        </Text>
+                      </HStack>
                     </Box>
                     <Box borderBottomWidth="1" _dark={{
                           borderColor: "#d7dbd9"
@@ -129,10 +153,6 @@ const wait = (timeout) => {
         id: "68694a0f-3da1-431f-bd56-142371e29d72",
         fullName: "Task Settings",
         icon: "folder-search"
-      }, {
-        id: "28694a0f-3da1-471f-bd96-142456e29d72",
-        fullName: "Change Password",
-        icon: "account-key"
       }];
       return <Box>
           <FlatList data={data} renderItem={({

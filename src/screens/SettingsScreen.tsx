@@ -65,24 +65,24 @@ const wait = (timeout) => {
                   end={{ x: 1, y: 1 }}
                 >
                   <HStack space={2} ml="2%" mt="-18%" flexDirection="row" justifyContent="center" justifyItems="center" >
-                    <Center pl="3%" h="110px" w="110px" bg="primary.300" rounded="full" shadow={3}>
-                      <Avatar bg="purple.600" alignSelf="center" size="2xl" source={{
+                    <Center h="95px" w="95px" bg="primary.300" rounded="full" shadow={3}>
+                      <Avatar bg="purple.600" alignSelf="center" size="xl" source={{
                           uri: "https://hris.att-group.co.id/assets/images/karyawan/F01A-150885933/tmp/F01A-150885933-26102021134633.jpeg"
                         }}>
                             EM
                       </Avatar>
                     </Center>
-                    <Box h="110px" p="2" pl="5%" maxWidth="75%" bg="transparent" rounded="md" >
-                      <Text style={{fontSize:20,color:'#ffffff',fontWeight:'bold'}}>Rafles Nainggolan</Text>
-                      <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>Programmer</Text>
-                      <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>IT - Segara Artha Investama</Text>
+                    <Box minHeight="110px" p="2" pl="3%" maxWidth="75%" bg="transparent" rounded="md" >
+                      <Text style={{fontSize:22,color:'#ffffff',fontWeight:'bold'}}>Rafles Nainggolan</Text>
+                      <Text style={{fontSize:14,color:'#e3e6e8',fontWeight:'bold'}}>IT - Segara Artha Investama</Text>
+                      <Text style={{fontSize:14,color:'#e3e6e8',fontWeight:'bold'}}>Programmer</Text>
                     </Box>
                   </HStack>
               </LinearGradient>
 
-                <Box w="96%" ml="2%" h="auto" p="2" minHeight="95%" mt="-23%" pt="2" bg="#ffffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
-                    <Box p="2" ml="2%" mb="3" maxWidth="75%" bg="transparent" >
-                      <Text style={{fontSize:26,color:'#4b5157'}}>Settings</Text>
+                <Box w="96%" ml="2%" h="auto" p="2" pl="3" minHeight="85%" mt="-23%" bg="#ffffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
+                    <Box p="1" ml="2%" mb="3" maxWidth="75%" bg="transparent" >
+                      <Text style={{fontSize:26,color:'#4b5157'}}>My Profile's</Text>
                     </Box>
 
                     <Box p="1" mt="1" mb="1" ml="2%" maxWidth="75%" bg="transparent" >

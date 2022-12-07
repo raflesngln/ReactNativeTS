@@ -168,8 +168,8 @@ const wait = (timeout) => {
                             }
                           >
                         <Center h="80px" w="20" bg="#c2edf2" borderRadius="15" borderWidth="1" borderColor="#a5cacf">
-                          <MaterialCommunityIcons name="adjust" color='#507378' size={23} />
-                          <Text style={{color:'#507378',fontWeight:'bold'}}>Tracking</Text>
+                          <MaterialCommunityIcons name="adjust" color='#317520' size={23} />
+                          <Text style={{color:'#6c8182',fontWeight:'normal'}}>Tracking</Text>
                         </Center>
                       </Pressable>
                       <Pressable
@@ -180,8 +180,8 @@ const wait = (timeout) => {
                             }
                           >
                       <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
-                        <MaterialCommunityIcons name="folder-home-outline" color='#507378' size={23} />
-                        <Text  style={{color:'#507378',fontWeight:'bold'}}>My Works</Text>
+                        <MaterialCommunityIcons name="folder-home-outline" color='#317520' size={23} />
+                        <Text  style={{color:'#6c8182',fontWeight:'normal'}}>My Works</Text>
                       </Center>
                       </Pressable>
                       <Pressable
@@ -192,8 +192,8 @@ const wait = (timeout) => {
                             }
                           >
                       <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
-                        <MaterialCommunityIcons name="chart-donut" color='#507378' size={23} />
-                        <Text  style={{color:'#507378',fontWeight:'bold'}}>Pending</Text>
+                        <MaterialCommunityIcons name="chart-donut" color='#317520' size={23} />
+                        <Text  style={{color:'#6c8182',fontWeight:'normal'}}>Pending</Text>
                       </Center>
                       </Pressable>
                       <Pressable
@@ -204,8 +204,8 @@ const wait = (timeout) => {
                             }
                           >
                       <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
-                        <MaterialCommunityIcons name="check-circle-outline" color='#507378' size={23} />
-                        <Text style={{color:'#507378',fontWeight:'bold'}}>Complete</Text>
+                        <MaterialCommunityIcons name="check-circle-outline" color='#317520' size={23} />
+                        <Text style={{color:'#6c8182',fontWeight:'normal'}}>Complete</Text>
                       </Center>
                       </Pressable>
                       {/* </Flex> */}
@@ -222,8 +222,8 @@ const wait = (timeout) => {
                             }
                           >
                         <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
-                          <MaterialCommunityIcons name="alarm" color='#507378' size={23} />
-                          <Text style={{color:'#507378',fontWeight:'bold'}}>Tasks</Text>
+                          <MaterialCommunityIcons name="alarm" color='#317520' size={23} />
+                          <Text style={{color:'#6c8182',fontWeight:'normal'}}>Tasks</Text>
                         </Center>
                       </Pressable>
                       <Pressable
@@ -234,8 +234,8 @@ const wait = (timeout) => {
                             }
                           >
                         <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
-                          <MaterialCommunityIcons name="arrow-u-left-top" color='#507378' size={23} />
-                          <Text style={{color:'#507378',fontWeight:'bold'}}>Import</Text>
+                          <MaterialCommunityIcons name="arrow-u-left-top" color='#317520' size={23} />
+                          <Text style={{color:'#6c8182',fontWeight:'normal'}}>Import</Text>
                         </Center>
                       </Pressable>
                       <Pressable
@@ -246,8 +246,8 @@ const wait = (timeout) => {
                             }
                           >
                         <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
-                          <MaterialCommunityIcons name="arrow-u-right-top" color='#507378' size={23} />
-                          <Text style={{color:'#507378',fontWeight:'bold'}}>Export</Text>
+                          <MaterialCommunityIcons name="arrow-u-right-top" color='#317520' size={23} />
+                          <Text style={{color:'#6c8182',fontWeight:'normal'}}>Export</Text>
                         </Center>
                       </Pressable>
                       <Pressable
@@ -258,8 +258,8 @@ const wait = (timeout) => {
                             }
                           >
                         <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
-                          <MaterialCommunityIcons name="apps" color='#507378' size={23} />
-                          <Text style={{color:'#507378',fontWeight:'bold'}}>All</Text>
+                          <MaterialCommunityIcons name="apps" color='#317520' size={23} />
+                          <Text style={{color:'#6c8182',fontWeight:'normal'}}>All</Text>
                         </Center>
                       </Pressable>
                       {/* </Flex> */}

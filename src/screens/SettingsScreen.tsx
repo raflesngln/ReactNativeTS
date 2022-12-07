@@ -75,7 +75,7 @@ const wait = (timeout) => {
                     <Box h="110px" p="2" pl="5%" maxWidth="75%" bg="transparent" rounded="md" >
                       <Text style={{fontSize:20,color:'#ffffff',fontWeight:'bold'}}>Rafles Nainggolan</Text>
                       <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>Programmer</Text>
-                      <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>IT DEPARTEMEN</Text>
+                      <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>IT - Segara Artha Investama</Text>
                     </Box>
                   </HStack>
               </LinearGradient>

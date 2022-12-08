@@ -93,6 +93,14 @@ const wait = (timeout) => {
                     <Box p="1" mt="6" mb="1" ml="2%" maxWidth="75%" bg="transparent" >
                       <Text style={{fontSize:16,color:'#b6bab8',fontWeight:'bold'}}>Other Settings</Text>
                     </Box>
+
+                    <Pressable
+                            onPress={() =>
+                              navigation.navigate('DetailProduct', {
+                                title: 'Detail Course'
+                              })
+                            }
+                      >
                     <Box borderBottomWidth="1" _dark={{
                           borderColor: "#d7dbd9"
                         }} borderColor="#d7dbd9" pl={["0", "4"]} pr={["0", "5"]} py="2">
@@ -113,6 +121,14 @@ const wait = (timeout) => {
                         </Text>
                       </HStack>
                     </Box>
+                    </Pressable>
+                    <Pressable
+                            onPress={() =>
+                              navigation.navigate('Login', {
+                                title: 'Login Course'
+                              })
+                            }
+                    >
                     <Box borderBottomWidth="1" _dark={{
                           borderColor: "#d7dbd9"
                         }} borderColor="#d7dbd9" pl={["0", "4"]} pr={["0", "5"]} py="2">
@@ -128,6 +144,7 @@ const wait = (timeout) => {
                         <Spacer />
                       </HStack>
                     </Box>
+                    </Pressable>
                 </Box>
               </VStack>
             </Flex>

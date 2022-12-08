@@ -31,3 +31,9 @@ export type BottomTabNavigatorParamList = {
     Message: undefined;
     Settings: undefined;
   };
+
+  //   type checks for screens Bottom Navigations
+export type SettingsNavigatorParamList = {
+    Home: HomeStackNavigatorParamList;
+    Login: undefined;
+  };

@@ -81,7 +81,7 @@ const wait = (timeout) => {
                     <AspectRatio w="100%" ratio={16 / 9}>
                           <Image source={{
                           uri: "https://img.freepik.com/premium-vector/distance-learning-online-education-work-happy-woman-girl-working-office-remotely-using-laptop_503750-461.jpg"
-                        }} alt="image" />
+                        }} alt="image"/>
                         </AspectRatio>
                   </Center>
               </LinearGradient>

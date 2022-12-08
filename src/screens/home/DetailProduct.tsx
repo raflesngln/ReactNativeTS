@@ -25,7 +25,7 @@ import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 import { HomeScreenNavigationProp } from '../../navigation/types';
 
 
-const DetailScreen = (props) => {
+const DetailProduct = (props) => {
   const route = useRoute();
   const { title } = route.params;
 
@@ -68,141 +68,59 @@ const wait = (timeout) => {
                   />
                 }
               >
-            <Flex direction="row" mb="2.5" mt="-3">
+            <Flex direction="row" mb="2.5" mt="-6">
               <VStack space={4}  w='100%'>
                 <LinearGradient
-                  // colors={['#030e28','#2d3a85','#030e28' ]}
-                  colors={['#087aa3','#4d90a8','#087aa3' ]}
+                  colors={['#f0eded','#f0eded','#f0eded' ]}
+                  // colors={['#39c37a','#4d90a8','#39c37a' ]}
                   style={styles.headerBox}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
                 >
-                  <HStack space={2} ml="2%" mt="-18%" flexDirection="row" justifyContent="center" justifyItems="center">
-                    <Center h="120px" w="120px" bg="primary.300" rounded="full" shadow={3}>
-                      {/* <Image source={require('../../../assets/images/elon.jpg')} ml="-1%" width="100%" height="100%" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/> */}
-                      <Avatar bg="purple.600" alignSelf="center" size="2xl" source={{
-                          uri: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                        }}>
-                            EM
-                      </Avatar>
-                    </Center>
-                    <Center h="120px" w="50%" bg="primary.500" rounded="md" shadow={3}>
-                      <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>My Bio </Text>
-                      <Text style={{fontSize:14,color:'#ffffff',fontWeight:'bold'}}>Rafles Nainggolan</Text>
-                      <Text style={{fontSize:14,color:'#ffffff',fontWeight:'bold'}}>Programmer</Text>
-                    </Center>
-                  </HStack>
+                  <Center borderRadius="4">
+                    <AspectRatio w="100%" ratio={16 / 9}>
+                          <Image source={{
+                          uri: "https://img.freepik.com/premium-vector/distance-learning-online-education-work-happy-woman-girl-working-office-remotely-using-laptop_503750-461.jpg"
+                        }} alt="image" />
+                        </AspectRatio>
+                  </Center>
               </LinearGradient>
 
-              <Box w="96%" ml="2%" h="auto" mt="-26%" pt="5" pb="6" bg="#ffffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
-                <Box ml="8%" mt="2" mb="5">
-                    <Text style={{fontSize:16,color:'#1b7de9',fontWeight:'bold'}}>{`${Today}`}</Text>
-                </Box>
-
+                <Box w="96%" ml="2%" h="auto" mt="-15%" p="2" bg="#ffffff" roundedTopRight="8" roundedTopLeft="8" roundedBottomRight="8" roundedBottomLeft="8" shadow={9}
+                   borderWidth="1" borderColor="coolGray.300">
                   <Center>
                     <HStack space={3} >
-                        <Pressable
-                            onPress={() =>
-                              navigation.navigate('Tracking', {
-                                title: 'Tracking'
-                              })
-                            }
-                          >
-                        <Center h="80px" w="20" bg="#c2edf2" borderRadius="15" borderWidth="1" borderColor="#7cd6d9">
-                          <MaterialCommunityIcons name="adjust" color='#6c8182' size={23} />
-                          <Text style={{color:'#6c8182',fontWeight:'bold'}}>Tracking</Text>
-                        </Center>
-                      </Pressable>
-                      <Pressable
-                            onPress={() =>
-                              navigation.navigate('Tracking', {
-                                title: 'My Works'
-                              })
-                            }
-                          >
-                      <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#7cd6d9">
-                        <MaterialCommunityIcons name="folder-home-outline" color='#6c8182' size={23} />
-                        <Text  style={{color:'#6c8182',fontWeight:'bold'}}>My Works</Text>
-                      </Center>
-                      </Pressable>
-                      <Pressable
-                            onPress={() =>
-                              navigation.navigate('Tracking', {
-                                title: 'Pending Status'
-                              })
-                            }
-                          >
-                      <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#7cd6d9">
-                        <MaterialCommunityIcons name="chart-donut" color='#6c8182' size={23} />
-                        <Text  style={{color:'#6c8182',fontWeight:'bold'}}>Pending</Text>
-                      </Center>
-                      </Pressable>
-                      <Pressable
-                            onPress={() =>
-                              navigation.navigate('Tracking', {
-                                title: 'Complete Status'
-                              })
-                            }
-                          >
-                      <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#7cd6d9">
-                        <MaterialCommunityIcons name="check-circle-outline" color='#6c8182' size={23} />
-                        <Text style={{color:'#6c8182',fontWeight:'bold'}}>Complete</Text>
-                      </Center>
-                      </Pressable>
+                    <Flex direction="column" mt="1">
+                      <Box mt="1" mb="2">
+                        <Text style={styles.titleText}>The Complete 2023 Web Development Bootcamp</Text>
+                        <Text style={styles.titlePrice}>Rp 12.000.000</Text>
+                        <Text>Become a Full-Stack Web Developer with just ONE course. HTML, CSS, Javascript, Node, React, MongoDB, Web3 and DApps</Text>
+                      </Box>
+                    </Flex>
                       {/* </Flex> */}
                     </HStack>
                   </Center>
-
-                  <Center mt="5">
+                </Box>
+                <Box w="96%" ml="2%" h="auto" p="2" bg="#ffffff" roundedTopRight="8" roundedTopLeft="8" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
+                  <Center>
                     <HStack space={3} >
-                    <Pressable
-                            onPress={() =>
-                              navigation.navigate('Tracking', {
-                                title: 'Tasks'
-                              })
-                            }
-                          >
-                        <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#7cd6d9">
-                          <MaterialCommunityIcons name="alarm" color='#6c8182' size={23} />
-                          <Text style={{color:'#6c8182',fontWeight:'bold'}}>Tasks</Text>
-                        </Center>
-                      </Pressable>
-                      <Pressable
-                            onPress={() =>
-                              navigation.navigate('Tracking', {
-                                title: 'Import'
-                              })
-                            }
-                          >
-                        <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#7cd6d9">
-                          <MaterialCommunityIcons name="arrow-u-left-top" color='#6c8182' size={23} />
-                          <Text style={{color:'#6c8182',fontWeight:'bold'}}>Import</Text>
-                        </Center>
-                      </Pressable>
-                      <Pressable
-                            onPress={() =>
-                              navigation.navigate('Tracking', {
-                                title: 'Export'
-                              })
-                            }
-                          >
-                        <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#7cd6d9">
-                          <MaterialCommunityIcons name="arrow-u-right-top" color='#6c8182' size={23} />
-                          <Text style={{color:'#6c8182',fontWeight:'bold'}}>Export</Text>
-                        </Center>
-                      </Pressable>
-                      <Pressable
-                            onPress={() =>
-                              navigation.navigate('Tracking', {
-                                title: 'All Menu'
-                              })
-                            }
-                          >
-                        <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#7cd6d9">
-                          <MaterialCommunityIcons name="apps" color='#6c8182' size={23} />
-                          <Text style={{color:'#6c8182',fontWeight:'bold'}}>All</Text>
-                        </Center>
-                      </Pressable>
+                    <Flex direction="column" mb="2.5" mt="1.5">
+                      <Box p="2">
+                        <Text style={styles.titleText}>Deskripsi :</Text>
+                        <Text>Welcome to the Complete Web Development Bootcamp, the only course you need to learn to code and become a full-stack web developer. With 150,000+ ratings and a 4.8 average, my Web Development course is one of the HIGHEST RATED courses in the history of Udemy! </Text>
+                        <Divider my="2" _light={{bg: "coolGray.300"}} _dark={{bg: "coolGray.300"}}/>
+                        <Text>You Will Learn : </Text>
+                        <Text>&nbsp;</Text>
+                        <Text style={styles.contentLists}><MaterialCommunityIcons name="check-circle" color='#487d71' size={23} style={{marginBottom:'14px'}}/> You will build 16 web development projects for your portfolio, ready to apply for junior developer jobs</Text>
+                        <Text style={styles.contentLists}><MaterialCommunityIcons name="check-circle" color='#487d71' size={23} style={{marginBottom:'14px'}}/> You will master both front and back-end development, becoming a full-stack developer by the end of the course.</Text>
+                        <Text style={styles.contentLists}><MaterialCommunityIcons name="check-circle" color='#487d71' size={23} style={{marginBottom:'14px'}}/> Build fully-fledged websites and web apps for your startup or business.</Text>
+                        <Text style={styles.contentLists}><MaterialCommunityIcons name="check-circle" color='#487d71' size={23} style={{marginBottom:'14px'}}/> Master frontend development with React</Text>
+                        <Text style={styles.contentLists}><MaterialCommunityIcons name="check-circle" color='#487d71' size={23} style={{marginBottom:'14px'}}/> Master frontend development with React</Text>
+                        <Text style={styles.contentLists}><MaterialCommunityIcons name="check-circle" color='#487d71' size={23} style={{marginBottom:'14px'}}/> Learn professional developer best practices.</Text>
+                        <Text style={styles.contentLists}><MaterialCommunityIcons name="check-circle" color='#487d71' size={23} style={{marginBottom:'14px'}}/> You will learn the latest technologies, including Javascript, React, Node and even Web3 development.</Text>
+                        <Text style={styles.contentLists}><MaterialCommunityIcons name="check-circle" color='#487d71' size={23} style={{marginBottom:'14px'}}/> After the course you will be able to build ANY website you want.</Text>
+                      </Box>
+                    </Flex>
                       {/* </Flex> */}
                     </HStack>
                   </Center>
@@ -211,7 +129,7 @@ const wait = (timeout) => {
                 <Box w="96%" ml="2%" h="auto" mt="-1" minHeight="150" rounded="8" bg="#ffffff" shadow={5}>
                   <Box>
                   <Flex mt="3" mb="-5" p="3" flex={1}  flexDirection="row" justifyContent="space-between" alignItems="flex-start">
-                    <Text >ARTIKEL</Text>
+                    <Text >Rekomendasi :</Text>
                     <Text style={{color:'#3f51b5',textDecorationLine:'underline'}}>View more</Text>
                   </Flex>
 
@@ -233,10 +151,12 @@ const wait = (timeout) => {
                           }
                         >
                         <Box>
-                          <AspectRatio w="100%" ratio={16 / 9}>
-                            <Image source={{
-                            uri: "https://img.freepik.com/free-vector/contact-us-concept-landing-page_52683-18636.jpg?t=st=1670343853~exp=1670344453~hmac=b8f5657d438842aa8cd8798babfd25d3b0008f6b66af6afdf5b145c7735b2b20"
-                          }} alt="image" />
+                        <AspectRatio w="100%" ratio={16 / 9}>
+                          <Image
+                            source={{
+                              uri: 'https://img-b.udemycdn.com/course/240x135/1565838_e54e_16.jpg',
+                            }} alt="Javascript"
+                          />
                           </AspectRatio>
                           <Center bg="violet.500" _dark={{
                           bg: "violet.400"
@@ -245,7 +165,7 @@ const wait = (timeout) => {
                           fontWeight: "700",
                           fontSize: "xs"
                         }} position="absolute" bottom="0" px="3" py="1.5">
-                            HEALTH
+                            Technology
                           </Center>
                         </Box>
                         <Stack p="4" space={3}>
@@ -280,7 +200,7 @@ const wait = (timeout) => {
                         <Box>
                           <AspectRatio w="100%" ratio={16 / 9}>
                             <Image source={{
-                            uri: "https://img.freepik.com/premium-vector/distance-learning-online-education-work-happy-woman-girl-working-office-remotely-using-laptop_503750-461.jpg"
+                            uri: "https://img-b.udemycdn.com/course/240x135/482754_7146_6.jpg"
                           }} alt="image" />
                           </AspectRatio>
                           <Center bg="violet.500" _dark={{
@@ -382,6 +302,23 @@ const wait = (timeout) => {
         height: 280,
         width:'100%',
       },
+      titleText:{
+        fontSize:16,
+        marginBottom:8,
+        fontWeight:'bold',
+        color:'#424242'
+      },
+      contentLists:{
+        fontSize:14,
+        marginBottom:8,
+        color:'#424242'
+      },
+      titlePrice:{
+        fontSize:16,
+        marginBottom:5,
+        fontWeight:'bold',
+        color:'#0f912d'
+      },
     });
 
-export default DetailScreen;
+export default DetailProduct;

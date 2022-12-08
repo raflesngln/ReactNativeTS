@@ -77,6 +77,25 @@ const wait = (timeout) => {
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
                 >
+                  {/* <HStack space={3} justifyContent="center"  >
+                    <Box zIndex={2} p="2" h="auto" borderRadius="8"  bg="#3f7173">
+                      <Image source={require('../../../assets/images/elon.jpg')} ml="-1%" width="90px" height="50px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
+                      <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>My Bio </Text>
+                      <Text style={{fontSize:14,color:'#ffffff',fontWeight:'bold'}}>Rafles Nainggolan</Text>
+                      <Text style={{fontSize:14,color:'#ffffff',fontWeight:'bold'}}>Programmer</Text>
+                    </Box>
+                   
+                    <Box zIndex={2} p="2" h="auto" borderRadius="8"  bg="#3f7173">
+                      <Image source={require('../../../assets/images/elon.jpg')} ml="-1%" width="90px" height="50px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
+                      <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>My Bio </Text>
+                      <Text style={{fontSize:14,color:'#ffffff',fontWeight:'bold'}}>Rafles Nainggolan</Text>
+                      <Text style={{fontSize:14,color:'#ffffff',fontWeight:'bold'}}>Programmer</Text>
+                    </Box>
+                   
+                    <Box position="absolute" zIndex={0}>
+                      <Image source={require('../../../assets/images/delivery2.png')} mt="10%" ml="40%" width="50%" height="250px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
+                    </Box>
+                  </HStack> */}
                   <HStack space={2} ml="2%" mt="-18%" flexDirection="row" justifyContent="center" justifyItems="center">
                     <Center h="120px" w="120px" bg="primary.300" rounded="full" shadow={3}>
                       {/* <Image source={require('../../../assets/images/elon.jpg')} ml="-1%" width="100%" height="100%" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/> */}
@@ -227,7 +246,7 @@ const wait = (timeout) => {
                         }}>
                       <Pressable
                           onPress={() =>
-                            navigation.navigate('DetailProduct', {
+                            navigation.navigate('Tracking', {
                               title: 'Detail Artikel'
                             })
                           }

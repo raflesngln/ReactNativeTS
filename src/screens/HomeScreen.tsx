@@ -270,7 +270,7 @@ const wait = (timeout) => {
                 <Box w="96%" ml="2%" h="auto" mt="-1" minHeight="150" rounded="8" bg="#ffffff" shadow={5}>
                   <Box>
                   <Flex mt="3" mb="-5" p="3" flex={1}  flexDirection="row" justifyContent="space-between" alignItems="flex-start">
-                    <Text >ARTIKEL</Text>
+                    <Text >POPULAR</Text>
                     <Text style={{color:'#3f51b5',textDecorationLine:'underline'}}>View more</Text>
                   </Flex>
 
@@ -286,34 +286,35 @@ const wait = (timeout) => {
                         }}>
                       <Pressable
                           onPress={() =>
-                            navigation.navigate('Tracking', {
-                              title: 'Detail Artikel'
+                            navigation.navigate('DetailProduct', {
+                              title: 'Detail Course'
                             })
                           }
                         >
                         <Box>
                           <AspectRatio w="100%" ratio={16 / 9}>
                             <Image source={{
-                            uri: "https://img.freepik.com/free-vector/contact-us-concept-landing-page_52683-18636.jpg?t=st=1670343853~exp=1670344453~hmac=b8f5657d438842aa8cd8798babfd25d3b0008f6b66af6afdf5b145c7735b2b20"
+                            uri: "https://img-b.udemycdn.com/course/240x135/1565838_e54e_16.jpg"
                           }} alt="image" />
                           </AspectRatio>
                           <Center bg="violet.500" _dark={{
-                          bg: "violet.400"
-                        }} _text={{
-                          color: "warmGray.50",
-                          fontWeight: "700",
-                          fontSize: "xs"
-                        }} position="absolute" bottom="0" px="3" py="1.5">
-                            HEALTH
+                              bg: "violet.400"
+                            }} _text={{
+                              color: "warmGray.50",
+                              fontWeight: "700",
+                              fontSize: "xs"
+                            }} position="absolute" bottom="0" px="3" py="1.5">
+                                Technology
                           </Center>
                         </Box>
-                        <Stack p="4" space={3}>
+                        <Stack p="2" space={3} h="220">
+                          <Text>The Complete 2023 Web Development Bootcamp</Text>
                           <Text fontWeight="400">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                              Become a Full-Stack Web Developer with just ONE course. HTML, CSS, Javascript, Node, React, MongoDB, Web3 and DApps
                           </Text>
                           <HStack alignItems="center" space={4} justifyContent="space-between">
                             <HStack alignItems="center">
-                              <Badge colorScheme="warning" variant="outline" borderRadius="full">Aktif</Badge>
+                              <Badge colorScheme="warning" variant="outline" borderRadius="full">120.000</Badge>
                             </HStack>
                           </HStack>
                         </Stack>
@@ -331,8 +332,8 @@ const wait = (timeout) => {
                           }}>
                         <Pressable
                             onPress={() =>
-                              navigation.navigate('Tracking', {
-                                title: 'Detail Artikel'
+                              navigation.navigate('DetailProduct', {
+                                title: 'Detail Course'
                               })
                             }
                           >
@@ -349,70 +350,132 @@ const wait = (timeout) => {
                           fontWeight: "700",
                           fontSize: "xs"
                         }} position="absolute" bottom="0" px="3" py="1.5">
-                            FINANCE
+                            Technology
                           </Center>
                         </Box>
                         
-                        <Stack p="4" space={3}>
+                        <Stack p="2" space={3} h="220">
+                          <Text>Python From Scratch & Selenium WebDriver</Text>
                           <Text fontWeight="400">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                              Python and Selenium WebDriver from scratch for Automation Testing, SQL Crash Course, Framework Design
                           </Text>
                           <HStack alignItems="center" space={4} justifyContent="space-between">
                             <HStack alignItems="center">
-                              <Badge colorScheme="warning" variant="outline" borderRadius="full">Aktif</Badge>
+                              <Badge colorScheme="warning" variant="outline" borderRadius="full">180.000</Badge>
                             </HStack>
                           </HStack>
                         </Stack>
                         </Pressable>
                       </Box>
                   </Flex>
-
-                  <Flex mt="5" mb="-5" p="3" flex={1}  flexDirection="row" justifyContent="space-between" alignItems="flex-start">
-                    <Text >TASKS</Text>
-                    <Text style={{color:'#3f51b5',textDecorationLine:'underline'}}>View More</Text>
-                  </Flex>
-                  <VStack space={4} alignItems="center" mt="5" borderWidth="1" borderColor="#cacdcf" borderRadius="md" >
-                    <Box>
-                        <AspectRatio w="90%" ratio={16 / 9}>
-                          <Image source={{
-                          uri: "https://img.freepik.com/free-vector/illustrated-woman-being-intern-company_23-2148726151.jpg?t=st=1670343853~exp=1670344453~hmac=f6ffc287abf74b335e7bb195020c876a7ca997190078218b146c95959c87f443"
-                        }} alt="image" />
-                        </AspectRatio>
-                        <Stack p="4" space={3}>
-                          <Stack space={2}>
-                            <Heading size="md" ml="-1">
-                              Name
-                            </Heading>
-                            <Text fontSize="xs" _light={{
-                            color: "violet.500"
-                          }} _dark={{
-                            color: "violet.400"
-                          }} fontWeight="500" ml="-0.5" mt="-1">
-                              deskripsas
-                            </Text>
-                          </Stack>
-                          <Text fontWeight="400">
-                          Deskretiweotr
-                          </Text>
-
-                          <HStack alignItems="center" space={4} justifyContent="space-between">
-                            <HStack alignItems="center">
-                              <Text color="coolGray.600" _dark={{
-                              color: "warmGray.200"
-                            }} fontWeight="400">
-                                6 mins ago
-                              </Text>
-                            </HStack>
-                          </HStack>
-                          </Stack>
-                      </Box>
-                  </VStack>
                  </Box>
                 </Box>
-                <Box>
-                  <Text>Lists</Text>
-                  {/* <Pengumuman/> */}
-              </Box>
+
+                <Box w="96%" ml="2%" h="auto" mt="-1" minHeight="150" rounded="8" bg="#ffffff" shadow={5}>
+                  <Box>
+                  <Flex mt="3" mb="-5" p="3" flex={1}  flexDirection="row" justifyContent="space-between" alignItems="flex-start">
+                    <Text >NEW COURSE</Text>
+                    <Text style={{color:'#3f51b5',textDecorationLine:'underline'}}>View more</Text>
+                  </Flex>
+
+                  <Flex mt="5" p="2" flex={1}  flexDirection="row" justifyContent="space-between" alignItems="flex-start">
+                        <Box w="49%"  rounded="lg" overflow="hidden" borderColor="coolGray.200" borderWidth="1" _dark={{
+                        borderColor: "coolGray.600",
+                        backgroundColor: "gray.700"
+                        }} _web={{
+                          shadow: 2,
+                          borderWidth: 0
+                        }} _light={{
+                          backgroundColor: "gray.50"
+                        }}>
+                      <Pressable
+                          onPress={() =>
+                            navigation.navigate('DetailProduct', {
+                              title: 'Detail Course'
+                            })
+                          }
+                        >
+                        <Box>
+                          <AspectRatio w="100%" ratio={16 / 9}>
+                            <Image source={{
+                            uri: "https://img-c.udemycdn.com/course/240x135/3579383_3c67_4.jpg"
+                          }} alt="image" />
+                          </AspectRatio>
+                          <Center bg="violet.500" _dark={{
+                              bg: "violet.400"
+                            }} _text={{
+                              color: "warmGray.50",
+                              fontWeight: "700",
+                              fontSize: "xs"
+                            }} position="absolute" bottom="0" px="3" py="1.5">
+                                Technology
+                          </Center>
+                        </Box>
+                        <Stack p="2" space={3} h="220">
+                          <Text>Building Modern Web Applications with Go (Golang)</Text>
+                          <Text fontWeight="400">
+                              Learn to program in Go from an award winning university professor
+                          </Text>
+                          <HStack alignItems="center" space={4} justifyContent="space-between">
+                            <HStack alignItems="center">
+                              <Badge colorScheme="warning" variant="outline" borderRadius="full">120.000</Badge>
+                            </HStack>
+                          </HStack>
+                        </Stack>
+                        </Pressable>
+                      </Box>
+
+                      <Box w="49%"  rounded="lg" overflow="hidden" borderColor="coolGray.200" borderWidth="1" _dark={{
+                            borderColor: "coolGray.600",
+                            backgroundColor: "gray.700"
+                          }} _web={{
+                            shadow: 2,
+                            borderWidth: 0
+                          }} _light={{
+                            backgroundColor: "gray.50"
+                          }}>
+                        <Pressable
+                            onPress={() =>
+                              navigation.navigate('DetailProduct', {
+                                title: 'Detail Course'
+                              })
+                            }
+                          >
+                        <Box>
+                          <AspectRatio w="100%" ratio={16 / 9}>
+                            <Image source={{
+                            uri: "https://img-b.udemycdn.com/course/240x135/888716_4225_8.jpg"
+                          }} alt="image" />
+                          </AspectRatio>
+                          <Center bg="violet.500" _dark={{
+                          bg: "violet.400"
+                        }} _text={{
+                          color: "warmGray.50",
+                          fontWeight: "700",
+                          fontSize: "xs"
+                        }} position="absolute" bottom="0" px="3" py="1.5">
+                            Technology
+                          </Center>
+                        </Box>
+                        
+                        <Stack p="2" space={3} h="220">
+                          <Text>Introduction to Finance, Accounting, Modeling and Valuation</Text>
+                          <Text fontWeight="400">
+                              Learn Finance & Accounting from Scratch by an Award
+                          </Text>
+                          <HStack alignItems="center" space={4} justifyContent="space-between">
+                            <HStack alignItems="center">
+                              <Badge colorScheme="warning" variant="outline" borderRadius="full">75.000</Badge>
+                            </HStack>
+                          </HStack>
+                        </Stack>
+                        </Pressable>
+                      </Box>
+                  </Flex>
+                 </Box>
+                </Box>
+
+
               </VStack>
             </Flex>
             </ScrollView>

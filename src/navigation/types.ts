@@ -14,14 +14,15 @@ export type HomeStackNavigatorParamList = {
     Tracking:{
         title:string
     };
+    DetailProduct:{
+        title:string
+    };
   };
 
 
 //   type checks for screens
-  export type HomeScreenNavigationProp = NativeStackNavigationProp<
-  HomeStackNavigatorParamList,
-  'Settings'
->;
+  export type HomeScreenNavigationProp = NativeStackNavigationProp<HomeStackNavigatorParamList,'Settings'>;
+
 
 //   type checks for screens Bottom Navigations
 export type BottomTabNavigatorParamList = {

@@ -20,6 +20,9 @@ export type HomeStackNavigatorParamList = {
     RecomendationProduct:{
         title:string
     };
+    Login:{
+        title:string
+    };
   };
 
 

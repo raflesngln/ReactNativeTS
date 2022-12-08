@@ -13,7 +13,7 @@ import {
   useColorScheme,
   RefreshControl
 } from 'react-native';
-import { AspectRatio ,Image,Box,Container, Heading, Center, NativeBaseProvider,VStack ,ZStack,HStack ,Flex,Input,Icon,FormControl, WarningOutlineIcon, Spacer,Stack,ScrollView,Divider,FlatList,SectionList,Avatar,Badge } from "native-base";
+import { AspectRatio ,Image,Box,Container, Heading, Center, NativeBaseProvider,VStack ,ZStack,HStack ,Flex,Input,Icon,CheckIcon,Button,FormControl, WarningOutlineIcon, Spacer,Stack,ScrollView,Divider,FlatList,SectionList,Avatar,Badge } from "native-base";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import LinearGradient from 'react-native-linear-gradient'
 import moment from 'moment';
@@ -66,8 +66,8 @@ const wait = (timeout) => {
                   />
                 }
               >
-            <Flex direction="row" mb="2.5" mt="-3">
-              <VStack space={4}  w='100%'>
+            <Flex direction="row" mb="2" mt="-3">
+              <VStack space={2}  w='100%'>
                 <LinearGradient
                   // colors={['#030e28','#2d3a85','#030e28' ]}
                   colors={['#087aa3','#4d90a8','#087aa3' ]}
@@ -75,19 +75,19 @@ const wait = (timeout) => {
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
                 >
-                  <VStack space={2} ml="2%" mt="-18%" flexDirection="row" justifyContent="center" justifyItems="center">
-                    <Center ml="20%" h="180px" w="250px" >
-                      <Image source={require('../../../assets/images/delivery.png')} mt="6%" ml="-1%" width="200" height="250px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
+                  <VStack space={2} ml="2%" mt="-20%" flexDirection="row" justifyContent="center" justifyItems="center">
+                    <Center ml="20%" h="150px" w="200px" >
+                      <Image source={require('../../../assets/images/delivery.png')} mt="6%" ml="-1%" width="200" height="200px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
                     </Center>
                   </VStack>
-                  <Center w="100%">
+                  <Center w="100%" mt="0">
                     <Text style={{fontSize:24,color:'#ffffff',fontWeight:'bold'}}>COURSE APPLICATIONS</Text>
                   </Center>
               </LinearGradient>
 
-              <Box w="96%" ml="2%" h="auto" minHeight="380" mt="-20%" pt="5" pb="6" bg="#ffffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
-                <Center  mt="2" mb="5">
-                    <Text style={{fontSize:24,color:'#1b7de9',fontWeight:'bold'}}>LOGIN USER</Text>
+              <Box w="96%" ml="2%" h="auto" minHeight="380" mt="-25%" pt="5" pb="6" bg="#ffffff" roundedTopRight="30" roundedTopLeft="30" roundedBottomRight="6" roundedBottomLeft="6" shadow={5}>
+                <Center  mt="1" mb="1">
+                    <Text style={{fontSize:20,color:'#1b7de9',fontWeight:'bold'}}>LOGIN USER</Text>
                 </Center>
                     <Box  p="5" w="100%">
                       <FormControl isInvalid w="100%" maxW="100%">
@@ -96,18 +96,37 @@ const wait = (timeout) => {
                         
                         <FormControl.Label>Password</FormControl.Label>
                         <Input placeholder="Enter password" w="100%"/>
-                        <FormControl.ErrorMessage leftIcon={<WarningOutlineIcon size="xs" />}>
-                          Try different from previous passwords.
-                        </FormControl.ErrorMessage>
+
+                        <Center>
+                          <FormControl.ErrorMessage leftIcon={<WarningOutlineIcon size="xs" />}>
+                          Your Username & Password not Match !
+                          </FormControl.ErrorMessage>
+                        </Center>
                       </FormControl>
+                      <Box mt="5">
+                          <Button rounded="22" shadow={8} h="45px" bg="#0586f0"> 
+                            <HStack space={2} >
+                              <Text style={{color:"#ffff"}}>LOGIN</Text>
+                              <MaterialCommunityIcons name="chevron-right" style={{color:"#ffff"}} size={22} />
+                            </HStack>
+                          </Button>
+                      </Box>
+                      <Box mt="8">
+                          <Button rounded="22" h="42px" bg="#fc4e2b" shadow={8}> 
+                            <HStack space={2} >
+                              <MaterialCommunityIcons name="google" style={{color:"#ffff"}} size={22} />
+                              <Text style={{color:"#ffff"}}>Google Account</Text>
+                            </HStack>
+                          </Button>
+                      </Box>
                     </Box>
 
-                    <HStack p="5" display="flex" flexDirection="row" justifyContent="space-between">
+                    <HStack p="3" display="flex" flexDirection="row" justifyContent="space-between">
                       <Box>
-                        <Text style={styles.titleText}>New Users</Text>
+                        <Text style={styles.bottomText}>New Users</Text>
                       </Box>
                       <Box>
-                        <Text style={styles.titleText}>Forgot Password ? </Text>
+                        <Text style={styles.bottomText}>Forgot Password ? </Text>
                       </Box>
                     </HStack>
                 </Box>
@@ -180,14 +199,16 @@ const wait = (timeout) => {
       headerBox: {
         alignItems: 'flex-start',
         justifyContent: 'center',
-        height: 350,
+        height: 340,
         width:'100%',
       },
-      titleText:{
+      bottomText:{
         fontSize:16,
         marginBottom:8,
-        fontWeight:'bold',
-        color:'#424242'
+        color:'#1a52d6',
+        textDecorationLine: "underline",
+        textDecorationStyle: "solid",
+        textDecorationColor: "#838587"
       },
       contentLists:{
         fontSize:14,

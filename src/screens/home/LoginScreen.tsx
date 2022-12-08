@@ -70,24 +70,26 @@ const wait = (timeout) => {
               <VStack space={2}  w='100%'>
                 <LinearGradient
                   // colors={['#030e28','#2d3a85','#030e28' ]}
-                  colors={['#087aa3','#4d90a8','#087aa3' ]}
+                  colors={['#076875','#0fbd9c','#054f59' ]}
                   style={styles.headerBox}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
                 >
                   <VStack space={2} ml="2%" mt="-20%" flexDirection="row" justifyContent="center" justifyItems="center">
-                    <Center ml="20%" h="150px" w="200px" >
-                      <Image source={require('../../../assets/images/delivery.png')} mt="6%" ml="-1%" width="200" height="200px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
+                    <Center mt="-9%">
+                      <Image source={require('../../../assets/images/course.png')} ml="18%" width="100%" height="290px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
                     </Center>
                   </VStack>
-                  <Center w="100%" mt="0">
-                    <Text style={{fontSize:24,color:'#ffffff',fontWeight:'bold'}}>COURSE APPLICATIONS</Text>
+                  <Center w="100%" mt="-10%">
+                    <Text style={{fontSize:24,color:'#ffffff',fontWeight:'bold'}}>ATT Smart Online Course</Text>
                   </Center>
               </LinearGradient>
 
-              <Box w="96%" ml="2%" h="auto" minHeight="380" mt="-25%" pt="5" pb="6" bg="#ffffff" roundedTopRight="30" roundedTopLeft="30" roundedBottomRight="6" roundedBottomLeft="6" shadow={5}>
+              <Box w="96%" ml="2%" h="auto" minHeight="380" mt="-20%" pt="5" pb="3" bg="#ffffff" roundedTopRight="30" roundedTopLeft="30" roundedBottomRight="10" roundedBottomLeft="10" shadow={5}>
                 <Center  mt="1" mb="1">
-                    <Text style={{fontSize:20,color:'#1b7de9',fontWeight:'bold'}}>LOGIN USER</Text>
+                    <Text style={{fontSize:20,color:'#1f616b',fontWeight:'bold'}}>LOGIN USER</Text>
+                    <Text>&nbsp;</Text>
+                    <Text style={{color:'#f53d18'}}>Your Username & Password not Match !</Text>
                 </Center>
                     <Box  p="5" w="100%">
                       <FormControl isInvalid w="100%" maxW="100%">
@@ -96,12 +98,6 @@ const wait = (timeout) => {
                         
                         <FormControl.Label>Password</FormControl.Label>
                         <Input placeholder="Enter password" w="100%"/>
-
-                        <Center>
-                          <FormControl.ErrorMessage leftIcon={<WarningOutlineIcon size="xs" />}>
-                          Your Username & Password not Match !
-                          </FormControl.ErrorMessage>
-                        </Center>
                       </FormControl>
                       <Box mt="5">
                           <Button rounded="22" shadow={8} h="45px" bg="#0586f0"> 
@@ -138,35 +134,6 @@ const wait = (timeout) => {
           </NativeBaseProvider>
         );
     };
-
-    const Pengumuman = () => {
-      const data = [{
-        title: "Cyan",
-        data: ["cyan.100", "cyan.200", "cyan.300", "cyan.400", "cyan.500"]
-      }, {
-        title: "Yellow",
-        data: ["yellow.100", "yellow.200", "yellow.300", "yellow.400", "yellow.500"]
-      }, {
-        title: "Violet",
-        data: ["violet.100", "violet.200", "violet.300", "violet.400", "violet.500"]
-      }];
-      return <Center h="80" w="100%">
-          <SectionList maxW="300" w="100%" mb="4" sections={data} keyExtractor={(item, index) => item + index} renderItem={({
-          item
-        }) => <Center py="4" bg={item}>
-                {item.split(".")[1]}
-              </Center>} renderSectionHeader={({
-          section: {
-            title
-          }
-        }) => <Center>
-                <Heading fontSize="xl" mt="8" pb="4">
-                  {title}
-                </Heading>
-              </Center>} />
-        </Center>
-    };
-
     
     const styles = StyleSheet.create({
       container: {
@@ -205,7 +172,7 @@ const wait = (timeout) => {
       bottomText:{
         fontSize:16,
         marginBottom:8,
-        color:'#1a52d6',
+        color:'#0858c9',
         textDecorationLine: "underline",
         textDecorationStyle: "solid",
         textDecorationColor: "#838587"

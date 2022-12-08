@@ -132,24 +132,24 @@ const wait = (timeout) => {
               <VStack space={4}  w='100%'>
               <LinearGradient
                   // colors={['#030e28','#2d3a85','#030e28' ]}
-                  colors={['#087aa3','#4d90a8','#087aa3' ]}
+                  colors={['#165970','#15d6d6','#063747' ]}
                   style={styles.headerBox}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
                 >
                   <Flex pt="1" >
-                    <Center zIndex={9} mt="10%" ml="2%" h="20px" p="1" borderRadius="8" position="absolute" bg="#4d90a869" >
-                      <Text style={{fontSize:16,color:'#ffffff',fontWeight:'bold'}}>Application </Text>
+                    <Center zIndex={9} mt="5%" ml="2%" h="20px" p="1" borderRadius="8" position="absolute" bg="#1659704a" >
+                      <Text style={{fontSize:15,color:'#ffffff',fontWeight:'bold'}}>Smart Online  </Text>
                     </Center>
-                    <Center zIndex={2} mt="18%" ml="14%" h="28px" borderRadius="8" position="absolute" bg="#4d90a88f">
-                      <Text style={{fontSize:28,color:'#ffffff',fontWeight:'bold'}}>TRACKING</Text>
+                    <Center zIndex={2} mt="9%" ml="1%" borderRadius="8" position="absolute" >
+                      <Text style={{fontSize:35,color:'#ffffff',fontWeight:'bold',borderRadius:6,padding:3}}>Course</Text>
                     </Center>
-                    <Box mt="-12" >
-                      <Image source={require('../../assets/images/delivery.png')} mt="6%" ml="-1%" width="50%" height="250px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
-                    </Box>
-                    <Box mt="-12" position="absolute" zIndex={0}>
+                    <Center mt="-12" >
+                      <Image source={require('../../assets/images/course2.png')} mt="1%" ml="29%"  width="98%" height="250px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
+                    </Center>
+                    {/* <Box mt="-12" position="absolute" zIndex={0}>
                       <Image source={require('../../assets/images/delivery2.png')} mt="10%" ml="40%" width="50%" height="250px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
-                    </Box>
+                    </Box> */}
                   </Flex>
               </LinearGradient>
 
@@ -167,9 +167,9 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                        <Center h="70px" w="20" bg="#c2edf2" borderRadius="15" borderWidth="1" borderColor="#a5cacf">
-                          <MaterialCommunityIcons name="adjust" color='#317520' size={23} />
-                          <Text style={{color:'#6c8182',fontWeight:'normal'}}>Tracking</Text>
+                        <Center h="70px" w="20" bg="#b4e7ed" borderRadius="12" borderWidth="1" borderColor="#80c9d1">
+                          <MaterialCommunityIcons name="adjust" color='#089981' size={23} />
+                          <Text style={{color:'#517175',fontWeight:'normal'}}>Tracking</Text>
                         </Center>
                       </Pressable>
                       <Pressable
@@ -179,9 +179,9 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                      <Center h="70px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
-                        <MaterialCommunityIcons name="folder-home-outline" color='#317520' size={23} />
-                        <Text  style={{color:'#6c8182',fontWeight:'normal'}}>My Works</Text>
+                      <Center h="70px" w="20" bg="#b4e7ed" borderRadius="10" borderWidth="1" borderColor="#80c9d1">
+                        <MaterialCommunityIcons name="folder-home-outline" color='#089981' size={23} />
+                        <Text  style={{color:'#517175',fontWeight:'normal'}}>My Works</Text>
                       </Center>
                       </Pressable>
                       <Pressable
@@ -191,9 +191,9 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                      <Center h="70px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
-                        <MaterialCommunityIcons name="chart-donut" color='#317520' size={23} />
-                        <Text  style={{color:'#6c8182',fontWeight:'normal'}}>Pending</Text>
+                      <Center h="70px" w="20" bg="#b4e7ed" borderRadius="10" borderWidth="1" borderColor="#80c9d1">
+                        <MaterialCommunityIcons name="chart-donut" color='#089981' size={23} />
+                        <Text  style={{color:'#517175',fontWeight:'normal'}}>Pending</Text>
                       </Center>
                       </Pressable>
                       <Pressable
@@ -203,9 +203,9 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                      <Center h="70px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
-                        <MaterialCommunityIcons name="check-circle-outline" color='#317520' size={23} />
-                        <Text style={{color:'#6c8182',fontWeight:'normal'}}>Complete</Text>
+                      <Center h="70px" w="20" bg="#b4e7ed" borderRadius="10" borderWidth="1" borderColor="#80c9d1">
+                        <MaterialCommunityIcons name="check-circle-outline" color='#089981' size={23} />
+                        <Text style={{color:'#517175',fontWeight:'normal'}}>Complete</Text>
                       </Center>
                       </Pressable>
                       {/* </Flex> */}
@@ -221,9 +221,9 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                        <Center h="70px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
-                          <MaterialCommunityIcons name="alarm" color='#317520' size={23} />
-                          <Text style={{color:'#6c8182',fontWeight:'normal'}}>Tasks</Text>
+                        <Center h="70px" w="20" bg="#b4e7ed" borderRadius="10" borderWidth="1" borderColor="#80c9d1">
+                          <MaterialCommunityIcons name="alarm" color='#089981' size={23} />
+                          <Text style={{color:'#517175',fontWeight:'normal'}}>Tasks</Text>
                         </Center>
                       </Pressable>
                       <Pressable
@@ -233,9 +233,9 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                        <Center h="70px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
-                          <MaterialCommunityIcons name="arrow-u-left-top" color='#317520' size={23} />
-                          <Text style={{color:'#6c8182',fontWeight:'normal'}}>Import</Text>
+                        <Center h="70px" w="20" bg="#b4e7ed" borderRadius="10" borderWidth="1" borderColor="#80c9d1">
+                          <MaterialCommunityIcons name="arrow-u-left-top" color='#089981' size={23} />
+                          <Text style={{color:'#517175',fontWeight:'normal'}}>Import</Text>
                         </Center>
                       </Pressable>
                       <Pressable
@@ -245,9 +245,9 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                        <Center h="70px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
-                          <MaterialCommunityIcons name="arrow-u-right-top" color='#317520' size={23} />
-                          <Text style={{color:'#6c8182',fontWeight:'normal'}}>Export</Text>
+                        <Center h="70px" w="20" bg="#b4e7ed" borderRadius="10" borderWidth="1" borderColor="#80c9d1">
+                          <MaterialCommunityIcons name="arrow-u-right-top" color='#089981' size={23} />
+                          <Text style={{color:'#517175',fontWeight:'normal'}}>Export</Text>
                         </Center>
                       </Pressable>
                       <Pressable
@@ -257,9 +257,9 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                        <Center h="70px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
-                          <MaterialCommunityIcons name="apps" color='#317520' size={23} />
-                          <Text style={{color:'#6c8182',fontWeight:'normal'}}>All</Text>
+                        <Center h="70px" w="20" bg="#b4e7ed" borderRadius="10" borderWidth="1" borderColor="#80c9d1">
+                          <MaterialCommunityIcons name="apps" color='#089981' size={23} />
+                          <Text style={{color:'#517175',fontWeight:'normal'}}>All</Text>
                         </Center>
                       </Pressable>
                       {/* </Flex> */}

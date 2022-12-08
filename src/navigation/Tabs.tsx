@@ -31,9 +31,9 @@ const BottomTabs = () => {
       <Tab.Screen name="Tracking" component={TrackingScreen}
         options={{ 
         headerShown: false,
-        tabBarLabel: 'Tracking',
+        tabBarLabel: 'My Course',
         tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="arrange-send-to-back" color={color} size={size+3} />
+            <MaterialCommunityIcons name="sticker-text" color={color} size={size+3} />
             ),
         }}
       />

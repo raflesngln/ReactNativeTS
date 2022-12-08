@@ -17,6 +17,9 @@ export type HomeStackNavigatorParamList = {
     DetailProduct:{
         title:string
     };
+    RecomendationProduct:{
+        title:string
+    };
   };
 
 

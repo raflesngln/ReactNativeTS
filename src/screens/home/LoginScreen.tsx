@@ -94,10 +94,10 @@ const wait = (timeout) => {
                     <Box  p="5" w="100%">
                       <FormControl isInvalid w="100%" maxW="100%">
                         <FormControl.Label>Username</FormControl.Label>
-                        <Input placeholder="Enter username" w="100%"/>
+                        <Input variant="rounded" placeholder="Enter username" w="100%"/>
                         
                         <FormControl.Label>Password</FormControl.Label>
-                        <Input placeholder="Enter password" w="100%"/>
+                        <Input variant="rounded" placeholder="Enter password" w="100%"/>
                       </FormControl>
                       <Box mt="5">
                           <Button rounded="22" shadow={8} h="45px" bg="#0586f0"> 

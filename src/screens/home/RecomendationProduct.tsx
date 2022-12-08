@@ -145,7 +145,7 @@ const wait = (timeout) => {
                         }}>
                       <Pressable
                           onPress={() =>
-                            navigation.navigate('RecomendationProduct', {
+                            navigation.navigate('DetailProduct', {
                               title: 'Detail Artikel'
                             })
                           }
@@ -193,7 +193,7 @@ const wait = (timeout) => {
                           }}>
                         <Pressable
                             onPress={() =>
-                              navigation.navigate('RecomendationProduct', {
+                              navigation.navigate('DetailProduct', {
                                 title: 'Detail Artikel'
                               })
                             }

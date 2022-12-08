@@ -167,7 +167,7 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                        <Center h="80px" w="20" bg="#c2edf2" borderRadius="15" borderWidth="1" borderColor="#a5cacf">
+                        <Center h="70px" w="20" bg="#c2edf2" borderRadius="15" borderWidth="1" borderColor="#a5cacf">
                           <MaterialCommunityIcons name="adjust" color='#317520' size={23} />
                           <Text style={{color:'#6c8182',fontWeight:'normal'}}>Tracking</Text>
                         </Center>
@@ -179,7 +179,7 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                      <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
+                      <Center h="70px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
                         <MaterialCommunityIcons name="folder-home-outline" color='#317520' size={23} />
                         <Text  style={{color:'#6c8182',fontWeight:'normal'}}>My Works</Text>
                       </Center>
@@ -191,7 +191,7 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                      <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
+                      <Center h="70px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
                         <MaterialCommunityIcons name="chart-donut" color='#317520' size={23} />
                         <Text  style={{color:'#6c8182',fontWeight:'normal'}}>Pending</Text>
                       </Center>
@@ -203,7 +203,7 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                      <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
+                      <Center h="70px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
                         <MaterialCommunityIcons name="check-circle-outline" color='#317520' size={23} />
                         <Text style={{color:'#6c8182',fontWeight:'normal'}}>Complete</Text>
                       </Center>
@@ -221,7 +221,7 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                        <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
+                        <Center h="70px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
                           <MaterialCommunityIcons name="alarm" color='#317520' size={23} />
                           <Text style={{color:'#6c8182',fontWeight:'normal'}}>Tasks</Text>
                         </Center>
@@ -233,7 +233,7 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                        <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
+                        <Center h="70px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
                           <MaterialCommunityIcons name="arrow-u-left-top" color='#317520' size={23} />
                           <Text style={{color:'#6c8182',fontWeight:'normal'}}>Import</Text>
                         </Center>
@@ -245,7 +245,7 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                        <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
+                        <Center h="70px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
                           <MaterialCommunityIcons name="arrow-u-right-top" color='#317520' size={23} />
                           <Text style={{color:'#6c8182',fontWeight:'normal'}}>Export</Text>
                         </Center>
@@ -257,7 +257,7 @@ const wait = (timeout) => {
                               })
                             }
                           >
-                        <Center h="80px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
+                        <Center h="70px" w="20" bg="#c2edf2" borderRadius="10" borderWidth="1" borderColor="#a5cacf">
                           <MaterialCommunityIcons name="apps" color='#317520' size={23} />
                           <Text style={{color:'#6c8182',fontWeight:'normal'}}>All</Text>
                         </Center>
@@ -297,8 +297,8 @@ const wait = (timeout) => {
                             uri: "https://img-b.udemycdn.com/course/240x135/1565838_e54e_16.jpg"
                           }} alt="image" />
                           </AspectRatio>
-                          <Center bg="violet.500" _dark={{
-                              bg: "violet.400"
+                          <Center bg="warning.400" _dark={{
+                              bg: "warning.400"
                             }} _text={{
                               color: "warmGray.50",
                               fontWeight: "700",
@@ -308,8 +308,8 @@ const wait = (timeout) => {
                           </Center>
                         </Box>
                         <Stack p="2" space={3} h="220">
-                          <Text>The Complete 2023 Web Development Bootcamp</Text>
-                          <Text fontWeight="400">
+                          <Text style={styles.cardTitle}>The Complete 2023 Web Development Bootcamp</Text>
+                          <Text>
                               Become a Full-Stack Web Developer with just ONE course. HTML, CSS, Javascript, Node, React, MongoDB, Web3 and DApps
                           </Text>
                           <HStack alignItems="center" space={4} justifyContent="space-between">
@@ -343,8 +343,8 @@ const wait = (timeout) => {
                             uri: "https://img.freepik.com/premium-vector/distance-learning-online-education-work-happy-woman-girl-working-office-remotely-using-laptop_503750-461.jpg"
                           }} alt="image" />
                           </AspectRatio>
-                          <Center bg="violet.500" _dark={{
-                          bg: "violet.400"
+                          <Center bg="warning.400" _dark={{
+                          bg: "warning.400"
                         }} _text={{
                           color: "warmGray.50",
                           fontWeight: "700",
@@ -355,8 +355,8 @@ const wait = (timeout) => {
                         </Box>
                         
                         <Stack p="2" space={3} h="220">
-                          <Text>Python From Scratch & Selenium WebDriver</Text>
-                          <Text fontWeight="400">
+                          <Text style={styles.cardTitle}>Python From Scratch & Selenium WebDriver</Text>
+                          <Text >
                               Python and Selenium WebDriver from scratch for Automation Testing, SQL Crash Course, Framework Design
                           </Text>
                           <HStack alignItems="center" space={4} justifyContent="space-between">
@@ -401,8 +401,8 @@ const wait = (timeout) => {
                             uri: "https://img-c.udemycdn.com/course/240x135/3579383_3c67_4.jpg"
                           }} alt="image" />
                           </AspectRatio>
-                          <Center bg="violet.500" _dark={{
-                              bg: "violet.400"
+                          <Center bg="warning.400" _dark={{
+                              bg: "warning.400"
                             }} _text={{
                               color: "warmGray.50",
                               fontWeight: "700",
@@ -412,8 +412,8 @@ const wait = (timeout) => {
                           </Center>
                         </Box>
                         <Stack p="2" space={3} h="220">
-                          <Text>Building Modern Web Applications with Go (Golang)</Text>
-                          <Text fontWeight="400">
+                          <Text style={styles.cardTitle}>Building Modern Web Applications with Go (Golang)</Text>
+                          <Text >
                               Learn to program in Go from an award winning university professor
                           </Text>
                           <HStack alignItems="center" space={4} justifyContent="space-between">
@@ -447,8 +447,8 @@ const wait = (timeout) => {
                             uri: "https://img-b.udemycdn.com/course/240x135/888716_4225_8.jpg"
                           }} alt="image" />
                           </AspectRatio>
-                          <Center bg="violet.500" _dark={{
-                          bg: "violet.400"
+                          <Center bg="warning.400" _dark={{
+                          bg: "warning.400"
                         }} _text={{
                           color: "warmGray.50",
                           fontWeight: "700",
@@ -459,7 +459,7 @@ const wait = (timeout) => {
                         </Box>
                         
                         <Stack p="2" space={3} h="220">
-                          <Text>Introduction to Finance, Accounting, Modeling and Valuation</Text>
+                          <Text style={styles.cardTitle}>Introduction to Finance, Accounting, Modeling and Valuation</Text>
                           <Text fontWeight="400">
                               Learn Finance & Accounting from Scratch by an Award
                           </Text>
@@ -539,8 +539,12 @@ const wait = (timeout) => {
         fontWeight: '400',
       },
       headerTittle: {
-        fontSize:'70px',
+        fontSize:'30px',
         color:'#1d64f2'
+      },
+      cardTitle: {
+        color:'#094deb',
+        fontWeight: '500'
       },
       headerBox: {
         alignItems: 'flex-start',

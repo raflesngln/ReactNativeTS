@@ -7,6 +7,7 @@ import DetailsScreen from '../screens/DetailsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import TrackingScreen from '../screens/home/TrackingScreen';
 import DetailProduct from '../screens/home/DetailProduct';
+import RecomendationProduct from '../screens/home/RecomendationProduct';
 import LoginScreen from '../screens/home/LoginScreen';
 
 const HomeStack = createNativeStackNavigator<HomeStackNavigatorParamList>(); // checking type for name stack & types params
@@ -28,6 +29,7 @@ const HomeStackNavigator = () => {
       <HomeStack.Screen name="Details" component={DetailsScreen} />
       <HomeStack.Screen name="Tracking" component={TrackingScreen} />
       <HomeStack.Screen name="DetailProduct" component={DetailProduct} />
+      <HomeStack.Screen name="RecomendationProduct" component={RecomendationProduct} />
       <HomeStack.Screen name="Login" component={LoginScreen} />
     </HomeStack.Navigator>
   );

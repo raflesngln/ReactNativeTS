@@ -85,19 +85,18 @@ const wait = (timeout) => {
                   </Center>
               </LinearGradient>
 
-              <Box w="96%" ml="2%" h="auto" minHeight="380" mt="-23%" pt="5" pb="5" bg="#ffffff" roundedTopRight="30" roundedTopLeft="30" roundedBottomRight="15" roundedBottomLeft="15" shadow={3}>
-                <Center>
+              <Box w="96%" ml="2%" h="auto" minHeight="380" mt="-25%" pt="5" pb="5" bg="#ffffff" roundedTopRight="30" roundedTopLeft="30" roundedBottomRight="15" roundedBottomLeft="15" shadow={3}>
+                <Center mb="4">
                     <Text style={{fontSize:20,color:'#1f616b',fontWeight:'bold'}}>LOGIN USER</Text>
                     <Text>&nbsp;</Text>
                     <Text style={{color:'#f53d18'}}>Your Username & Password not Match !</Text>
                 </Center>
                     <Box p="3" w="100%">
                       <FormControl isInvalid w="100%" maxW="100%">
-                        <FormControl.Label>Username</FormControl.Label>
-                        <Input variant="rounded" placeholder="Enter username" w="100%"/>
-                        
-                        <FormControl.Label>Password</FormControl.Label>
-                        <Input variant="rounded" placeholder="Enter password" w="100%"/>
+                        {/* <FormControl.Label>   Username</FormControl.Label> */}
+                        <Input variant="rounded" placeholder="Enter Email / Username" w="100%"/>
+                        {/* <FormControl.Label>   Password</FormControl.Label> */}
+                        <Input mt="3" variant="rounded" placeholder="Enter Password" w="100%"/>
                       </FormControl>
                       <Box mt="5">
                           <Button rounded="22" shadow={8} h="45px" bg="#0586f0"> 
@@ -107,7 +106,7 @@ const wait = (timeout) => {
                             </HStack>
                           </Button>
                       </Box>
-                      <Flex direction="row" justify="center" alignItems="center" mt="5">
+                      <Flex direction="row" justify="center" alignItems="center" mt="9">
                         <View style={{flexDirection: 'row', alignItems: 'center'}}>
                           <View style={{flex: 1, height: 1, backgroundColor: '#dbdbdb'}} />
                             <View>

@@ -106,7 +106,7 @@ const wait = (timeout) => {
                             </HStack>
                           </Button>
                       </Box>
-                      <Flex direction="row" justify="center" alignItems="center" mt="9">
+                      <Flex direction="row" justify="center" alignItems="center" mt="5">
                         <View style={{flexDirection: 'row', alignItems: 'center'}}>
                           <View style={{flex: 1, height: 1, backgroundColor: '#dbdbdb'}} />
                             <View>

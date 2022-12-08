@@ -77,7 +77,7 @@ const wait = (timeout) => {
                 >
                   <VStack space={2} ml="2%" mt="-20%" flexDirection="row" justifyContent="center" justifyItems="center">
                     <Center mt="-9%">
-                      <Image source={require('../../../assets/images/course.png')} ml="18%" width="100%" height="290px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
+                      <Image source={require('../../../assets/images/course.png')} ml="18%" width="100%" height="270px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
                     </Center>
                   </VStack>
                   <Center w="100%" mt="-12%">
@@ -85,7 +85,7 @@ const wait = (timeout) => {
                   </Center>
               </LinearGradient>
 
-              <Box w="96%" ml="2%" h="auto" minHeight="380" mt="-21%" pt="5" pb="2" bg="#ffffff" roundedTopRight="30" roundedTopLeft="30" roundedBottomRight="10" roundedBottomLeft="10" shadow={5}>
+              <Box w="96%" ml="2%" h="auto" minHeight="380" mt="-23%" pt="5" pb="5" bg="#ffffff" roundedTopRight="30" roundedTopLeft="30" roundedBottomRight="15" roundedBottomLeft="15" shadow={3}>
                 <Center>
                     <Text style={{fontSize:20,color:'#1f616b',fontWeight:'bold'}}>LOGIN USER</Text>
                     <Text>&nbsp;</Text>

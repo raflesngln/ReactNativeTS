@@ -259,7 +259,7 @@ const wait = (timeout) => {
                           >
                         <Center h="70px" w="20" bg="#b4e7ed" borderRadius="10" borderWidth="1" borderColor="#80c9d1">
                           <MaterialCommunityIcons name="apps" color='#089981' size={23} />
-                          <Text style={{color:'#384e52',fontWeight:'normal'}}>All</Text>
+                          <Text style={{color:'#384e52',fontWeight:'normal'}}>More</Text>
                         </Center>
                       </Pressable>
                       {/* </Flex> */}

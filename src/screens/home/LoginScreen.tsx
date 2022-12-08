@@ -80,18 +80,18 @@ const wait = (timeout) => {
                       <Image source={require('../../../assets/images/course.png')} ml="18%" width="100%" height="290px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
                     </Center>
                   </VStack>
-                  <Center w="100%" mt="-10%">
+                  <Center w="100%" mt="-12%">
                     <Text style={{fontSize:24,color:'#ffffff',fontWeight:'bold'}}>ATT Smart Online Course</Text>
                   </Center>
               </LinearGradient>
 
-              <Box w="96%" ml="2%" h="auto" minHeight="380" mt="-20%" pt="5" pb="3" bg="#ffffff" roundedTopRight="30" roundedTopLeft="30" roundedBottomRight="10" roundedBottomLeft="10" shadow={5}>
-                <Center  mt="1" mb="1">
+              <Box w="96%" ml="2%" h="auto" minHeight="380" mt="-21%" pt="5" pb="2" bg="#ffffff" roundedTopRight="30" roundedTopLeft="30" roundedBottomRight="10" roundedBottomLeft="10" shadow={5}>
+                <Center>
                     <Text style={{fontSize:20,color:'#1f616b',fontWeight:'bold'}}>LOGIN USER</Text>
                     <Text>&nbsp;</Text>
                     <Text style={{color:'#f53d18'}}>Your Username & Password not Match !</Text>
                 </Center>
-                    <Box  p="5" w="100%">
+                    <Box p="3" w="100%">
                       <FormControl isInvalid w="100%" maxW="100%">
                         <FormControl.Label>Username</FormControl.Label>
                         <Input variant="rounded" placeholder="Enter username" w="100%"/>
@@ -107,11 +107,20 @@ const wait = (timeout) => {
                             </HStack>
                           </Button>
                       </Box>
-                      <Box mt="8">
+                      <Flex direction="row" justify="center" alignItems="center" mt="5">
+                        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                          <View style={{flex: 1, height: 1, backgroundColor: '#dbdbdb'}} />
+                            <View>
+                              <Text style={{width: 60, textAlign: 'center'}}>OR</Text>
+                            </View>
+                          <View style={{flex: 1, height: 1, backgroundColor: '#dbdbdb'}} />
+                        </View>
+                      </Flex>
+                      <Box mt="3">
                           <Button rounded="22" h="42px" bg="#fc4e2b" shadow={8}> 
                             <HStack space={2} >
                               <MaterialCommunityIcons name="google" style={{color:"#ffff"}} size={22} />
-                              <Text style={{color:"#ffff"}}>Google Account</Text>
+                              <Text style={{color:"#ffff"}}>Login With Google</Text>
                             </HStack>
                           </Button>
                       </Box>
@@ -119,7 +128,7 @@ const wait = (timeout) => {
 
                     <HStack p="3" display="flex" flexDirection="row" justifyContent="space-between">
                       <Box>
-                        <Text style={styles.bottomText}>New Users</Text>
+                        <Text style={styles.bottomText}>Resgister</Text>
                       </Box>
                       <Box>
                         <Text style={styles.bottomText}>Forgot Password ? </Text>

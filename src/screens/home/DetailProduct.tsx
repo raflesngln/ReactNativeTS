@@ -88,7 +88,6 @@ const wait = (timeout) => {
 
                 <Box w="96%" ml="2%" h="auto" mt="-15%" p="2" bg="#ffffff" roundedTopRight="8" roundedTopLeft="8" roundedBottomRight="8" roundedBottomLeft="8" shadow={9}
                    borderWidth="1" borderColor="coolGray.300">
-                  <Center>
                     <HStack space={3} >
                     <Flex direction="column" mt="1">
                       <Box mt="1" mb="2">
@@ -99,7 +98,6 @@ const wait = (timeout) => {
                     </Flex>
                       {/* </Flex> */}
                     </HStack>
-                  </Center>
                 </Box>
                 <Box w="96%" ml="2%" h="auto" p="2" bg="#ffffff" roundedTopRight="8" roundedTopLeft="8" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
                   <Center>
@@ -318,7 +316,7 @@ const wait = (timeout) => {
       cardTitleDetail: {
         color:'#094deb',
         fontWeight: '500',
-        fontSize:16,
+        fontSize:18,
         marginBottom:5
       },
       cardTitle: {
@@ -328,7 +326,7 @@ const wait = (timeout) => {
         marginBottom:3
       },
       titlePrice:{
-        fontSize:16,
+        fontSize:18,
         marginBottom:5,
         fontWeight:'bold',
         color:'#eb8509'

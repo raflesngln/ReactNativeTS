@@ -102,7 +102,6 @@ const wait = (timeout) => {
                   <Text style={styles.sectionTitle}><MaterialCommunityIcons name="filter-variant" color='#7a7b7d' size={25} /></Text>
                  </HStack>
                 </HStack>
-
               <ItemCard/>
             </Box>
           </ScrollView>
@@ -119,7 +118,7 @@ const wait = (timeout) => {
           data.map((val,i)=>{
             return(
               <Box key={i} mb="5">
-                <Pressable maxW="100%">
+              <Pressable maxW="100%">
                 {({
                 isHovered,
                 isFocused,

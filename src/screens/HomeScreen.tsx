@@ -73,7 +73,7 @@ const wait = (timeout) => {
             <Center p="2" mb="-4" mt="-1" zIndex={9}  >
               <Box w="100%" >
                   <HStack flexDirection="row" justifyContent="space-between">
-                    <Box pb="3"> <Text style={styles.sectionTitle} >POPULAR</Text></Box>
+                    <Box pb="3"> <Text style={styles.sectionTitle} >POPULER</Text></Box>
                     <Box pt="4"><Text style={{color:'#3f51b5',textDecorationLine:'underline'}}>View more</Text></Box>
                   </HStack>
               </Box>
@@ -433,8 +433,8 @@ const data = [{
       },
       sectionTitle: {
         fontSize: 16,
-        fontWeight: '600',
-        color:'#5d5e61'
+        fontWeight: '800',
+        color:'#7d968f'
       },
       sectionDescription: {
         marginTop: 8,

@@ -433,8 +433,8 @@ const data = [{
       },
       sectionTitle: {
         fontSize: 16,
-        fontWeight: '800',
-        color:'#7d968f'
+        fontWeight: '700',
+        color:'#79797d'
       },
       sectionDescription: {
         marginTop: 8,

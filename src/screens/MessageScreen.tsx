@@ -9,6 +9,9 @@ import {
   Text,
   StatusBar,
   StyleSheet,
+  Animated,
+  useWindowDimensions ,
+  TouchableOpacity,
   useColorScheme,
   RefreshControl
 } from 'react-native';
@@ -17,7 +20,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import LinearGradient from 'react-native-linear-gradient'
 import moment from 'moment';
 
-import {TextCustom} from '../../components/TextCustom';
+import { TabView,TabBar, SceneMap } from 'react-native-tab-view';
 import { useAppSelector, useAppDispatch } from '../redux/hooks'
 
 // import HomeScreenNavigationProp that check fro routes in homescreen
@@ -39,11 +42,7 @@ const wait = (timeout) => {
   return new Promise(resolve => setTimeout(resolve, timeout));
 }
 
-
   function Content(){
-  var Today=moment().format('ddd, MMMM Do YYYY')
-  var {width} = Dimensions.get('window');
-  var lebar=width.toFixed()-2
   const navigation = useNavigation<HomeScreenNavigationProp>(); // check which routes is navigates
 
   const[jam,setJam]=React.useState(null);
@@ -76,7 +75,8 @@ const wait = (timeout) => {
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
                 >
-                  <Box h="200" display="flex" flexDirection="column" justifyContent="center" alignItems="center" >
+
+                  <Box h="150" display="flex" flexDirection="column" justifyContent="center" alignItems="center" >
                       <Box p="2" m="2" borderRadius="md" >
                         <Text style={styles.headerTittle}>Message's</Text>
                       </Box>
@@ -85,16 +85,15 @@ const wait = (timeout) => {
                       </Box>
                   </Box>
               </LinearGradient>
+              <Box mt="-25" mb="5">
+                <TabViewExample/>
+              </Box>
+
+
               </VStack>
             </Flex>
 
-            {/* <Box mt="5%" mb="15%">
-              <ListItems/>
-            </Box> */}
-
-
-
-            <Box p="2" mt="-15%" bg="#ffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
+            {/* <Box p="2" mt="15%" bg="#ffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
                 <HStack flexDirection="row" justifyContent="space-between">
                  <Box> <Text style={styles.sectionTitle}><MaterialCommunityIcons name="card-search-outline" color='#7a7b7d' size={23} /></Text></Box>
                  <HStack mt="5"> 
@@ -103,7 +102,7 @@ const wait = (timeout) => {
                  </HStack>
                 </HStack>
               <ItemCard/>
-            </Box>
+            </Box> */}
           </ScrollView>
         </SafeAreaView>
       </NativeBaseProvider>
@@ -145,29 +144,6 @@ const wait = (timeout) => {
                       <Text><MaterialCommunityIcons name="account-edit" color='#7a7b7d' size={25} /></Text>
                     </Box>
                   </HStack>
-
-                      {/* <HStack alignItems="center">
-                      <Avatar size="48px" source={{
-                          uri: val.avatarUrl
-                        }} />
-                        <Spacer />
-                        <Text fontSize={10} color="coolGray.800">
-                          1 month ago
-                        </Text>
-                      </HStack> */}
-                      {/* <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
-                        {val.fullName}
-                      </Text>
-                      <Text mt="2" fontSize="sm" color="coolGray.700">
-                        {val.recentText}
-                      </Text>
-                      <Flex>
-                        {isFocused ? <Text mt="2" fontSize={12} fontWeight="medium" textDecorationLine="underline" color="darkBlue.600" alignSelf="flex-start">
-                            Read More
-                          </Text> : <Text mt="2" fontSize={12} fontWeight="medium" color="darkBlue.600">
-                            Read More
-                          </Text>}
-                      </Flex> */}
                     </Box>;
               }}
               </Pressable>
@@ -178,6 +154,54 @@ const wait = (timeout) => {
       </Box>
     )
 }
+
+const FirstRoute = () => (
+  <View style={{ flex: 1, backgroundColor: '#e3e3e8'}}>
+    <ItemCard/>
+  </View>
+);
+const SecondRoute = () => (
+  <View style={{ flex: 1, backgroundColor: '#e3e3e8'}} >
+    <ItemCard/>
+  </View>
+);
+const ThirdRoute = () => (
+  <View style={{ flex: 1, backgroundColor: '#cbced1'}} >
+  	<Text style={{color:'#0a0af5'}}>Group Messgae</Text>
+  </View>
+);
+ 
+// type AppProps = {}
+
+const renderScene = SceneMap({
+  first: FirstRoute,
+  second: SecondRoute,
+  third: ThirdRoute,
+});
+
+function TabViewExample() {
+  const layout = useWindowDimensions();
+
+  const [index, setIndex] = React.useState(0);
+  const [routes] = React.useState([
+    { key: 'first', title: 'All' },
+    { key: 'second', title: 'Private' },
+    { key: 'third', title: 'Group' },
+  ]);
+
+  return (
+    <View style={{height: layout.height,}}>
+    <TabView
+      navigationState={{ index, routes }}
+      renderScene={renderScene}
+      onIndexChange={setIndex}
+      initialLayout={{ width: layout.width }}
+      />
+      </View>
+  );
+}
+
+
 const data = [{
   id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
   fullName: "MAWAR MERAH",
@@ -281,42 +305,14 @@ const data = [{
   avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
 },
 ];
-    const ListItems = () => {
-      return <Box p="2" pb="0" mb="-4" minHeight="100%">
-          <FlatList data={data} renderItem={({
-          item
-        }) => <Box borderBottomWidth="1" _dark={{
-          borderColor: "muted.100"
-        }} borderColor="muted.300" pl={["0", "4"]} pr={["0", "5"]} py="2">
-                <HStack space={[2, 3]} justifyContent="space-between">
-                  <Avatar size="48px" source={{
-              uri: item.avatarUrl
-            }} />
-                  <VStack>
-                    <Text _dark={{
-                color: "warmGray.50"
-              }} color="coolGray.800" bold>
-                      {item.fullName}
-                    </Text>
-                    <Text color="coolGray.600" _dark={{
-                color: "warmGray.200"
-              }}>
-                      {item.recentText}
-                    </Text>
-                  </VStack>
-                  <Spacer />
-                  <Text fontSize="xs" _dark={{
-              color: "warmGray.50"
-            }} color="coolGray.800" alignSelf="flex-start">
-                    {item.timeStamp}
-                  </Text>
-                </HStack>
-              </Box>} keyExtractor={item => item.id} />
-        </Box>;
-    };
+   
 
     const styles = StyleSheet.create({
       container: {
+        flex: 1,
+        // marginTop: StatusBar.currentHeight,
+      },
+      scene: {
         flex: 1,
       },
       scrollView: {
@@ -345,7 +341,7 @@ const data = [{
         fontWeight:'bold'
       },
       headerBox: {
-        minHeight: 150,
+        minHeight: 100,
         width:'100%',
       },
     });

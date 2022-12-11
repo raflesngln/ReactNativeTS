@@ -67,7 +67,7 @@ const wait = (timeout) => {
                   />
                 }
               >
-            <Flex direction="row" mb="2" mt="-3">
+            <Flex direction="row" mb="2" mt="-15%">
               <VStack space={2}  w='100%'>
                 <LinearGradient
                   // colors={['#030e28','#2d3a85','#030e28' ]}
@@ -76,7 +76,7 @@ const wait = (timeout) => {
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
                 >
-                  <Box h="200" display="flex" flexDirection="column" justifyContent="center" alignItems="center" >
+                  <Box h="250" display="flex" flexDirection="column" justifyContent="center" alignItems="center" >
                       <Box p="2" m="2" borderRadius="md" >
                         <Text style={styles.headerTittle}>My Course</Text>
                       </Box>
@@ -84,7 +84,11 @@ const wait = (timeout) => {
                         {/* <Text>Lorem Ipsum DOlor</Text> */}
                       </Box>
                   </Box>
+              <Box mt="-29%" mb="5">
+                <ButtonMenu/>
+              </Box>
               </LinearGradient>
+
               </VStack>
             </Flex>
 
@@ -94,7 +98,7 @@ const wait = (timeout) => {
 
 
 
-            <Box p="2" mt="-15%" bg="#ffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
+            <Box p="2" mt="-6%" bg="#ffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
                 <HStack flexDirection="row" justifyContent="space-between">
                  <Box> <Text style={styles.sectionTitle}><MaterialCommunityIcons name="card-search-outline" color='#7a7b7d' size={23} /></Text></Box>
                  <HStack mt="5"> 
@@ -179,6 +183,24 @@ const wait = (timeout) => {
       </Box>
     )
 }
+
+const ButtonMenu = () => {
+  return <Stack p="2" direction={{
+    base: "row",
+    md: "row"
+  }} space={4}>
+      <Button leftIcon={<MaterialCommunityIcons name="cards-variant" color='#0cb33e' size={15}/>} variant="subtle" rounded="30" bg="#ffff" h="40px" >
+        <Text style={{color:'#0cb33e',fontWeight:'bold'}}>All</Text>
+      </Button>
+      <Button leftIcon={<MaterialCommunityIcons name="atom-variant" color='#f2f2f2' size={15}/>} variant="outline" rounded="30" bgs="#b5b5b5" h="40px" >
+        <Text style={{color:'#f2f2f2',fontWeight:'600'}}>Progress</Text>
+      </Button>
+      <Button leftIcon={<MaterialCommunityIcons name="alarm" color='#f2f2f2' size={15}/>} variant="outline" rounded="30" bgs="#b5b5b5" h="40px" >
+        <Text style={{color:'#f2f2f2',fontWeight:'600'}}>Pending</Text>
+      </Button>
+    </Stack>;
+};
+
 const data = [{
   id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
   fullName: "MAWAR MERAH",

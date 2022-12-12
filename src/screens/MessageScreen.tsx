@@ -80,7 +80,7 @@ const wait = (timeout) => {
                   <Box>
                     <Box p="2" pt="8%" display="flex" flexDirection="row" justifyContent="space-between">
                         <Box>
-                        <Text style={{color:'#ffff',fontWeight:'600',fontSize:22}}>Message's</Text>
+                        <Text style={{color:'#ffff',fontWeight:'600',fontSize:22}}><MaterialCommunityIcons name="chat-processing-outline" color='#bfe0ce' size={28} /> Message's</Text>
                       </Box>
                       <HStack>
                         <Box pl="1"><MaterialCommunityIcons name="file-search-outline" color='#ffff' size={25} /></Box>
@@ -96,8 +96,8 @@ const wait = (timeout) => {
                     </Box>
                   </Box>
               </LinearGradient>
-                <Box mt="-13%"  >
-                  <TabViewExample/>
+                <Box mt="-15%"  >
+                  <TabMenu/>
                 </Box>
               </VStack>
             </Flex>
@@ -107,6 +107,7 @@ const wait = (timeout) => {
     };
 
   const ItemCard=()=>{
+    const navigation = useNavigation<HomeScreenNavigationProp>(); // check which routes is navigates
     
     return(
       <Box mt="5" mb="25" >
@@ -114,7 +115,7 @@ const wait = (timeout) => {
           data.map((val,i)=>{
             return(
               <Box key={i} mb="2">
-              <Pressable maxW="100%">
+              <Pressable maxW="100%" onPress={() =>navigation.navigate('DetailProduct', {title: 'Detail Course'})}>
                 {({
                 isHovered,
                 isFocused,
@@ -152,21 +153,21 @@ const wait = (timeout) => {
 
 const FirstRoute = () => (
   <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-      <Box minH="323" p="2" pb="30%" style={{ flex: 1, backgroundColor: '#e3e3e8'}}>
+      <Box minH="100%" p="2" pb="30%" style={{ flex: 1, backgroundColor: 'coolGray.300'}}>
         <ItemCard/>
       </Box>
   </ScrollView>
 );
 const SecondRoute = () => (
   <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-    <Box minH="323" p="2" pb="30%" style={{ flex: 1, backgroundColor: '#e3e3e8'}} >
+    <Box minH="100" p="2" pb="30%" style={{ flex: 1, backgroundColor: 'coolGray.300'}} >
       <ItemCard/>
     </Box>
   </ScrollView>
 );
 const ThirdRoute = () => (
   <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-    <Box minH="323" p="2" style={{ flex: 1, backgroundColor: '#cbced1'}} >
+    <Box minH="100" p="2" style={{ flex: 1, backgroundColor: 'coolGray.300'}} >
       <Text style={{color:'#0a0af5'}}>Group Messgae</Text>
     </Box>
   </ScrollView>
@@ -180,7 +181,7 @@ const renderScene = SceneMap({
   third: ThirdRoute,
 });
 
-function TabViewExample() {
+function TabMenu() {
   const layout = useWindowDimensions();
 
   const [index, setIndex] = React.useState(0);

@@ -1,5 +1,5 @@
 import { useRoute } from '@react-navigation/native';
-import React,{FC, useEffect,useState}  from 'react';
+import React,{useEffect,useState}  from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { color } from 'native-base/lib/typescript/theme/styled-system';
 import {
@@ -9,6 +9,9 @@ import {
   Text,
   StatusBar,
   StyleSheet,
+  Animated,
+  useWindowDimensions ,
+  TouchableOpacity,
   useColorScheme,
   RefreshControl
 } from 'react-native';
@@ -17,22 +20,14 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import LinearGradient from 'react-native-linear-gradient'
 import moment from 'moment';
 
-import {TextCustom} from '../../components/TextCustom';
-import { useAppSelector, useAppDispatch } from '../redux/hooks'
+import { TabView,TabBar, SceneMap } from 'react-native-tab-view';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 
 // import HomeScreenNavigationProp that check fro routes in homescreen
-import { HomeScreenNavigationProp } from '../navigation/types';
+import { HomeScreenNavigationProp } from '../../navigation/types';
 
-const wait = (timeout) => {
-  return new Promise(resolve => setTimeout(resolve, timeout));
-}
 
-interface KategoriProps {
-  numCategory: number,
-  title: any
-}
-
-const MyCourseScreen = (props) => {
+const DetailScreen = (props) => {
   const route = useRoute();
   // const { title } = route.params;
 
@@ -43,22 +38,19 @@ const MyCourseScreen = (props) => {
   );
 };
 
+const wait = (timeout) => {
+  return new Promise(resolve => setTimeout(resolve, timeout));
+}
 
   function Content(){
-  var Today=moment().format('ddd, MMMM Do YYYY')
+    let screenHeight = Dimensions.get('window').height;
   const navigation = useNavigation<HomeScreenNavigationProp>(); // check which routes is navigates
+
   const[jam,setJam]=React.useState(null);
   const [refreshing, setRefreshing] = React.useState(false);
-  const [tab, setTab] = React.useState(0);
-
   const datalogin = useAppSelector((state) => state.login)
   const dispatch = useAppDispatch()
 
-
-  const changeCategory=(num:any)=>{
-    setTab(num)
-    console.warn("OKOKO "+num)
-  }
   const onRefresh = React.useCallback(() => {
       setRefreshing(true);
       wait(2000).then(() => setRefreshing(false));
@@ -67,7 +59,15 @@ const MyCourseScreen = (props) => {
         return (
           <NativeBaseProvider>
             <SafeAreaView style={styles.container}>
-            <Flex direction="row" mb="2" mt="-15%">
+            {/* <ScrollView
+                refreshControl={
+                  <RefreshControl
+                    refreshing={refreshing}
+                    onRefresh={onRefresh}
+                  />
+                }
+              > */}
+            <Flex direction="row" mb="2" mt="-3">
               <VStack space={2}  w='100%'>
                 <LinearGradient
                   // colors={['#030e28','#2d3a85','#030e28' ]}
@@ -76,12 +76,11 @@ const MyCourseScreen = (props) => {
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
                 >
-              <Box mt="19%">
-                <VStack>
-                  <Box mb="2">
-                    <Box p="2" display="flex" flexDirection="row" justifyContent="space-between">
+
+                  <Box>
+                    <Box p="2" pt="8%" display="flex" flexDirection="row" justifyContent="space-between">
                         <Box>
-                        <Text style={{color:'#ffff',fontWeight:'600',fontSize:22}}><MaterialCommunityIcons name="book-open-page-variant-outline" color='#bfe0ce' size={28} /> MY Course</Text>
+                        <Text style={{color:'#ffff',fontWeight:'600',fontSize:22}}><MaterialCommunityIcons name="chat-processing-outline" color='#bfe0ce' size={28} /> Message's</Text>
                       </Box>
                       <HStack>
                         <Box pl="1"><MaterialCommunityIcons name="file-search-outline" color='#ffff' size={25} /></Box>
@@ -96,33 +95,26 @@ const MyCourseScreen = (props) => {
                       </HStack>
                     </Box>
                   </Box>
-                  <Box>
-                    <ButtonTabsMenu numCategory={0} title={(e:any)=>changeCategory(e)}/>
-                  </Box>
-                </VStack>
-              </Box>
               </LinearGradient>
+                <Box mt="-15%"  >
+                  <TabMenu/>
+                </Box>
               </VStack>
             </Flex>
-              <Box p="2" mt="-14%" bg="coolGray.200" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
-                <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-                    <ItemCard numCategory={0} title={'nainggolan'}/>
-                </ScrollView>
-              </Box>
         </SafeAreaView>
       </NativeBaseProvider>
         );
     };
 
-    // const ItemCard=()=>{
-const ItemCard: FC<KategoriProps> = (props): JSX.Element => {
+  const ItemCard=()=>{
+    
     return(
-      <Box mt="4" minH="100%" pb="47%" style={{ flex: 1, }}>
+      <Box mt="5" mb="25" >
         {
           data.map((val,i)=>{
             return(
-              <Box key={i} mb="5">
-                <Pressable maxW="100%">
+              <Box key={i} mb="2">
+              <Pressable maxW="100%">
                 {({
                 isHovered,
                 isFocused,
@@ -140,38 +132,13 @@ const ItemCard: FC<KategoriProps> = (props): JSX.Element => {
                         }} />
                       </Box>
                       <VStack pl="2" maxWidth="72%">
-                        <Text style={styles.sectionTitle}>{val.fullName} {props.numCategory}</Text>
+                        <Text style={styles.sectionTitle}>{val.fullName}</Text>
                         <Text>{val.recentText}</Text>
                         <Text>{val.avatarUrl}</Text>
                       </VStack>
                     </HStack>
-                    <Box>
-                      <Text><MaterialCommunityIcons name="account-edit" color='#7a7b7d' size={25} /></Text>
-                    </Box>
+                    
                   </HStack>
-
-                      {/* <HStack alignItems="center">
-                      <Avatar size="48px" source={{
-                          uri: val.avatarUrl
-                        }} />
-                        <Spacer />
-                        <Text fontSize={10} color="coolGray.800">
-                          1 month ago
-                        </Text>
-                      </HStack> */}
-                      {/* <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
-                        {val.fullName}
-                      </Text>
-                      <Text mt="2" fontSize="sm" color="coolGray.700">
-                        {val.recentText}
-                      </Text>
-                      <Flex>
-                        {isFocused ? <Text mt="2" fontSize={12} fontWeight="medium" textDecorationLine="underline" color="darkBlue.600" alignSelf="flex-start">
-                            Read More
-                          </Text> : <Text mt="2" fontSize={12} fontWeight="medium" color="darkBlue.600">
-                            Read More
-                          </Text>}
-                      </Flex> */}
                     </Box>;
               }}
               </Pressable>
@@ -183,30 +150,68 @@ const ItemCard: FC<KategoriProps> = (props): JSX.Element => {
     )
 }
 
-const ButtonTabsMenu: FC<KategoriProps> = (props): JSX.Element => {
-  const[aktif,setAktif]=useState(0)
+const FirstRoute = () => (
+  <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+      <Box minH="100%" p="2" pb="30%" style={{ flex: 1, backgroundColor: '#e3e3e8'}}>
+        <ItemCard/>
+      </Box>
+  </ScrollView>
+);
+const SecondRoute = () => (
+  <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+    <Box minH="100" p="2" pb="30%" style={{ flex: 1, backgroundColor: '#e3e3e8'}} >
+      <ItemCard/>
+    </Box>
+  </ScrollView>
+);
+const ThirdRoute = () => (
+  <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+    <Box minH="100" p="2" style={{ flex: 1, backgroundColor: '#cbced1'}} >
+      <Text style={{color:'#0a0af5'}}>Group Messgae</Text>
+    </Box>
+  </ScrollView>
+);
+ 
+// type AppProps = {}
 
-  const changeTab=(e:any)=>{
-    props.numCategory=e
-    props.title=()=>e
-    setAktif(e)
-  }
+const renderScene = SceneMap({
+  first: FirstRoute,
+  second: SecondRoute,
+  third: ThirdRoute,
+});
 
-  return <HStack p="2" direction={{
-    base: "row",
-    md: "row"
-  }} space={4}>
-      <Button onPress={()=>changeTab(0)} leftIcon={<MaterialCommunityIcons name="cards-variant" color={aktif==0?'#0cb33e':'#f2f2f2'} size={17}/>} variant="outline" rounded="30" bg={aktif==0?'#ffff':'transparent'}  h="40px" >
-        <Text style={{color:aktif==0?'#0fa855':'#f2f2f2',fontWeight:'bold'}}>All </Text>
-      </Button>
-      <Button onPress={()=>changeTab(1)} leftIcon={<MaterialCommunityIcons name="atom-variant" color={aktif==1?'#0cb33e':'#f2f2f2'} size={17}/>} variant="outline" rounded="30" bg={aktif==1?'#ffff':'transparent'} h="40px" >
-        <Text style={{color:aktif==1?'#0fa855':'#f2f2f2',fontWeight:'600'}}>Progress </Text>
-      </Button>
-      <Button onPress={()=>changeTab(2)} leftIcon={<MaterialCommunityIcons name="alarm" color={aktif==2?'#0cb33e':'#f2f2f2'} size={17}/>} variant="outline" rounded="30" bg={aktif==2?'#ffff':'transparent'} h="40px" >
-        <Text style={{color:aktif==2?'#0fa855':'#f2f2f2',fontWeight:'600'}}>Pending </Text>
-      </Button>
-    </HStack>;
-};
+function TabMenu() {
+  const layout = useWindowDimensions();
+
+  const [index, setIndex] = React.useState(0);
+  const [routes] = React.useState([
+    { key: 'first', title: 'All' },
+    { key: 'second', title: 'Private' },
+    { key: 'third', title: 'Group' },
+  ]);
+
+  return (
+    <View style={{height: layout.height,}}>
+    <TabView
+      navigationState={{ index, routes }}
+      renderScene={renderScene}
+      onIndexChange={setIndex}
+      initialLayout={{ width: layout.width }}
+      renderTabBar={props => <TabBar {...props} 
+                    indicatorStyle={{ backgroundColor: '#09ebb1',height:3 }}
+                    style={{backgroundColor: '#1e4957'}}
+                    renderLabel={({ route, focused, color }) => (
+                          <Text style={{ color, margin: 5 }}>
+                              {route.title}
+                          </Text>
+                      )}
+                    />
+                  }
+      />
+      </View>
+  );
+}
+
 
 const data = [{
   id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
@@ -235,42 +240,70 @@ const data = [{
 },
 {
   id: "28694a0f-3da1-471f-bd96-142456e29d72",
-  fullName: "Kiara1",
+  fullName: "Kiara",
   timeStamp: "12:47 PM",
   recentText: "I will call today.",
   avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
 },
 {
   id: "28694a0f-3da1-471f-bd96-142456e2968",
-  fullName: "Kiara2",
+  fullName: "Kiara",
   timeStamp: "12:47 PM",
   recentText: "I will call today.",
   avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
 },
 {
   id: "28694a0f-3da1-471f-bd96-142456e5672",
-  fullName: "Kiara3",
+  fullName: "Kiara",
   timeStamp: "12:47 PM",
   recentText: "I will call today.",
   avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
 },
 {
   id: "28694a0f-3da1-471f-bd96-142456e86772",
-  fullName: "Kiara4",
+  fullName: "Kiara",
   timeStamp: "12:47 PM",
   recentText: "I will call today.",
   avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
 },
 {
   id: "28694a0f-3da1-471f-bd96-6789456e29d72",
-  fullName: "Kiara5",
+  fullName: "Kiara",
+  timeStamp: "12:47 PM",
+  recentText: "I will call today.",
+  avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
+},
+{
+  id: "28694a0f-3da1-471f-bd96-146756e29d72",
+  fullName: "Kiara",
+  timeStamp: "12:47 PM",
+  recentText: "I will call today.",
+  avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
+},
+{
+  id: "28694a0f-3da1-471f-bd96-142459629d72",
+  fullName: "Kiara",
+  timeStamp: "12:47 PM",
+  recentText: "I will call today.",
+  avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
+},
+{
+  id: "28694a0f-3da1-471f-bd96-142455429d72",
+  fullName: "Kiara",
+  timeStamp: "12:47 PM",
+  recentText: "I will call today.",
+  avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
+},
+{
+  id: "28694a0f-3da1-471f-bd96-1424345629d72",
+  fullName: "Kiara",
   timeStamp: "12:47 PM",
   recentText: "I will call today.",
   avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
 },
 {
   id: "28694a0f-3da1-471f-bd96-14242349d72",
-  fullName: "Kiara10",
+  fullName: "Kiara",
   timeStamp: "12:47 PM",
   recentText: "I will call today.",
   avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
@@ -283,8 +316,14 @@ const data = [{
   avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
 },
 ];
+   
+
     const styles = StyleSheet.create({
       container: {
+        flex: 1,
+        // marginTop: StatusBar.currentHeight,
+      },
+      scene: {
         flex: 1,
       },
       scrollView: {
@@ -313,9 +352,9 @@ const data = [{
         fontWeight:'bold'
       },
       headerBox: {
-        minHeight: 250,
+        minHeight: 150,
         width:'100%',
       },
     });
 
-export default MyCourseScreen;
+export default DetailScreen;

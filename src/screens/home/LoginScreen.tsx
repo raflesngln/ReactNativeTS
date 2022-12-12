@@ -85,7 +85,7 @@ const wait = (timeout) => {
                   </Center>
               </LinearGradient>
 
-              <Box w="96%" ml="2%" h="auto" minHeight="380" mt="-25%" pt="5" pb="5" bg="#ffffff" roundedTopRight="30" roundedTopLeft="30" roundedBottomRight="15" roundedBottomLeft="15" shadow={3}>
+              <Box w="100%"  minHeight="600" mt="-25%" pt="5"  bg="#ffffff" roundedTopRight="35" roundedTopLeft="35" >
                 <Center mb="4">
                     <Text style={{fontSize:20,color:'#1f616b',fontWeight:'bold'}}>LOGIN USER</Text>
                     <Text>&nbsp;</Text>

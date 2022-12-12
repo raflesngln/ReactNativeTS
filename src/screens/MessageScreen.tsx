@@ -43,6 +43,7 @@ const wait = (timeout) => {
 }
 
   function Content(){
+    let screenHeight = Dimensions.get('window').height;
   const navigation = useNavigation<HomeScreenNavigationProp>(); // check which routes is navigates
 
   const[jam,setJam]=React.useState(null);
@@ -58,36 +59,48 @@ const wait = (timeout) => {
         return (
           <NativeBaseProvider>
             <SafeAreaView style={styles.container}>
-            <ScrollView
+            {/* <ScrollView
                 refreshControl={
                   <RefreshControl
                     refreshing={refreshing}
                     onRefresh={onRefresh}
                   />
                 }
-              >
+              > */}
             <Flex direction="row" mb="2" mt="-3">
               <VStack space={2}  w='100%'>
                 <LinearGradient
                   // colors={['#030e28','#2d3a85','#030e28' ]}
-                  colors={['#4d90a8','#39c37a','#4d90a8']}
+                  colors={['#1e5569','#05876e','#1e5569']}
                   style={styles.headerBox}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
                 >
 
-                  <Box h="150" display="flex" flexDirection="column" justifyContent="center" alignItems="center" >
-                      <Box p="2" m="2" borderRadius="md" >
-                        <Text style={styles.headerTittle}>Message's</Text>
+                  <Box>
+                    <Box p="2" pt="8%" display="flex" flexDirection="row" justifyContent="space-between">
+                        <Box>
+                        <Text style={{color:'#ffff',fontWeight:'600',fontSize:22}}>Message's</Text>
                       </Box>
-                      <Box p="2" m="2" borderRadius="md" >
-                        {/* <Text>Lorem Ipsum DOlor</Text> */}
-                      </Box>
+                      <HStack>
+                        <Box pl="1"><MaterialCommunityIcons name="file-search-outline" color='#ffff' size={25} /></Box>
+                        <Box pl="1"><MaterialCommunityIcons name="bell-outline" color='#ffff' size={25} /></Box>
+                        <Box pl="2" mt="-10%">
+                        <Avatar bg="green.500" alignSelf="center" size="45px" source={{
+                              uri: "https://hris.att-group.co.id/assets/images/karyawan/F01A-150885933/tmp/F01A-150885933-26102021134633.jpeg"
+                            }}>
+                            AJ
+                        </Avatar>
+                        </Box>
+                      </HStack>
+                    </Box>
                   </Box>
               </LinearGradient>
-              <Box mt="-25" mb="5">
-                <TabViewExample/>
-              </Box>
+
+
+                <Box mt="-13%"  >
+                  <TabViewExample/>
+                </Box>
 
 
               </VStack>
@@ -103,7 +116,7 @@ const wait = (timeout) => {
                 </HStack>
               <ItemCard/>
             </Box> */}
-          </ScrollView>
+          {/* </ScrollView> */}
         </SafeAreaView>
       </NativeBaseProvider>
         );
@@ -112,11 +125,11 @@ const wait = (timeout) => {
   const ItemCard=()=>{
     
     return(
-      <Box mt="10">
+      <Box mt="5" mb="25" >
         {
           data.map((val,i)=>{
             return(
-              <Box key={i} mb="5">
+              <Box key={i} mb="2">
               <Pressable maxW="100%">
                 {({
                 isHovered,
@@ -140,9 +153,7 @@ const wait = (timeout) => {
                         <Text>{val.avatarUrl}</Text>
                       </VStack>
                     </HStack>
-                    <Box>
-                      <Text><MaterialCommunityIcons name="account-edit" color='#7a7b7d' size={25} /></Text>
-                    </Box>
+                    
                   </HStack>
                     </Box>;
               }}
@@ -156,19 +167,25 @@ const wait = (timeout) => {
 }
 
 const FirstRoute = () => (
-  <View style={{ flex: 1, backgroundColor: '#e3e3e8'}}>
-    <ItemCard/>
-  </View>
+  <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+      <Box minH="323" p="2" pb="30%" style={{ flex: 1, backgroundColor: '#e3e3e8'}}>
+        <ItemCard/>
+      </Box>
+  </ScrollView>
 );
 const SecondRoute = () => (
-  <View style={{ flex: 1, backgroundColor: '#e3e3e8'}} >
-    <ItemCard/>
-  </View>
+  <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+    <Box minH="323" p="2" pb="30%" style={{ flex: 1, backgroundColor: '#e3e3e8'}} >
+      <ItemCard/>
+    </Box>
+  </ScrollView>
 );
 const ThirdRoute = () => (
-  <View style={{ flex: 1, backgroundColor: '#cbced1'}} >
-  	<Text style={{color:'#0a0af5'}}>Group Messgae</Text>
-  </View>
+  <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+    <Box minH="323" p="2" style={{ flex: 1, backgroundColor: '#cbced1'}} >
+      <Text style={{color:'#0a0af5'}}>Group Messgae</Text>
+    </Box>
+  </ScrollView>
 );
  
 // type AppProps = {}
@@ -196,6 +213,16 @@ function TabViewExample() {
       renderScene={renderScene}
       onIndexChange={setIndex}
       initialLayout={{ width: layout.width }}
+      renderTabBar={props => <TabBar {...props} 
+                    indicatorStyle={{ backgroundColor: '#09ebb1',height:3 }}
+                    style={{backgroundColor: '#1e4957'}}
+                    renderLabel={({ route, focused, color }) => (
+                          <Text style={{ color, margin: 5 }}>
+                              {route.title}
+                          </Text>
+                      )}
+                    />
+                  }
       />
       </View>
   );
@@ -341,7 +368,7 @@ const data = [{
         fontWeight:'bold'
       },
       headerBox: {
-        minHeight: 100,
+        minHeight: 150,
         width:'100%',
       },
     });

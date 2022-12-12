@@ -59,7 +59,7 @@ const wait = (timeout) => {
               <VStack space={4}  w='100%'>
                 <LinearGradient
                   // colors={['#030e28','#2d3a85','#030e28' ]}
-                  colors={['#39c37a','#4d90a8','#39c37a' ]}
+                  colors={['#259459','#4d90a8','#259459' ]}
                   style={styles.headerBoxSettings}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}

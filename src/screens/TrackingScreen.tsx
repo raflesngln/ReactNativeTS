@@ -71,42 +71,51 @@ const wait = (timeout) => {
               <VStack space={2}  w='100%'>
                 <LinearGradient
                   // colors={['#030e28','#2d3a85','#030e28' ]}
-                  colors={['#4d90a8','#39c37a','#4d90a8']}
+                  colors={['#1e5569','#05876e','#1e5569']}
                   style={styles.headerBox}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
                 >
-                  <Box h="250" display="flex" flexDirection="column" justifyContent="center" alignItems="center" >
-                      <Box p="2" m="2" borderRadius="md" >
-                        <Text style={styles.headerTittle}>My Course</Text>
+              <Box mt="20%" mb="5">
+                <VStack>
+                  <Box>
+                    <Box p="2" display="flex" flexDirection="row" justifyContent="space-between">
+                        <Box>
+                        <Text style={{color:'#ffff',fontWeight:'600',fontSize:22}}>MY Course</Text>
                       </Box>
-                      <Box p="2" m="2" borderRadius="md" >
-                        {/* <Text>Lorem Ipsum DOlor</Text> */}
-                      </Box>
+                      <HStack>
+                        <Box pl="1"><MaterialCommunityIcons name="file-search-outline" color='#ffff' size={25} /></Box>
+                        <Box pl="1"><MaterialCommunityIcons name="bell-outline" color='#ffff' size={25} /></Box>
+                        <Box pl="2" mt="-10%">
+                        <Avatar bg="green.500" alignSelf="center" size="45px" source={{
+                              uri: "https://hris.att-group.co.id/assets/images/karyawan/F01A-150885933/tmp/F01A-150885933-26102021134633.jpeg"
+                            }}>
+                            AJ
+                        </Avatar>
+                        </Box>
+                      </HStack>
+                    </Box>
                   </Box>
-              <Box mt="-29%" mb="5">
-                <ButtonMenu/>
+                  <Box>
+                    <ButtonTabsMenu/>
+                  </Box>
+                </VStack>
               </Box>
               </LinearGradient>
 
               </VStack>
             </Flex>
-
             {/* <Box mt="5%" mb="15%">
               <ListItems/>
             </Box> */}
-
-
-
-            <Box p="2" mt="-6%" bg="#ffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
-                <HStack flexDirection="row" justifyContent="space-between">
-                 <Box> <Text style={styles.sectionTitle}><MaterialCommunityIcons name="card-search-outline" color='#7a7b7d' size={23} /></Text></Box>
-                 <HStack mt="5"> 
-                  <Text style={styles.sectionTitle}><MaterialCommunityIcons name="format-list-checkbox" color='#7a7b7d' size={25} /></Text>
-                  <Text style={styles.sectionTitle}><MaterialCommunityIcons name="filter-variant" color='#7a7b7d' size={25} /></Text>
-                 </HStack>
-                </HStack>
-
+            <Box p="2" mt="-13%" bg="#ffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
+                {/* <HStack flexDirection="row" justifyContent="space-between">
+                  <Box> <Text>&nbsp;</Text></Box>
+                  <HStack mt="3"> 
+                      <Box><MaterialCommunityIcons name="format-list-checkbox" color='#7a7b7d' size={28} /></Box>
+                      <Box><MaterialCommunityIcons name="filter-variant" color='#7a7b7d' size={28} /></Box>
+                  </HStack>
+                </HStack> */}
               <ItemCard/>
             </Box>
           </ScrollView>
@@ -118,7 +127,7 @@ const wait = (timeout) => {
   const ItemCard=()=>{
     
     return(
-      <Box mt="10">
+      <Box mt="5">
         {
           data.map((val,i)=>{
             return(
@@ -184,21 +193,21 @@ const wait = (timeout) => {
     )
 }
 
-const ButtonMenu = () => {
-  return <Stack p="2" direction={{
+const ButtonTabsMenu = () => {
+  return <HStack p="2" direction={{
     base: "row",
     md: "row"
   }} space={4}>
-      <Button leftIcon={<MaterialCommunityIcons name="cards-variant" color='#0cb33e' size={15}/>} variant="subtle" rounded="30" bg="#ffff" h="40px" >
+      <Button leftIcon={<MaterialCommunityIcons name="cards-variant" color='#0cb33e' size={17}/>} variant="subtle" rounded="30" bg="#ffff" h="40px" >
         <Text style={{color:'#0cb33e',fontWeight:'bold'}}>All</Text>
       </Button>
-      <Button leftIcon={<MaterialCommunityIcons name="atom-variant" color='#f2f2f2' size={15}/>} variant="outline" rounded="30" bgs="#b5b5b5" h="40px" >
+      <Button leftIcon={<MaterialCommunityIcons name="atom-variant" color='#f2f2f2' size={17}/>} variant="outline" rounded="30" bgs="#b5b5b5" h="40px" >
         <Text style={{color:'#f2f2f2',fontWeight:'600'}}>Progress</Text>
       </Button>
-      <Button leftIcon={<MaterialCommunityIcons name="alarm" color='#f2f2f2' size={15}/>} variant="outline" rounded="30" bgs="#b5b5b5" h="40px" >
+      <Button leftIcon={<MaterialCommunityIcons name="alarm" color='#f2f2f2' size={17}/>} variant="outline" rounded="30" bgs="#b5b5b5" h="40px" >
         <Text style={{color:'#f2f2f2',fontWeight:'600'}}>Pending</Text>
       </Button>
-    </Stack>;
+    </HStack>;
 };
 
 const data = [{
@@ -368,7 +377,7 @@ const data = [{
         fontWeight:'bold'
       },
       headerBox: {
-        minHeight: 150,
+        minHeight: 250,
         width:'100%',
       },
     });

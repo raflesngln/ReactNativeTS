@@ -38,7 +38,7 @@ const BottomTabs = () => {
           height: 65,
           width:'92%',
           marginLeft:'4%',
-          paddingHorizontal: 5,
+          paddingHorizontal:5,
           paddingTop: 0,
           paddingBottom:5,
           backgroundColor: '#0f78a3',
@@ -78,7 +78,7 @@ const BottomTabs = () => {
             headerShown: false,
             tabBarLabel: 'Home',
             tabBarIcon: ({ color, size }) => (
-                <MaterialCommunityIcons name="view-dashboard-outline" color={color} size={size+3} />
+                <MaterialCommunityIcons name="view-dashboard-outline" color={color} size={size+2} />
               ),
          }}
         
@@ -88,7 +88,7 @@ const BottomTabs = () => {
         headerShown: false,
         tabBarLabel: 'My Course',
         tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="sticker-text" color={color} size={size+3} />
+            <MaterialCommunityIcons name="sticker-text" color={color} size={size+2} />
             ),
         }}
       />
@@ -97,7 +97,7 @@ const BottomTabs = () => {
         headerShown: false,
         tabBarLabel: 'Message',
         tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="message-text-outline" color={color} size={size+3} />
+            <MaterialCommunityIcons name="message-text-outline" color={color} size={size+2} />
             ),
             tabBarBadge: 55,
         }}
@@ -107,7 +107,7 @@ const BottomTabs = () => {
             headerShown: false,
             tabBarLabel: 'Profile',
             tabBarIcon: ({ color, size }) => (
-                <MaterialCommunityIcons name="account-circle" color={color} size={size+3} />
+                <MaterialCommunityIcons name="account-circle" color={color} size={size+2} />
                 ),
             }}
       />

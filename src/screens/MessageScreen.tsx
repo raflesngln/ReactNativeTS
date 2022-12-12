@@ -96,27 +96,11 @@ const wait = (timeout) => {
                     </Box>
                   </Box>
               </LinearGradient>
-
-
                 <Box mt="-13%"  >
                   <TabViewExample/>
                 </Box>
-
-
               </VStack>
             </Flex>
-
-            {/* <Box p="2" mt="15%" bg="#ffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
-                <HStack flexDirection="row" justifyContent="space-between">
-                 <Box> <Text style={styles.sectionTitle}><MaterialCommunityIcons name="card-search-outline" color='#7a7b7d' size={23} /></Text></Box>
-                 <HStack mt="5"> 
-                  <Text style={styles.sectionTitle}><MaterialCommunityIcons name="format-list-checkbox" color='#7a7b7d' size={25} /></Text>
-                  <Text style={styles.sectionTitle}><MaterialCommunityIcons name="filter-variant" color='#7a7b7d' size={25} /></Text>
-                 </HStack>
-                </HStack>
-              <ItemCard/>
-            </Box> */}
-          {/* </ScrollView> */}
         </SafeAreaView>
       </NativeBaseProvider>
         );

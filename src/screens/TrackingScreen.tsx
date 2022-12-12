@@ -59,14 +59,6 @@ const wait = (timeout) => {
         return (
           <NativeBaseProvider>
             <SafeAreaView style={styles.container}>
-            <ScrollView
-                refreshControl={
-                  <RefreshControl
-                    refreshing={refreshing}
-                    onRefresh={onRefresh}
-                  />
-                }
-              >
             <Flex direction="row" mb="2" mt="-15%">
               <VStack space={2}  w='100%'>
                 <LinearGradient
@@ -105,20 +97,11 @@ const wait = (timeout) => {
 
               </VStack>
             </Flex>
-            {/* <Box mt="5%" mb="15%">
-              <ListItems/>
-            </Box> */}
-            <Box p="2" mt="-13%" bg="#ffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
-                {/* <HStack flexDirection="row" justifyContent="space-between">
-                  <Box> <Text>&nbsp;</Text></Box>
-                  <HStack mt="3"> 
-                      <Box><MaterialCommunityIcons name="format-list-checkbox" color='#7a7b7d' size={28} /></Box>
-                      <Box><MaterialCommunityIcons name="filter-variant" color='#7a7b7d' size={28} /></Box>
-                  </HStack>
-                </HStack> */}
-              <ItemCard/>
-            </Box>
-          </ScrollView>
+              <Box p="2" mt="-13%" bg="#ffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
+                <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+                    <ItemCard/>
+                </ScrollView>
+              </Box>
         </SafeAreaView>
       </NativeBaseProvider>
         );
@@ -313,40 +296,6 @@ const data = [{
   avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
 },
 ];
-    const ListItems = () => {
-      return <Box p="2" pb="0" mb="-4" minHeight="100%">
-          <FlatList data={data} renderItem={({
-          item
-        }) => <Box borderBottomWidth="1" _dark={{
-          borderColor: "muted.100"
-        }} borderColor="muted.300" pl={["0", "4"]} pr={["0", "5"]} py="2">
-                <HStack space={[2, 3]} justifyContent="space-between">
-                  <Avatar size="48px" source={{
-              uri: item.avatarUrl
-            }} />
-                  <VStack>
-                    <Text _dark={{
-                color: "warmGray.50"
-              }} color="coolGray.800" bold>
-                      {item.fullName}
-                    </Text>
-                    <Text color="coolGray.600" _dark={{
-                color: "warmGray.200"
-              }}>
-                      {item.recentText}
-                    </Text>
-                  </VStack>
-                  <Spacer />
-                  <Text fontSize="xs" _dark={{
-              color: "warmGray.50"
-            }} color="coolGray.800" alignSelf="flex-start">
-                    {item.timeStamp}
-                  </Text>
-                </HStack>
-              </Box>} keyExtractor={item => item.id} />
-        </Box>;
-    };
-
     const styles = StyleSheet.create({
       container: {
         flex: 1,

@@ -44,7 +44,7 @@ const BottomTabs = () => {
           // backgroundColor: '#06519c',
           backgroundColor: '#036785',
           position: 'absolute',
-          borderTopWidth: 1,
+          // borderTopWidth: 1,
           // borderTopColor:'#0d3440',
           borderColor:'#0d3440',
           paddingLeft:10,

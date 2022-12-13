@@ -16,6 +16,11 @@ import { AspectRatio, Pressable, Image, Box, Container, Heading, Center, NativeB
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import LinearGradient from 'react-native-linear-gradient'
 import moment from 'moment';
+import Animated, {
+  LightSpeedInLeft, 
+  LightSpeedOutRight,
+  Layout
+} from 'react-native-reanimated';
 
 import {TextCustom} from '../../components/TextCustom';
 import { useAppSelector, useAppDispatch } from '../redux/hooks'

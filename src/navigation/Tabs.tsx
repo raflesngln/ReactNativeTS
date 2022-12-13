@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {BottomTabBar, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Animated, { FadeInUp, FadeOutDown, Layout } from 'react-native-reanimated';
 import {View} from 'react-native';
@@ -11,17 +11,6 @@ import TrackingScreen from '../screens/TrackingScreen';
 import MessageScreen from '../screens/MessageScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
-const screenOptions = {
-  tabBarStyle:{
-    backgroundColor:'#0000ff',
-    height:100,
-  },
-  tabBarItemStyle:{
-    backgroundColor:'#00ff00',
-    margin:5,
-    borderRadius:10,
-  }
-};
 
 const Tab = createBottomTabNavigator<BottomTabNavigatorParamList>();
 
@@ -33,6 +22,8 @@ const BottomTabs = () => {
         tabBarInactiveTintColor: "#dff0e7",
         headerShown: false,
         gestureEnabled: true,
+        unmountOnBlur: true,
+        animation: 'slide_from_right',
         gestureDirection: 'horizontal',
         tabBarStyle: {
           height: 65,
@@ -41,11 +32,9 @@ const BottomTabs = () => {
           paddingHorizontal:5,
           paddingTop: 5,
           paddingBottom:5,
-          // backgroundColor: '#06519c',
           backgroundColor: '#036785',
           position: 'absolute',
           // borderTopWidth: 1,
-          // borderTopColor:'#0d3440',
           borderColor:'#0d3440',
           paddingLeft:10,
           paddingRight:10,
@@ -64,6 +53,7 @@ const BottomTabs = () => {
           padding:2,
         },
         headerStyle: { backgroundColor: '#242833' }, // for header if active
+        
       })}
     >
       <Tab.Screen

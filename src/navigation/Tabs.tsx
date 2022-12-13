@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Animated, { FadeInUp, FadeOutDown, Layout } from 'react-native-reanimated';
 import {View} from 'react-native';
 
 import { BottomTabNavigatorParamList } from './types';
@@ -39,16 +39,17 @@ const BottomTabs = () => {
           width:'92%',
           marginLeft:'4%',
           paddingHorizontal:5,
-          paddingTop: 0,
+          paddingTop: 5,
           paddingBottom:5,
-          backgroundColor: '#0f78a3',
+          // backgroundColor: '#06519c',
+          backgroundColor: '#036785',
           position: 'absolute',
           borderTopWidth: 1,
-          borderTopColor:'#acb0ae',
-          borderColor:'#10c779',
+          // borderTopColor:'#0d3440',
+          borderColor:'#0d3440',
           paddingLeft:10,
           paddingRight:10,
-          shadowColor:'0f0f0f',
+          shadowColor:'#0d3440',
           shadowRadius:9,
           shadowOpacity:4,
           borderTopLeftRadius:25,
@@ -62,13 +63,7 @@ const BottomTabs = () => {
           fontSize: 12,
           padding:2,
         },
-        // tabBarStyle:{ backgroundColor: '#18db22',height:60,padding:2,marginTop:9,borderRadius:50,marginBottom:9 },
         headerStyle: { backgroundColor: '#242833' }, // for header if active
-        
-        style: {
-                backgroundColor: '#18db22',
-                paddingBottom: 3
-          }
       })}
     >
       <Tab.Screen

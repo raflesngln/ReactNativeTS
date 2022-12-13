@@ -53,15 +53,12 @@ const BottomTabs = () => {
           fontSize: 12,
           padding:2,
         },
-        headerStyle: { backgroundColor: '#242833' }, // for header if active
-        
       })}
     >
       <Tab.Screen
         name="Home"
         component={HomeStackNavigator}
         options={{ 
-            headerShown: false,
             tabBarLabel: 'Home',
             tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons name="view-dashboard-outline" color={color} size={size+2} />
@@ -71,7 +68,6 @@ const BottomTabs = () => {
       />
       <Tab.Screen name="MyCourse" component={MyCourseStack}
         options={{ 
-        headerShown: false,
         tabBarLabel: 'My Course',
         tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="sticker-text" color={color} size={size+2} />
@@ -80,7 +76,6 @@ const BottomTabs = () => {
       />
       <Tab.Screen name="Message" component={MessageStack}
         options={{ 
-        headerShown: false,
         tabBarLabel: 'Message',
         tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="message-text-outline" color={color} size={size+2} />
@@ -90,7 +85,6 @@ const BottomTabs = () => {
       />
       <Tab.Screen name="Profile" component={ProfileStack}
             options={{ 
-            headerShown: false,
             tabBarLabel: 'Profile',
             tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons name="account-circle" color={color} size={size+2} />

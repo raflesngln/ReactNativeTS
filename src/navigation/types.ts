@@ -49,6 +49,7 @@ export type MessageNavigatorParamList = {
   };
   };
 
+  
   //type checks for Stack BProfile Setttings
   export type MyProfileNavigatorParamList = {
     MyProfile:{
@@ -61,3 +62,12 @@ export type MessageNavigatorParamList = {
       title:string
     };
   };
+      //type checks for Stack My Course
+    export type AuthNavigatorParamList = {
+      LoginUser:{
+          title:string
+        };
+        RegisterUser:{
+          title:string
+      };
+      };

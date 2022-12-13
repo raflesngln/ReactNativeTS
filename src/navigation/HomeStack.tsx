@@ -2,13 +2,11 @@ import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeStackNavigatorParamList } from './types';
 
-import HomeScreen from '../screens/HomeScreen';
-import DetailsScreen from '../screens/DetailsScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import HomeScreen from '../screens/home/HomeScreen';
+import DetailsScreen from '../screens/home/DetailsScreen';
 import TrackingScreen from '../screens/home/TrackingScreen';
 import DetailProduct from '../screens/home/DetailProduct';
 import RecomendationProduct from '../screens/home/RecomendationProduct';
-import LoginScreen from '../screens/home/LoginScreen';
 
 const HomeStack = createNativeStackNavigator<HomeStackNavigatorParamList>(); // checking type for name stack & types params
 
@@ -22,15 +20,13 @@ const HomeStackNavigator = () => {
                 zIndex:1
               },
         }}
-        initialRouteName="HomeScreen"
+        initialRouteName="HomeScreenPage"
     >
-      {/* <HomeStack.Screen  name="TRACKING APPS" component={HomeScreen} /> */}
-      <HomeStack.Screen  name="TRACKING APPS" component={HomeScreen} />
+      <HomeStack.Screen  name="HomeScreenPage" component={HomeScreen} />
       <HomeStack.Screen name="Details" component={DetailsScreen} />
-      <HomeStack.Screen name="Tracking" component={TrackingScreen} />
+      <HomeStack.Screen name="CategoryCourse" component={TrackingScreen} />
       <HomeStack.Screen name="DetailProduct" component={DetailProduct} />
       <HomeStack.Screen name="RecomendationProduct" component={RecomendationProduct} />
-      <HomeStack.Screen name="Login" component={LoginScreen} />
     </HomeStack.Navigator>
   );
 };

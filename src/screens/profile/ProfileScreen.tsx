@@ -17,14 +17,14 @@ import { AspectRatio ,Image,Box,Container, Heading, Center, NativeBaseProvider,V
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import LinearGradient from 'react-native-linear-gradient'
 
-import {TextCustom} from '../../components/TextCustom';
-import { useAppSelector, useAppDispatch } from '../redux/hooks'
+import {TextCustom} from '../../../components/TextCustom';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 
 // import HomeScreenNavigationProp that check fro routes in homescreen
-import { HomeScreenNavigationProp } from '../navigation/types';
+import { HomeScreenNavigationProp } from '../../navigation/types';
 
 
-const DetailScreen = (props) => {
+const ProfileScreen = (props) => {
   const route = useRoute();
   return (
     <View style={{ flex: 1 }}>
@@ -124,8 +124,8 @@ const wait = (timeout) => {
                     </Pressable>
                     <Pressable
                             onPress={() =>
-                              navigation.navigate('Login', {
-                                title: 'Login Course'
+                              navigation.navigate('LogoutApp', {
+                                title: 'LogoutApp Course'
                               })
                             }
                     >
@@ -222,7 +222,6 @@ const wait = (timeout) => {
         fontWeight: '400',
       },
       headerTittle: {
-        fontSize:'70px',
         color:'#1d64f2'
       },
       headerBoxSettings: {
@@ -233,4 +232,4 @@ const wait = (timeout) => {
       },
     });
 
-export default DetailScreen;
+export default ProfileScreen;

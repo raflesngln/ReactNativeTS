@@ -25,9 +25,9 @@ import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 import { HomeScreenNavigationProp } from '../../navigation/types';
 
 
-const DetailScreen = (props) => {
+const LoginScreen = (props) => {
   const route = useRoute();
-  const { title } = route.params;
+  // const { title } = route.params;
 
   return (
     <View style={{ flex: 1 }}>
@@ -192,4 +192,4 @@ const wait = (timeout) => {
       },
     });
 
-export default DetailScreen;
+export default LoginScreen;

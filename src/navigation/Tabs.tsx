@@ -6,10 +6,11 @@ import Animated, { FadeInUp, FadeOutDown, Layout } from 'react-native-reanimated
 import {View} from 'react-native';
 
 import { BottomTabNavigatorParamList } from './types';
+
 import HomeStackNavigator from './HomeStack';
-import TrackingScreen from '../screens/TrackingScreen';
-import MessageScreen from '../screens/MessageScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import MyCourseStack from '../navigation/MyCourseStack';
+import MessageStack from '../navigation/MessageStack';
+import ProfileStack from '../navigation/ProfileStack';
 
 
 const Tab = createBottomTabNavigator<BottomTabNavigatorParamList>();
@@ -68,7 +69,7 @@ const BottomTabs = () => {
          }}
         
       />
-      <Tab.Screen name="Tracking" component={TrackingScreen}
+      <Tab.Screen name="MyCourse" component={MyCourseStack}
         options={{ 
         headerShown: false,
         tabBarLabel: 'My Course',
@@ -77,7 +78,7 @@ const BottomTabs = () => {
             ),
         }}
       />
-      <Tab.Screen name="Message" component={MessageScreen}
+      <Tab.Screen name="Message" component={MessageStack}
         options={{ 
         headerShown: false,
         tabBarLabel: 'Message',
@@ -87,7 +88,7 @@ const BottomTabs = () => {
             tabBarBadge: 55,
         }}
       />
-      <Tab.Screen name="Settings" component={SettingsScreen}
+      <Tab.Screen name="Profile" component={ProfileStack}
             options={{ 
             headerShown: false,
             tabBarLabel: 'Profile',

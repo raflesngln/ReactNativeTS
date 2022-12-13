@@ -17,11 +17,11 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import LinearGradient from 'react-native-linear-gradient'
 import moment from 'moment';
 
-import {TextCustom} from '../../components/TextCustom';
-import { useAppSelector, useAppDispatch } from '../redux/hooks'
+import {TextCustom} from '../../../components/TextCustom';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 
 // import HomeScreenNavigationProp that check fro routes in homescreen
-import { HomeScreenNavigationProp } from '../navigation/types';
+import { HomeScreenNavigationProp } from '../../navigation/types';
 
 
 const DetailScreen = (props) => {
@@ -141,7 +141,7 @@ const wait = (timeout) => {
                           <Text style={{fontSize:35,color:'#ffffff',fontWeight:'bold',borderRadius:6,padding:3}}>Course</Text>
                         </Center>
                         <Center mt="-12" >
-                          <Image source={require('../../assets/images/course2.png')} mt="2%" ml="29%"  width="98%" height="300px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
+                          <Image source={require('../../../assets/images/course2.png')} mt="2%" ml="29%"  width="98%" height="300px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
                         </Center>
                       </Flex>
                   </LinearGradient>
@@ -155,19 +155,19 @@ const wait = (timeout) => {
                         <HStack space={3} >
                             <Pressable
                                 onPress={() =>
-                                  navigation.navigate('Tracking', {
-                                    title: 'Tracking'
+                                  navigation.navigate('CategoryCourse', {
+                                    title: 'CategoryCourse'
                                   })
                                 }
                               >
                             <Center h="70px" w="20" bg="#b4e7ed" borderRadius="12" borderWidth="1" borderColor="#80c9d1">
                               <MaterialCommunityIcons name="adjust" color='#089981' size={23} />
-                              <Text style={{color:'#384e52',fontWeight:'normal'}}>Tracking</Text>
+                              <Text style={{color:'#384e52',fontWeight:'normal'}}>CategoryCourse</Text>
                             </Center>
                           </Pressable>
                           <Pressable
                                 onPress={() =>
-                                  navigation.navigate('Tracking', {
+                                  navigation.navigate('CategoryCourse', {
                                     title: 'My Works'
                                   })
                                 }
@@ -179,7 +179,7 @@ const wait = (timeout) => {
                           </Pressable>
                           <Pressable
                                 onPress={() =>
-                                  navigation.navigate('Tracking', {
+                                  navigation.navigate('CategoryCourse', {
                                     title: 'Pending Status'
                                   })
                                 }
@@ -191,7 +191,7 @@ const wait = (timeout) => {
                           </Pressable>
                           <Pressable
                                 onPress={() =>
-                                  navigation.navigate('Tracking', {
+                                  navigation.navigate('CategoryCourse', {
                                     title: 'Complete Status'
                                   })
                                 }
@@ -209,7 +209,7 @@ const wait = (timeout) => {
                         <HStack space={3} >
                         <Pressable
                                 onPress={() =>
-                                  navigation.navigate('Tracking', {
+                                  navigation.navigate('CategoryCourse', {
                                     title: 'Tasks'
                                   })
                                 }
@@ -221,7 +221,7 @@ const wait = (timeout) => {
                           </Pressable>
                           <Pressable
                                 onPress={() =>
-                                  navigation.navigate('Tracking', {
+                                  navigation.navigate('CategoryCourse', {
                                     title: 'Import'
                                   })
                                 }
@@ -233,7 +233,7 @@ const wait = (timeout) => {
                           </Pressable>
                           <Pressable
                                 onPress={() =>
-                                  navigation.navigate('Tracking', {
+                                  navigation.navigate('CategoryCourse', {
                                     title: 'Export'
                                   })
                                 }
@@ -245,7 +245,7 @@ const wait = (timeout) => {
                           </Pressable>
                           <Pressable
                                 onPress={() =>
-                                  navigation.navigate('Tracking', {
+                                  navigation.navigate('CategoryCourse', {
                                     title: 'All Menu'
                                   })
                                 }

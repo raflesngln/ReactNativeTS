@@ -1,18 +1,17 @@
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { HomeStackNavigatorParamList } from './types';
+import { MyProfileNavigatorParamList } from './types';
 
-import HomeScreen from '../screens/HomeScreen';
-import DetailsScreen from '../screens/DetailsScreen';
-import SettingsScreen from '../screens/SettingsScreen';
-import TrackingScreen from '../screens/home/TrackingScreen';
-import DetailProduct from '../screens/home/DetailProduct';
 
-const HomeStack = createNativeStackNavigator<HomeStackNavigatorParamList>(); // checking type for name stack & types params
+import ProfileScreen from '../screens/profile/ProfileScreen';
+import DetailsUser from '../screens/profile/ProfileScreen';
+import LogoutScreen from '../screens/auth/LoginScreen';
 
-const HomeStackNavigator = () => {
+const ProfileStack = createNativeStackNavigator<MyProfileNavigatorParamList>(); // checking type for name stack & types params
+
+const ProfileStackNavigator = () => {
   return (
-    <HomeStack.Navigator 
+    <ProfileStack.Navigator 
         screenOptions={{
             headerShown: false,
             contentStyle:{
@@ -20,15 +19,14 @@ const HomeStackNavigator = () => {
                 zIndex:999
               },
         }}
-        initialRouteName="HomeScreen"
+        initialRouteName="MyProfile"
     >
-      {/* <HomeStack.Screen  name="TRACKING APPS" component={HomeScreen} /> */}
-      <HomeStack.Screen  name="TRACKING APPS" component={HomeScreen} />
-      <HomeStack.Screen name="Details" component={DetailsScreen} />
-      <HomeStack.Screen name="Tracking" component={TrackingScreen} />
-      <HomeStack.Screen name="DetailProduct" component={DetailProduct} />
-    </HomeStack.Navigator>
+      <ProfileStack.Screen name="MyProfile" component={ProfileScreen} />
+      <ProfileStack.Screen name="DetailUser" component={DetailsUser} />
+      <ProfileStack.Screen name="LogoutApp" component={LogoutScreen} />
+
+    </ProfileStack.Navigator>
   );
 };
 
-export default HomeStackNavigator;
+export default ProfileStackNavigator;

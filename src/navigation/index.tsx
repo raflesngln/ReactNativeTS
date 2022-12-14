@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator<RootNavigatorList>(); // checking type 
 
 import SplashScreen from '../screens/SplashScreen';
 import AuthStackNavigator from './AuthStack';
-import BottomTabs from './Tabs';
+import BottomTabsStack from './Tabs';
 
 const RootNavigator = () => {
   return (
@@ -16,7 +16,7 @@ const RootNavigator = () => {
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="SplashScreen">
           <Stack.Screen name="SplashScreen" component={SplashScreen} />
           <Stack.Screen name="Auth" component={AuthStackNavigator} />
-          <Stack.Screen name="HomeMenu" component={BottomTabs} />
+          <Stack.Screen name="HomeMenu" component={BottomTabsStack} />
       </Stack.Navigator>
     </NavigationContainer>
   );

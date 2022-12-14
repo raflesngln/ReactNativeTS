@@ -162,11 +162,10 @@ const wait = (timeout) => {
                       </Box>
                     </TouchableOpacity>
 
-                    <Button onPress={()=>ChangeRedux()}>Change Redux</Button>
-
-                      <Text style={{color:'#f00a47'}}>
-                        Redux : {JSON.stringify(datalogin)}
-                      </Text>
+                    {/* <Button onPress={()=>ChangeRedux()}>Change Redux</Button>
+                    <Text style={{color:'#f00a47'}}>
+                      Redux : {JSON.stringify(datalogin)}
+                    </Text> */}
                 </Box>
               </VStack>
             </Flex>

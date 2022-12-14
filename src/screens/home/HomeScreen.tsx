@@ -162,7 +162,7 @@ const wait = (timeout) => {
                               >
                             <Center h="70px" w="20" bg="#b4e7ed" borderRadius="12" borderWidth="1" borderColor="#80c9d1">
                               <MaterialCommunityIcons name="adjust" color='#089981' size={23} />
-                              <Text style={{color:'#384e52',fontWeight:'normal'}}>CategoryCourse</Text>
+                              <Text style={{color:'#384e52',fontWeight:'normal'}}>Technology</Text>
                             </Center>
                           </Pressable>
                           <Pressable

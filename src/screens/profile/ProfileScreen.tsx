@@ -22,6 +22,8 @@ import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 
 // import HomeScreenNavigationProp that check fro routes in homescreen
 import { HomeScreenNavigationProp } from '../../navigation/types';
+import { RootNavigationProp } from '../../navigation/types';
+
 
 
 const ProfileScreen = (props) => {
@@ -40,6 +42,7 @@ const wait = (timeout) => {
 
   function Content(){
   const navigation = useNavigation<HomeScreenNavigationProp>(); // check which routes is navigates
+  const navigationRoot = useNavigation<RootNavigationProp>(); // check which routes is navigates
 
   const[jam,setJam]=React.useState(null);
   const [refreshing, setRefreshing] = React.useState(false);
@@ -124,7 +127,7 @@ const wait = (timeout) => {
                     </Pressable>
                     <Pressable
                             onPress={() =>
-                              navigation.navigate('LogoutApp', {
+                              navigationRoot.navigate('Auth', {
                                 title: 'LogoutApp Course'
                               })
                             }

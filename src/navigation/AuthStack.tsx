@@ -5,6 +5,7 @@ import { AuthNavigatorParamList } from './types';
 
 import LoginScreen from '../screens/auth/LoginScreen';
 import RegisterScreen from '../screens/auth/RegisterScreen';
+import ForgotPasswordScreen from '../screens/auth/ForgotPassword';
 
 const AuthStack = createNativeStackNavigator<AuthNavigatorParamList>(); // checking type for name stack & types params
 
@@ -22,6 +23,7 @@ const AuthStackNavigator = () => {
     >
       <AuthStack.Screen name="LoginUser" component={LoginScreen} />
       <AuthStack.Screen name="RegisterUser" component={RegisterScreen} />
+      <AuthStack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
 
     </AuthStack.Navigator>
   );

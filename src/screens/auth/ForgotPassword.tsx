@@ -12,7 +12,7 @@ import {
   useColorScheme,
   RefreshControl
 } from 'react-native';
-import { AspectRatio ,Text,Image,Box,Container, Heading, Center, NativeBaseProvider,VStack ,ZStack,HStack ,Flex,Input,Icon ,CheckIcon,Button,FormControl, WarningOutlineIcon, Spacer,Stack,ScrollView,Divider,FlatList,SectionList,Avatar,Badge } from "native-base";
+import { AspectRatio,Text,Image,Box,Container, Heading, Center, NativeBaseProvider,VStack ,ZStack,HStack ,Flex,Input,Icon ,CheckIcon,Button,FormControl, WarningOutlineIcon, Spacer,Stack,ScrollView,Divider,FlatList,SectionList,Avatar,Badge } from "native-base";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import LinearGradient from 'react-native-linear-gradient'
@@ -22,7 +22,7 @@ import {TextCustom} from '../../../components/TextCustom';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 
 // import HomeScreenNavigationProp that check fro routes in homescreen
-import { RootNavigationProp } from '../../navigation/types';
+import { HomeScreenNavigationProp } from '../../navigation/types';
 import { AuthNavigationProp } from '../../navigation/types';
 
 
@@ -44,7 +44,7 @@ const wait = (timeout) => {
 
   function Content(props:any){
     const [show, setShow] = React.useState(false);
-  const navigationHome = useNavigation<RootNavigationProp>(); // check which routes is navigates
+  const navigation = useNavigation<HomeScreenNavigationProp>(); // check which routes is navigates
   const navigationAuth = useNavigation<AuthNavigationProp>(); // check which routes is navigates
 
   const[jam,setJam]=React.useState(null);
@@ -70,71 +70,56 @@ const wait = (timeout) => {
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
                 >
-                  <VStack space={2} ml="2%" mt="-20%" flexDirection="row" justifyContent="center" justifyItems="center">
-                    <Center mt="-15%">
-                      <Image source={require('../../../assets/images/course.png')} ml="18%" width="100%" height="270px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
+                  <VStack space={2} ml="2%" mt="-5%" flexDirection="row" justifyContent="center" justifyItems="center">
+                    <Center mt="-10%">
+                      <Image source={require('../../../assets/images/course.png')} ml="20%" width="100%" height="230px" style={{resizeMode: 'contain',aspectRatio: 1}} alt="header image"/>
                     </Center>
                   </VStack>
-                  <Center w="100%" mt="-9%">
+                  <Center w="100%" mt="-7%">
                     <Text pt="1" style={{fontSize:24,color:'#ffffff',fontWeight:'bold'}}>ATT Smart Online Course</Text>
                   </Center>
               </LinearGradient>
 
-              <Box w="100%"  minHeight="600" mt="-25%" pt="5"  bg="#ffffff" roundedTopRight="35" roundedTopLeft="35" >
-                <Center mb="2" pt="1">
-                    <HStack>
-                      <Icon  as={<MaterialIcons name="admin-panel-settings" />} size={7} ml="2" color="muted.400" />
-                      <Text pl="1" pt="1" style={{fontSize:20,color:'#1f616b',fontWeight:'bold'}}>
-                        LOGIN USER</Text>
-                    </HStack>
-                    <Text>&nbsp;</Text>
-                    <Text style={{color:'#f53d18'}}>Your Username & Password not Match !</Text>
+              <Box w="100%"  minHeight="600" mt="-10%" pt="5"  bg="#ffffff" roundedTopRight="35" roundedTopLeft="35" >
+                <Center mt="1" mb="6">
+                  <HStack>
+                    <Icon  as={<MaterialIcons name="keyboard-hide" />} size={8} ml="2" color="muted.400" />
+                    <Text pl="2" mt="2" style={{fontSize:20,color:'#1f616b',fontWeight:'bold'}}> 
+                       FORGOT PASSWORD</Text>
+                  </HStack>
                 </Center>
                     <Box p="3" w="100%">
                       <FormControl isInvalid w="100%" maxW="100%">
                         <Input h="50px" variant="rounded" w={{base: "100%",md: "100%"}} InputLeftElement={<Icon as={<MaterialIcons name="how-to-reg" />} size={5} ml="2" color="muted.400" />} placeholder="Enter Email / Username" />
-                        <Input h="50px" mt="3" variant="rounded" w={{base: "100%",md: "100%"}} type={show ? "text" : "password"} InputLeftElement={<Icon as={<MaterialIcons name="lock-outline" />} size={5} ml="2" color="muted.400" />} InputRightElement={<Pressable onPress={() => setShow(!show)}>
-                          <Icon as={<MaterialIcons name={show ? "visibility" : "visibility-off"} />} size={5} mr="2" color="muted.400" />
-                        </Pressable>} placeholder="Password" />
-
-                        {/* <FormControl.Label>   Password</FormControl.Label> */}
                       </FormControl>
-                      <Box mt="5">
-                          <Button rounded="22" shadow={8} h="45px" bg="#0586f0" onPress={()=>navigationHome.navigate('HomeMenu',{title:'Login User'})}> 
+                      <Box mt="2">
+                        <HStack mb="5" display="flex" justifyContent="space-between">
+                          <Box w="60%">
+                            <Input mt="5" h="50px" variant="rounded" w={{base: "100%",md: "100%"}} InputLeftElement={<Icon as={<MaterialIcons name="pending" />} size={5} ml="2" color="muted.400" />} placeholder="enter token have send to email" />
+                          </Box>
+                          <Box  w="35%">
+                            <Button mt="5" rounded="22" shadow={8} h="45px" bg="#ff500a">Send Token Code</Button>
+                          </Box>
+                        </HStack>
+
+                          <Button rounded="22" shadow={8} h="45px" bg="#164ec7"> 
                             <HStack space={2} >
-                              <Text style={{color:"#ffff"}}>SUBMIT LOGIN</Text>
+                              <Text style={{color:"#ffff"}}>Submit Forgot Password</Text>
                               <MaterialCommunityIcons name="chevron-right" style={{color:"#ffff"}} size={22} />
-                            </HStack>
-                          </Button>
-                      </Box>
-                      <Flex direction="row" justify="center" alignItems="center" mt="5">
-                        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                          <View style={{flex: 1, height: 1, backgroundColor: '#dbdbdb'}} />
-                            <View>
-                              <Text style={{width: 60, textAlign: 'center'}}>OR</Text>
-                            </View>
-                          <View style={{flex: 1, height: 1, backgroundColor: '#dbdbdb'}} />
-                        </View>
-                      </Flex>
-                      <Box mt="3">
-                          <Button rounded="22" h="42px" bg="#fc4e2b" shadow={8}> 
-                            <HStack space={2} >
-                              <MaterialCommunityIcons name="google" style={{color:"#ffff"}} size={22} />
-                              <Text style={{color:"#ffff"}}>Login With Google</Text>
                             </HStack>
                           </Button>
                       </Box>
                     </Box>
 
-                    <HStack p="3" display="flex" flexDirection="row" justifyContent="space-between">
+                    <HStack mt="5" p="3" display="flex" flexDirection="row" justifyContent="space-between">
                       <Box>
-                        <Text mt="2" style={styles.bottomText} onPress={() =>navigationAuth.navigate('RegisterUser')}>Register New User</Text>
+                        <Text>Already have an Acount ?</Text>
+                        <Text style={styles.bottomText} onPress={() =>navigationAuth.navigate('LoginUser')}>Login here !</Text>
                       </Box>
                       <Box>
-                        <Text>Forgot Password ? </Text>
-                        <Text style={styles.bottomText} onPress={() =>navigationAuth.navigate('ForgotPassword',{title:'Lupa Password'})}>Click here ! </Text>
+                        <Text style={styles.bottomText} onPress={() =>navigationAuth.navigate('RegisterUser')}>Register New User </Text>
                       </Box>
-                    </HStack> 
+                    </HStack>
                 </Box>
               </VStack>
             </Flex>
@@ -175,7 +160,7 @@ const wait = (timeout) => {
       headerBox: {
         alignItems: 'flex-start',
         justifyContent: 'center',
-        height: 340,
+        minHeight: 250,
         width:'100%',
       },
       bottomText:{

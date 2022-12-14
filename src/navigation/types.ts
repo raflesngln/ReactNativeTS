@@ -1,11 +1,26 @@
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
+
+//type checks for Stack Root
+export type RootNavigatorList = {
+  HomeMenu: {
+    title:string
+  };
+  Auth: {
+      title:string
+    };
+  };
+
+
 export type HomeStackNavigatorParamList = {
     HomeScreenPage: undefined;
     Details: {
       name: string;
     };
     CategoryCourse:{
+        title:string
+    };
+    HomeMenu:{
         title:string
     };
     DetailProduct:{
@@ -15,10 +30,6 @@ export type HomeStackNavigatorParamList = {
         title:string
     };
   };
-
-
-//   type checks for screens
-  export type HomeScreenNavigationProp = NativeStackNavigationProp<HomeStackNavigatorParamList,'HomeScreenPage'>;
 
 
 //   type checks for screens Bottom Navigations
@@ -38,6 +49,7 @@ export type MyCourseNavigatorParamList = {
       title:string
     };
   };
+
   
 //type checks for Stack My Course
 export type MessageNavigatorParamList = {
@@ -62,12 +74,17 @@ export type MessageNavigatorParamList = {
       title:string
     };
   };
-      //type checks for Stack My Course
-    export type AuthNavigatorParamList = {
-      LoginUser:{
-          title:string
-        };
-        RegisterUser:{
-          title:string
-      };
-      };
+    //type checks for Stack My Course
+  export type AuthNavigatorParamList = {
+      LoginUser:undefined;
+      RegisterUser:undefined;
+      ForgotPassword:{
+        title:string
+    };
+  };
+
+
+  //   type checks for screens
+  export type HomeScreenNavigationProp = NativeStackNavigationProp<HomeStackNavigatorParamList,'HomeScreenPage'>;
+  export type AuthNavigationProp = NativeStackNavigationProp<AuthNavigatorParamList,'LoginUser'>;
+  export type RootNavigationProp = NativeStackNavigationProp<RootNavigatorList,'HomeMenu'>;

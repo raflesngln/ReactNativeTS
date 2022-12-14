@@ -5,8 +5,12 @@ import type { RootState } from '../store'
 export interface LoginState {
   dataLogin:{
     isLogin: boolean;
+    token: string;
     username: string;
+    name: string;
     profilePicture: string;
+    photo: string;
+    email: string;
     value:number;
     darkMode:string;
   },
@@ -16,10 +20,14 @@ export interface LoginState {
 const initialState: LoginState = {
   dataLogin: {
     isLogin: true,
-    username: 'rafles',
+    token:'',
+    username: '',
+    name: '',
     profilePicture: '',
+    photo: '',
+    email: '',
     value: 0,
-    darkMode: 'lights'
+    darkMode: 'light'
   },
   darkMode: 'light',
 };

@@ -21,6 +21,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import LinearGradient from 'react-native-linear-gradient'
 import moment from 'moment';
+import axios from 'axios';
 
 import {TextCustom} from '../../../components/TextCustom';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks'
@@ -86,6 +87,23 @@ function Content(props:any){
         [usr]:ev
       }))
     }
+    const GoLogin= async()=>{
+      console.log('GOLOGIN')
+      const dataParams = {
+        "username" : "admin@crudbooster.com",
+        "password" : "123456"
+      };
+      const res:any=await axios.post("https://dev2.wakita.id/api/auth", dataParams, {
+              headers: {
+                token:'asas'
+              }
+            })
+        const respon=await res.data
+        console.log(respon.data.auth)
+        console.log(respon.data.user)
+        dispatch(setDataLogin({username:respon.data.user.name,profilePicture:respon.data.user.photo}))
+    }
+
     useEffect(()=>{
           console.log('State login Berubah')
     },[animating])
@@ -165,7 +183,7 @@ function Content(props:any){
                         </View>
                       </Flex>
                       <Box mt="3">
-                          <Button rounded="22" h="42px" bg="#fc4e2b" shadow={8}> 
+                          <Button rounded="22" h="42px" bg="#fc4e2b" shadow={8} onPress={()=>GoLogin()}> 
                             <HStack space={2} >
                               <MaterialCommunityIcons name="google" style={{color:"#ffff"}} size={22} />
                               <Text style={{color:"#ffff"}}>Login With Google</Text>

@@ -21,8 +21,8 @@ import moment from 'moment';
 import {TextCustom} from '../../../components/TextCustom';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 
-// import HomeScreenNavigationProp that check fro routes in homescreen
-import { HomeScreenNavigationProp } from '../../navigation/types';
+// import HomeScreenNavigation that check fro routes in homescreen
+import { HomeScreenNavigation } from '../../navigation/types';
 
 
 const DetailProduct = (props) => {
@@ -45,7 +45,7 @@ const wait = (timeout) => {
   var Today=moment().format('ddd, MMMM Do YYYY')
   var {width} = Dimensions.get('window');
   var lebar=width.toFixed()-2
-  const navigation = useNavigation<HomeScreenNavigationProp>(); // check which routes is navigates
+  const navigation = useNavigation<HomeScreenNavigation>(); // check which routes is navigates
 
   const[jam,setJam]=React.useState(null);
   const [refreshing, setRefreshing] = React.useState(false);

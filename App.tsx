@@ -24,6 +24,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 
 import {extendTheme,Button,Heading,AspectRatio,Text,HStack,Stack, Image,Box, Center, NativeBaseProvider,useColorMode,useColorModeValue } from "native-base";
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -62,10 +63,31 @@ declare module 'native-base' {
   interface ICustomTheme extends CustomThemeType {}
 }
 
+// ==========REACT QUERY=============
+const queryClientConfig = {
+  defaultOptions: {
+    queries: {
+      retry: 2,
+      refetchOnMount: true,
+      refetchOnWindowFocus:true,
+      refetchOnReconnect:true,
+      // cacheTime: 1000*300, //30 seconds
+      // refetchInterval: 1000*600, //in seconds count
+      // refetchIntervalInBackground: false,
+      // suspense: false,
+      // staleTime: 60,
+      // retryDelay: 60
+    },
+    mutations: {
+      retry: 2,
+    },
+  }
+}
+const my_queryClient:any = new QueryClient(queryClientConfig)
+
 
 const App = () => {
-  
-  
+
   const config = {
     initialColorMode: 'dark' // initial color mode
   };
@@ -74,13 +96,15 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <NativeBaseProvider theme={mytheme}>
-          <RootNavigator />
-          {/* <Text>{JSON.stringify(mytheme)}</Text> */}
-        </NativeBaseProvider>
-      </PersistGate>
-  </Provider>
+      <QueryClientProvider client={my_queryClient}>
+        <PersistGate loading={null} persistor={persistor}>
+          <NativeBaseProvider theme={mytheme}>
+            <RootNavigator />
+            {/* <Text>{JSON.stringify(mytheme)}</Text> */}
+          </NativeBaseProvider>
+        </PersistGate>
+        </QueryClientProvider>
+    </Provider>
   );
 };
 

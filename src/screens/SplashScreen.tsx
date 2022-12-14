@@ -9,54 +9,68 @@ import {
   StyleSheet,
   Image
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import LinearGradient from 'react-native-linear-gradient'
 
+import { RootNavigation } from '../navigation/types';
 import { useAppSelector, useAppDispatch } from '../redux/hooks'
-import { setDataLogin, logout } from '../redux/apps/loginSlice'
+import { setDataLogin, logout } from '../redux/apps/LoginSlice'
+// import {  } from 'react-native-svg';
+import { Text, Avatar, Badge, VStack, Center, Box, Flex, Heading } from 'native-base';
+
+
 
 
 const SplashScreen = ({navigation}:any) => {
   //State for ActivityIndicator animation
+  const Rootnavigation = useNavigation<RootNavigation>(); // croot Navigations
   const datalogin = useAppSelector((state) => state.login)
     const dispatch = useAppDispatch()
   const [animating, setAnimating] = useState(true);
 
   
-  const ChangeDataLogin=()=>{
-    console.warn('You tapped the button!')
-    dispatch(setDataLogin({isLogin:true,username:'raflesngln@gmail.com',profilePicture:'no photos',value:90}))
-}
-
   useEffect(() => {
+    function GetStatusLogin(){
+      const cekLogin:boolean=datalogin.dataLogin.isLogin
+      Rootnavigation.replace(cekLogin === true ? 'HomeMenu' : 'Auth')
+      console.log('Checking status login')
+      console.log(datalogin)
+    }
     setTimeout(() => {
+      GetStatusLogin()
       setAnimating(false);
-      //Check if user_id is set or not
-      //If not then send for Authentication
-      //else send to Home Screen
-
-      function getDataLogin(){
-        const cekLogin=datalogin.isLogin
-        navigation.replace(
-            cekLogin === true ? 'AuthStackNavigator' : 'HomeScreenPage'
-          )
-      }
-
-      getDataLogin()
-
-    }, 5000);
+    }, 1000);
   }, []);
 
   return (
-    <View style={styles.container}>
-      <Image
-        source={require('../../assets/images/course.png')}
-        style={{width: '90%', resizeMode: 'contain', margin: 30}}
-      />
-      <ActivityIndicator
-        animating={animating}
-        color="#FFFFFF"
-        size="large"
-        style={styles.activityIndicator}
-      />
+    <View >
+      <LinearGradient
+          colors={['#0f4d87','#24bdb7','#0f4d87' ]}
+          style={styles.headerBox}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+        >
+
+       <Flex pt="11" direction="column" justifyContent="center"  alignItems="center">         
+          <Image
+            source={require('../../assets/images/course2.png')}
+            style={{width: '75%',resizeMode: 'contain',marginTop:'35%'}}
+            />
+        <Box>
+          <Heading>
+              <Text mt="5" color="#cffffd" style={{fontSize:30,paddingTop:15}} >Online Course System</Text>
+          </Heading>
+        </Box>  
+        <Box>  
+          <ActivityIndicator
+            animating={animating}
+            color="#FFFFFF"
+            size="large"
+            style={styles.activityIndicator}
+            />
+      </Box>
+      </Flex>      
+      </LinearGradient>
     </View>
   );
 };
@@ -70,8 +84,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#307ecc',
   },
+  headerBox: {
+    height: '100%',
+    width:'100%',
+  },
   activityIndicator: {
     alignItems: 'center',
-    height: 80,
+    height: 150,
   },
 });

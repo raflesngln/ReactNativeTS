@@ -5,7 +5,8 @@ import { persistReducer, persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
 
 
-import loginReducer from './apps/loginSlice';
+import loginReducer from './apps/LoginSlice';
+import profileReducer from './apps/ProfileSlice';
 
 // export const store = configureStore({
 //   reducer: {
@@ -24,7 +25,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   login: loginReducer,
-  produk: loginReducer,
+  profile: profileReducer,
 });
 
 const persistedReducer  = persistReducer(persistConfig, rootReducer);

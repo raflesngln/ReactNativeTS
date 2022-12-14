@@ -14,7 +14,7 @@ const MyCourseStackNavigator = () => {
             headerShown: false,
             contentStyle:{
                 backgroundColor:'#ebedf0',
-                zIndex:999
+                // zIndex:999
               },
         }}
         initialRouteName="Mycourse"

@@ -21,9 +21,9 @@ import moment from 'moment';
 import {TextCustom} from '../../../components/TextCustom';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 
-// import HomeScreenNavigationProp that check fro routes in homescreen
-import { HomeScreenNavigationProp } from '../../navigation/types';
-import { AuthNavigationProp } from '../../navigation/types';
+// import HomeScreenNavigation that check fro routes in homescreen
+import { HomeScreenNavigation } from '../../navigation/types';
+import { AuthNavigation } from '../../navigation/types';
 
 
 const LoginScreen = (props) => {
@@ -44,8 +44,8 @@ const wait = (timeout) => {
 
   function Content(props:any){
     const [show, setShow] = React.useState(false);
-  const navigation = useNavigation<HomeScreenNavigationProp>(); // check which routes is navigates
-  const navigationAuth = useNavigation<AuthNavigationProp>(); // check which routes is navigates
+  const navigation = useNavigation<HomeScreenNavigation>(); // check which routes is navigates
+  const navigationAuth = useNavigation<AuthNavigation>(); // check which routes is navigates
 
   const[jam,setJam]=React.useState(null);
   const [refreshing, setRefreshing] = React.useState(false);

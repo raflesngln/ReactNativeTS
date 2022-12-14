@@ -3,12 +3,9 @@ import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 //type checks for Stack Root
 export type RootNavigatorList = {
-  HomeMenu: {
-    title:string
-  };
-  Auth: {
-      title:string
-    };
+  HomeMenu:undefined;
+  Auth:undefined;
+  SplashScreen:undefined;
   };
 
 
@@ -85,6 +82,8 @@ export type MessageNavigatorParamList = {
 
 
   //   type checks for screens
-  export type HomeScreenNavigationProp = NativeStackNavigationProp<HomeStackNavigatorParamList,'HomeScreenPage'>;
-  export type AuthNavigationProp = NativeStackNavigationProp<AuthNavigatorParamList,'LoginUser'>;
-  export type RootNavigationProp = NativeStackNavigationProp<RootNavigatorList,'HomeMenu'>;
+  export type RootNavigation = NativeStackNavigationProp<RootNavigatorList,'HomeMenu'>;
+  export type AuthNavigation = NativeStackNavigationProp<AuthNavigatorParamList,'LoginUser'>;
+  export type HomeScreenNavigation = NativeStackNavigationProp<HomeStackNavigatorParamList,'HomeScreenPage'>;
+  export type ProfileNavigation = NativeStackNavigationProp<MyProfileNavigatorParamList,'MyProfile'>;
+  export type CourseNavigation = NativeStackNavigationProp<MyCourseNavigatorParamList,'Mycourse'>;

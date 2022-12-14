@@ -3,6 +3,7 @@ import React,{useEffect,useState}  from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { color } from 'native-base/lib/typescript/theme/styled-system';
 import {
+  Platform,
   SafeAreaView,
   Dimensions,
   View,
@@ -10,18 +11,23 @@ import {
   StatusBar,
   StyleSheet,
   useColorScheme,
-  RefreshControl
+  RefreshControl,
+  TouchableHighlight,
+  TouchableOpacity,
+  TouchableNativeFeedback
 } from 'react-native';
-import { AspectRatio ,Text,Image,Box,Container, Heading, Center, NativeBaseProvider,VStack ,ZStack,HStack ,Flex, Spacer,Stack,ScrollView,Divider,FlatList,SectionList,Avatar,Badge } from "native-base";
+
+import { AspectRatio ,Text,Image,Box,Container, Heading, Center, NativeBaseProvider,VStack ,ZStack,HStack ,Flex, Spacer,Stack,ScrollView,Divider,FlatList,SectionList,Avatar,Badge, Button } from "native-base";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import LinearGradient from 'react-native-linear-gradient'
 
 import {TextCustom} from '../../../components/TextCustom';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks'
+import { setDataLogin, logout } from '../../redux/apps/LoginSlice'
 
 // import Navigator Stack
-import { HomeScreenNavigationProp } from '../../navigation/types';
-import { RootNavigationProp } from '../../navigation/types';
+import { HomeScreenNavigation } from '../../navigation/types';
+import { RootNavigation } from '../../navigation/types';
 
 
 
@@ -40,8 +46,8 @@ const wait = (timeout) => {
 
 
   function Content(){
-  const navigation = useNavigation<HomeScreenNavigationProp>(); // check which routes is navigates
-  const navigationRoot = useNavigation<RootNavigationProp>(); // check which routes is navigates
+  const navigation = useNavigation<HomeScreenNavigation>(); // check which routes is navigates
+  const navigationRoot = useNavigation<RootNavigation>(); // check which routes is navigates
 
   const[jam,setJam]=React.useState(null);
   const [refreshing, setRefreshing] = React.useState(false);
@@ -53,6 +59,20 @@ const wait = (timeout) => {
       wait(2000).then(() => setRefreshing(false));
     }, []);
   
+    const ChangeRedux=()=>{
+      console.log('ChangeRedux Datas')
+      dispatch(setDataLogin({isLogin:true,username:'raflesngln@gmail.com',profilePicture:'no photos',value:90}))
+      
+      setTimeout(()=>{
+        console.log(datalogin)
+      },600)
+    }
+
+  const LogoutUser=()=>{
+      dispatch(setDataLogin({isLogin:false,username:'',profilePicture:'',value:0}))
+      console.log('logout user')
+      navigationRoot.replace('Auth')
+    }
         return (
           <NativeBaseProvider>
             <SafeAreaView style={styles.container}>
@@ -124,13 +144,8 @@ const wait = (timeout) => {
                       </HStack>
                     </Box>
                     </Pressable>
-                    <Pressable
-                            onPress={() =>
-                              navigationRoot.navigate('Auth', {
-                                title: 'Log-Out Apps'
-                              })
-                            }
-                    >
+                    
+                      <TouchableOpacity onPress={()=>LogoutUser()}>
                       <Box borderBottomWidth="1" _dark={{
                             borderColor: "#d7dbd9"
                           }} borderColor="#d7dbd9" pl={["0", "4"]} pr={["0", "5"]} py="2">
@@ -145,7 +160,13 @@ const wait = (timeout) => {
                           </VStack>
                         </HStack>
                       </Box>
-                    </Pressable>
+                    </TouchableOpacity>
+
+                    <Button onPress={()=>ChangeRedux()}>Change Redux</Button>
+
+                      <Text style={{color:'#f00a47'}}>
+                        Redux : {JSON.stringify(datalogin)}
+                      </Text>
                 </Box>
               </VStack>
             </Flex>

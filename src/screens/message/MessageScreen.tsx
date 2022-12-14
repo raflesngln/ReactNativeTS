@@ -23,8 +23,8 @@ import moment from 'moment';
 import { TabView,TabBar, SceneMap } from 'react-native-tab-view';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 
-// import HomeScreenNavigationProp that check fro routes in homescreen
-import { HomeScreenNavigationProp } from '../../navigation/types';
+// import HomeScreenNavigation that check fro routes in homescreen
+import { HomeScreenNavigation } from '../../navigation/types';
 
 
 const DetailScreen = (props) => {
@@ -44,7 +44,7 @@ const wait = (timeout) => {
 
   function Content(){
     let screenHeight = Dimensions.get('window').height;
-  const navigation = useNavigation<HomeScreenNavigationProp>(); // check which routes is navigates
+  const navigation = useNavigation<HomeScreenNavigation>(); // check which routes is navigates
 
   const[jam,setJam]=React.useState(null);
   const [refreshing, setRefreshing] = React.useState(false);
@@ -107,7 +107,7 @@ const wait = (timeout) => {
     };
 
   const ItemCard=()=>{
-    const navigation = useNavigation<HomeScreenNavigationProp>(); // check which routes is navigates
+    const navigation = useNavigation<HomeScreenNavigation>(); // check which routes is navigates
     
     return(
       <Box mt="5" mb="25" >

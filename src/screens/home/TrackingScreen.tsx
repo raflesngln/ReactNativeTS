@@ -25,8 +25,8 @@ import Animated, {
 import {TextCustom} from '../../../components/TextCustom';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 
-// import HomeScreenNavigationProp that check fro routes in homescreen
-import { HomeScreenNavigationProp } from '../../navigation/types';
+// import HomeScreenNavigation that check fro routes in homescreen
+import { HomeScreenNavigation } from '../../navigation/types';
 
 const wait = (timeout) => {
   return new Promise(resolve => setTimeout(resolve, timeout));
@@ -51,7 +51,7 @@ const MyCourseScreen = (props) => {
 
   function Content(){
   var Today=moment().format('ddd, MMMM Do YYYY')
-  const navigation = useNavigation<HomeScreenNavigationProp>(); // check which routes is navigates
+  const navigation = useNavigation<HomeScreenNavigation>(); // check which routes is navigates
   const[jam,setJam]=React.useState(null);
   const [refreshing, setRefreshing] = React.useState(false);
   const [tab, setTab] = React.useState(0);

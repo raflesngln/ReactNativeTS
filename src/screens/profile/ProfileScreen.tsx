@@ -6,21 +6,20 @@ import {
   SafeAreaView,
   Dimensions,
   View,
-  Text,
   Pressable,
   StatusBar,
   StyleSheet,
   useColorScheme,
   RefreshControl
 } from 'react-native';
-import { AspectRatio ,Image,Box,Container, Heading, Center, NativeBaseProvider,VStack ,ZStack,HStack ,Flex, Spacer,Stack,ScrollView,Divider,FlatList,SectionList,Avatar,Badge } from "native-base";
+import { AspectRatio ,Text,Image,Box,Container, Heading, Center, NativeBaseProvider,VStack ,ZStack,HStack ,Flex, Spacer,Stack,ScrollView,Divider,FlatList,SectionList,Avatar,Badge } from "native-base";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import LinearGradient from 'react-native-linear-gradient'
 
 import {TextCustom} from '../../../components/TextCustom';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 
-// import HomeScreenNavigationProp that check fro routes in homescreen
+// import Navigator Stack
 import { HomeScreenNavigationProp } from '../../navigation/types';
 import { RootNavigationProp } from '../../navigation/types';
 
@@ -62,7 +61,7 @@ const wait = (timeout) => {
               <VStack space={4}  w='100%'>
                 <LinearGradient
                   // colors={['#030e28','#2d3a85','#030e28' ]}
-                  colors={['#259459','#4d90a8','#259459' ]}
+                  colors={['#1e5569','#05876e','#1e5569']}
                   style={styles.headerBoxSettings}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
@@ -83,18 +82,18 @@ const wait = (timeout) => {
                   </HStack>
               </LinearGradient>
 
-                <Box w="96%" ml="2%" h="auto" p="2" pl="3" minHeight="85%" mt="-23%" bg="#ffffff" roundedTopRight="22" roundedTopLeft="22" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
+                <Box w="100%" pt="5" h="auto" p="2" pl="3" minHeight="85%" mt="-25%" bg="#ffffff" roundedTopRight="30" roundedTopLeft="30" roundedBottomRight="8" roundedBottomLeft="8" shadow={5}>
                     <Box p="1" ml="2%" mb="3" maxWidth="75%" bg="transparent" >
-                      <Text style={{fontSize:26,color:'#4b5157'}}>My Profile's</Text>
+                      <Text pt="5" style={{fontSize:26,color:'#4b5157'}}>My Profile's</Text>
                     </Box>
 
-                    <Box p="1" mt="1" mb="1" ml="2%" maxWidth="75%" bg="transparent" >
-                      <Text style={{fontSize:16,color:'#b6bab8',fontWeight:'bold'}}>Basic Settings</Text>
+                    <Box p="1" mt="1" ml="2%" maxWidth="75%" bg="transparent" >
+                      <Text style={{fontSize:16,color:'#b6bab8'}} bold>Basic Settings</Text>
                     </Box>
                     <ListSettings/>
                     
-                    <Box p="1" mt="6" mb="1" ml="2%" maxWidth="75%" bg="transparent" >
-                      <Text style={{fontSize:16,color:'#b6bab8',fontWeight:'bold'}}>Other Settings</Text>
+                    <Box p="1" mt="6" ml="2%" maxWidth="75%" bg="transparent" >
+                      <Text style={{fontSize:16,color:'#b6bab8'}} bold>Other Settings</Text>
                     </Box>
 
                     <Pressable
@@ -112,7 +111,7 @@ const wait = (timeout) => {
                         <VStack>
                           <Text _dark={{
                                 color: "warmGray.50"
-                              }} color="coolGray.800" bold>
+                              }} color="coolGray.800">
                              Change Password
                           </Text>
                         </VStack>
@@ -128,25 +127,24 @@ const wait = (timeout) => {
                     <Pressable
                             onPress={() =>
                               navigationRoot.navigate('Auth', {
-                                title: 'LogoutApp Course'
+                                title: 'Log-Out Apps'
                               })
                             }
                     >
-                    <Box borderBottomWidth="1" _dark={{
-                          borderColor: "#d7dbd9"
-                        }} borderColor="#d7dbd9" pl={["0", "4"]} pr={["0", "5"]} py="2">
-                      <HStack space={[2, 3]} justifyContent="space-between">
+                      <Box borderBottomWidth="1" _dark={{
+                            borderColor: "#d7dbd9"
+                          }} borderColor="#d7dbd9" pl={["0", "4"]} pr={["0", "5"]} py="2">
+                        <HStack space={[2, 3]} justifyContent="flex-start">
                           <MaterialCommunityIcons name="exit-to-app" color={'#4b5157'} size={25} />
-                        <VStack>
-                          <Text _dark={{
-                                color: "warmGray.50"
-                              }} color="coolGray.800" bold>
-                              LOG-OUT
-                          </Text>
-                        </VStack>
-                        <Spacer />
-                      </HStack>
-                    </Box>
+                          <VStack>
+                            <Text _dark={{
+                                  color: "warmGray.50"
+                                }} color="coolGray.800" bold>
+                                Log-Out
+                            </Text>
+                          </VStack>
+                        </HStack>
+                      </Box>
                     </Pressable>
                 </Box>
               </VStack>
@@ -185,7 +183,7 @@ const wait = (timeout) => {
               <VStack>
               <Text _dark={{
                     color: "warmGray.50"
-                  }} color="coolGray.800" bold>
+                  }} color="coolGray.900">
                 {item.fullName}
               </Text>
               </VStack>

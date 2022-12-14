@@ -90,15 +90,17 @@ const wait = (timeout) => {
                 </Center>
                     <Box p="3" w="100%">
                       <FormControl isInvalid w="100%" maxW="100%">
-                        <Input h="50px" variant="rounded" w={{base: "100%",md: "100%"}} InputLeftElement={<Icon as={<MaterialIcons name="how-to-reg" />} size={5} ml="2" color="muted.400" />} placeholder="Enter Email / Username" />
+                        <Input h="45px" variant="rounded" w={{base: "100%",md: "100%"}} InputLeftElement={<Icon as={<MaterialIcons name="how-to-reg" />} size={5} ml="2" color="muted.400" />} placeholder="Enter Email / Username" />
                       </FormControl>
-                      <Box mt="2">
-                        <HStack mb="5" display="flex" justifyContent="space-between">
-                          <Box w="60%">
-                            <Input mt="5" h="50px" variant="rounded" w={{base: "100%",md: "100%"}} InputLeftElement={<Icon as={<MaterialIcons name="pending" />} size={5} ml="2" color="muted.400" />} placeholder="enter token have send to email" />
+                      <Box>
+                        <HStack mb="10" display="flex" justifyContent="space-between">
+                          <Box w="64%">
+                            <Input mt="5" h="45px" variant="rounded" w={{base: "100%",md: "100%"}} InputLeftElement={<Icon as={<MaterialIcons name="pending" />} size={5} ml="2" color="muted.400" />} placeholder="enter token have send to email" />
                           </Box>
                           <Box  w="35%">
-                            <Button mt="5" rounded="22" shadow={8} h="45px" bg="#ff500a">Send Token Code</Button>
+                            <Button size="md" mt="5" rounded="30" shadow={8} bg="#f00760">
+                                <Text color="#ffa8c9">Send Token Code</Text>
+                              </Button>
                           </Box>
                         </HStack>
 

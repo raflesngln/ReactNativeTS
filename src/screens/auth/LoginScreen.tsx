@@ -62,19 +62,21 @@ function Content(props:any){
   const dispatch = useAppDispatch()
 
     const CheckLoginState=()=>{
+      setAnimating(true);
       if(stateLogin.password==''|| stateLogin.username==''){
         toast.show({
           title: "Please Correct Username and Password",
           placement: "bottom"
         })
         setMessage('Please Correct Username and Password')
+        setAnimating(false);
         return
       }
-      setAnimating(true);
       dispatch(setDataLogin({isLogin:true,username:stateLogin.username,profilePicture:'rafles.jpg',value:90}))
       setTimeout(()=>{
         const cekLogin:boolean=true
         RootnavigationProp.replace(cekLogin === true ? 'HomeMenu' : 'Auth')
+        setAnimating(false);
         console.log(datalogin)
         setMessage('')
       },5000)

@@ -34,12 +34,12 @@ const SplashScreen = ({navigation}:any) => {
       const cekLogin:boolean=datalogin.dataLogin.isLogin
       Rootnavigation.replace(cekLogin === true ? 'HomeMenu' : 'Auth')
       console.log('Checking status login')
-      console.log(datalogin)
+      // console.log(datalogin)
     }
     setTimeout(() => {
       GetStatusLogin()
       setAnimating(false);
-    }, 1000);
+    }, 600);
   }, []);
 
   return (

@@ -1,6 +1,4 @@
-import { VStack } from 'native-base';
 import { ActivityIndicator, Dimensions, StyleSheet, View } from 'react-native';
-
 
 var deviceHeight = Dimensions.get('window').height;
 var deviceWidth = Dimensions.get('window').width;

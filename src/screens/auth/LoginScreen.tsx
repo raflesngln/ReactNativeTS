@@ -62,28 +62,6 @@ function Content(props:any){
   const datalogin = useAppSelector((state) => state.login)
   const dispatch = useAppDispatch()
 
-    const CheckLoginState=()=>{
-      setAnimating(true);
-      if(stateLogin.password==''|| stateLogin.username==''){
-        toast.show({
-          title: "Please Correct Username and Password",
-          placement: "bottom"
-        })
-        setMessage('Please Correct Username and Password')
-        setAnimating(false);
-        return
-      }
-      dispatch(setDataLogin({isLogin:true,username:stateLogin.username,profilePicture:'rafles.jpg',value:90}))
-      setTimeout(()=>{
-        const cekLogin:boolean=true
-        RootnavigationProp.replace(cekLogin === true ? 'HomeMenu' : 'Auth')
-        setAnimating(false);
-        console.log(datalogin)
-        setMessage('')
-      },5000)
-      console.log('Check Login')
-    }
-
     const stateChange=(usr:any,ev:any)=>{
       setStateLogin(prev=>({
         ...prev,
@@ -107,8 +85,7 @@ function Content(props:any){
 
           if(respon.success==true){
             console.log(respon.success)
-            console.log(respon.data.auth)
-            console.log(respon.data.user)
+            // console.log(respon.data.user)
             const reduxdata:any={
               isLogin: true,
               token:respon.data.auth.token,
@@ -125,7 +102,7 @@ function Content(props:any){
             },600)
 
           }else{
-            console.log('Username and Password not match ' + stateLogin.username + ' - '+stateLogin.password )
+            // console.log('Username and Password not match ' + stateLogin.username + ' - '+stateLogin.password )
             toast.show({
               title: "Please Correct Username and Password",
               placement: "bottom"
@@ -134,7 +111,7 @@ function Content(props:any){
             setMessage('Username and Password not match')
           }
         } catch (error) {
-          console.log("ERROR RESPON : "+JSON.stringify(error))
+          // console.log("ERROR RESPON : "+JSON.stringify(error))
           setMessage('ERROR RESPON')
           setAnimating(false);
         }

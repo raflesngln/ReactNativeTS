@@ -22,6 +22,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import LinearGradient from 'react-native-linear-gradient'
 import moment from 'moment';
 import axios from 'axios';
+import IndicatorLoading from '../../component/indicatorLoading'
 
 import {TextCustom} from '../../../components/TextCustom';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks'
@@ -148,7 +149,9 @@ function Content(props:any){
         return (
           <NativeBaseProvider>
             <SafeAreaView style={styles.container}>
-             
+              {
+                animating && <IndicatorLoading animating={animating}/>
+              }
             <Flex direction="row" mb="2" mt="-3">
               <VStack space={2}  w='100%'>
                 <LinearGradient
@@ -167,23 +170,15 @@ function Content(props:any){
                     <Text pt="1" style={{fontSize:24,color:'#ffffff',fontWeight:'bold'}}>ATT Smart Online Course</Text>
                   </Center>
               </LinearGradient>
-
+              
               <Box w="100%"  minHeight="600" mt="-25%" pt="5"  bg="#ffffff" roundedTopRight="35" roundedTopLeft="35" >
                 <Center mb="2" pt="1">
                     <HStack mb="5">
                       <Icon  as={<MaterialIcons name="admin-panel-settings" />} size={7} ml="2" color="muted.400" />
                       <Text pl="1" pt="1" style={{fontSize:20,color:'#1f616b',fontWeight:'bold'}}>
                         LOGIN USER</Text>
-                    </HStack>
 
-                    {
-                      animating && <ActivityIndicator
-                      animating={animating}
-                      color="#f50a70"
-                      size="large"
-                      style={styles.activityIndicator}
-                      />
-                    }
+                    </HStack>
                     {
                       message?<Text style={{color:'#f53d18'}}>Your Username & Password not Match !</Text>:''
                     }
@@ -295,13 +290,14 @@ function Content(props:any){
       },
       activityIndicator: {
         backgroundColor:'#6f757a21',
+        // backgroundColor:'#b5860e',
         borderRadius:30,
         alignItems: 'center',
         position:'absolute',
-        width:'100%',
-        height: deviceHeight/1,
-        top:'-20%',
-        paddingBottom:'55%',
+        width:'120%',
+        height: deviceHeight/1+10,
+        top:'-370%',
+        // paddingBottom:'-55%',
         zIndex:99,
       },
     });

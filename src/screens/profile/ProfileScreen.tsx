@@ -51,7 +51,7 @@ const wait = (timeout) => {
 
   const[jam,setJam]=React.useState(null);
   const [refreshing, setRefreshing] = React.useState(false);
-  const datalogin = useAppSelector((state) => state.login)
+  const redux_profile = useAppSelector((state) => state.login)
   const dispatch = useAppDispatch()
 
   const onRefresh = React.useCallback(() => {
@@ -61,10 +61,10 @@ const wait = (timeout) => {
   
     const ChangeRedux=()=>{
       console.log('ChangeRedux Datas')
-      dispatch(setDataLogin({isLogin:true,username:'raflesngln@gmail.com',profilePicture:'no photos',value:90}))
+      dispatch(setDataLogin({isLogin:true,name:'raflesngln',username:'raflesngln@gmail.com',profilePicture:'no photos'}))
       
       setTimeout(()=>{
-        console.log(datalogin)
+        console.log(redux_profile)
       },600)
     }
 
@@ -95,8 +95,8 @@ const wait = (timeout) => {
                       </Avatar>
                     </Center>
                     <Box minHeight="110px" p="2" pl="3%" maxWidth="75%" bg="transparent" rounded="md" >
-                      <Text style={{fontSize:22,color:'#ffffff',fontWeight:'bold'}}>Rafles Nainggolan</Text>
-                      <Text style={{fontSize:14,color:'#e3e6e8',fontWeight:'bold'}}>IT - Segara Artha Investama</Text>
+                      <Text style={{fontSize:22,color:'#ffffff',fontWeight:'bold'}}>{redux_profile.dataLogin.name}</Text>
+                      <Text style={{fontSize:14,color:'#e3e6e8',fontWeight:'bold'}}>{redux_profile.dataLogin.username}</Text>
                       <Text style={{fontSize:14,color:'#e3e6e8',fontWeight:'bold'}}>Programmer</Text>
                     </Box>
                   </HStack>
@@ -164,8 +164,9 @@ const wait = (timeout) => {
 
                     {/* <Button onPress={()=>ChangeRedux()}>Change Redux</Button>
                     <Text style={{color:'#f00a47'}}>
-                      Redux : {JSON.stringify(datalogin)}
+                      Redux : {JSON.stringify(redux_profile.dataLogin)}
                     </Text> */}
+
                 </Box>
               </VStack>
             </Flex>

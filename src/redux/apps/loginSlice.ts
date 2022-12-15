@@ -9,7 +9,6 @@ export interface LoginState {
     username: string;
     name: string;
     profilePicture: string;
-    photo: string;
     email: string;
     value:number;
     darkMode:string;
@@ -24,7 +23,6 @@ const initialState: LoginState = {
     username: '',
     name: '',
     profilePicture: '',
-    photo: '',
     email: '',
     value: 0,
     darkMode: 'light'

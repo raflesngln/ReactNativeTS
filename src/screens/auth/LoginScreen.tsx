@@ -89,21 +89,55 @@ function Content(props:any){
         [usr]:ev
       }))
     }
+
     const GoLogin= async()=>{
-      console.log('GOLOGIN')
+      setAnimating(true);
       const dataParams = {
-        "username" : "admin@crudbooster.com",
-        "password" : "123456"
+        "username" : stateLogin.username,//"admin@crudbooster.com",
+        "password" : stateLogin.password,//"123456"
       };
       const res:any=await axios.post("https://dev2.wakita.id/api/auth", dataParams, {
               headers: {
                 token:'asas'
               }
             })
-        const respon=await res.data
-        console.log(respon.data.auth)
-        console.log(respon.data.user)
-        dispatch(setDataLogin({username:respon.data.user.name,profilePicture:respon.data.user.photo}))
+        try {
+          const respon=await res.data
+
+          if(respon.success==true){
+            console.log(respon.success)
+            console.log(respon.data.auth)
+            console.log(respon.data.user)
+            const reduxdata:any={
+              isLogin: true,
+              token:respon.data.auth.token,
+              username: respon.data.user.email,
+              name:respon.data.user.name,
+              photo:respon.data.user.photo,
+              email:respon.data.user.email,
+            }
+            dispatch(setDataLogin(reduxdata))
+            setTimeout(()=>{
+              RootnavigationProp.replace(respon.success==true ? 'HomeMenu' : 'Auth')
+              setAnimating(false);
+              setMessage('')
+            },600)
+
+          }else{
+            console.log('Username and Password not match ' + stateLogin.username + ' - '+stateLogin.password )
+            toast.show({
+              title: "Please Correct Username and Password",
+              placement: "bottom"
+            })
+            setAnimating(false);
+            setMessage('Username and Password not match')
+          }
+        } catch (error) {
+          console.log("ERROR RESPON : "+JSON.stringify(error))
+          setMessage('ERROR RESPON')
+          setAnimating(false);
+        }
+
     }
 
     useEffect(()=>{
@@ -167,7 +201,7 @@ function Content(props:any){
                         {/* <FormControl.Label>   Password</FormControl.Label> */}
                       
                       <Box mt="5">
-                            <Button rounded="22" shadow={8} h="45px" bg="#0586f0" onPress={CheckLoginState}> 
+                            <Button rounded="22" shadow={8} h="45px" bg="#0586f0" onPress={GoLogin}> 
                               <HStack space={2} >
                                 <Text style={{color:"#ffff"}}>SUBMIT LOGIN</Text>
                                 <MaterialCommunityIcons name="chevron-right" style={{color:"#ffff"}} size={22} />
